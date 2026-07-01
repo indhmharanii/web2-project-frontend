@@ -1,17 +1,7 @@
-import Home from "./pages/Home";
+import Login from "./pages/Login/Login";
 
 function App() {
-  return <Home />;
-}
-
-export default App;
-
-function App() {
-  return (
-    <>
-      <h1>💻 Laptop Recommendation</h1>
-    </>
-  );
+  return <Login />;
 }
 
 export default App;
