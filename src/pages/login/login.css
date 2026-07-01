@@ -66,7 +66,6 @@ body{
     transform:translateX(-50%);
     border-radius:20px;
 }
-
 .input-group{
     margin-bottom:25px;
 }
@@ -142,7 +141,7 @@ color:#2d6cff;
 font-weight:600;
 
 }
-button{
+.login-card button{
 
 width:100%;
 
@@ -166,7 +165,7 @@ transition:.35s;
 
 }
 
-button:hover{
+.login-card button:hover{
 
 transform:translateY(-4px);
 
@@ -262,7 +261,7 @@ margin-left:6px;
 }
 .laptop-image{
 
-width:900px;
+width:440px;
 
 margin-bottom:50px;
 
