@@ -12,21 +12,21 @@ function Navbar() {
 
       <ul>
 
-        <li className="active">Home</li>
+        <li className="active">Beranda</li>
 
-        <li>About</li>
+        <li>Tentang</li>
 
-        <li>Features</li>
+        <li>Fitur</li>
 
-        <li>How It Works</li>
+        <li>Cara Kerja</li>
 
-        <li>Contact</li>
+        <li>Kontak</li>
 
       </ul>
 
       <button>
 
-        Login
+        Masuk
 
       </button>
 

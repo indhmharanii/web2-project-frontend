@@ -1,9 +1,12 @@
 import "./Home.css";
 
 import Navbar from "../../components/Navbar/Navbar";
-
 import hero from "../../assets/images/hero-laptop.png";
 import about from "../../assets/images/about.png";
+import Features from "../../components/Features/Features";
+import PopularLaptops from "../../components/PopularLaptops/PopularLaptops";
+import Testimonials from "../../components/Testimonials/Testimonials";
+import Footer from "../../components/Footer/Footer";
 
 import {
   FaLaptop,
@@ -15,33 +18,34 @@ function Home() {
   return (
     <div className="home">
 
+      {/* ================= NAVBAR ================= */}
       <Navbar />
 
       {/* ================= HERO ================= */}
-
       <section className="hero">
 
         <div className="hero-left">
 
           <h1>
-            Find Your
-            <span>Perfect Laptop</span>
+            Temukan
+            <span>Laptop Impianmu</span>
           </h1>
 
           <p>
-            AI-powered recommendation platform that helps you
-            choose the perfect laptop based on budget,
-            gaming, programming, editing, and productivity.
+            Platform rekomendasi berbasis AI yang membantu Anda
+            memilih laptop terbaik sesuai anggaran,
+            kebutuhan gaming, pemrograman, editing,
+            maupun produktivitas.
           </p>
 
           <div className="buttons">
 
             <button className="start">
-              Get Started
+              Mulai Sekarang
             </button>
 
             <button className="learn">
-              Learn More
+              Pelajari Lebih Lanjut
             </button>
 
           </div>
@@ -69,7 +73,7 @@ function Home() {
 
           <h2>1000+</h2>
 
-          <p>Laptops Reviewed</p>
+          <p>Laptop Telah Ditinjau</p>
 
         </div>
 
@@ -79,7 +83,7 @@ function Home() {
 
           <h2>500+</h2>
 
-          <p>Recommendations</p>
+          <p>Rekomendasi Diberikan</p>
 
         </div>
 
@@ -89,7 +93,7 @@ function Home() {
 
           <h2>95%</h2>
 
-          <p>Accuracy Rate</p>
+          <p>Tingkat Akurasi</p>
 
         </div>
 
@@ -101,17 +105,18 @@ function Home() {
 
         <div className="about-left">
 
-          <h2>About Budget2Build</h2>
+          <h2>Tentang Budget2Build</h2>
 
           <p>
-            Budget2Build is an AI-powered platform designed to
-            help users find the best laptop based on their
-            budget and specific needs.
+            Budget2Build adalah platform rekomendasi laptop
+            berbasis AI yang dirancang untuk membantu pengguna
+            menemukan laptop terbaik sesuai dengan anggaran
+            dan kebutuhan masing-masing.
 
-            Whether you are a student, programmer, gamer,
-            content creator, or office worker, our
-            recommendation system provides the most suitable
-            laptop quickly and accurately.
+            Baik Anda seorang pelajar, programmer, gamer,
+            content creator, maupun pekerja kantoran,
+            sistem rekomendasi kami akan memberikan pilihan
+            laptop yang paling sesuai secara cepat dan akurat.
           </p>
 
         </div>
@@ -120,13 +125,19 @@ function Home() {
 
           <img
             src={about}
-            alt="About"
+            alt="Tentang Budget2Build"
           />
 
         </div>
 
       </section>
 
+      {/* ================= FEATURES ================= */}
+
+      <Features />
+      <PopularLaptops />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }

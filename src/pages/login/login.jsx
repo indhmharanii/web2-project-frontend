@@ -25,22 +25,22 @@ function Login() {
         />
 
         <h1>
-          Hello.
+          Halo.
           <br />
-          <span>Welcome Back!</span>
+          <span>Selamat Datang Kembali!</span>
         </h1>
 
         <p>
-          This AI website helps you find laptop recommendations
-          based on your budget and needs.
-          Let our AI help you find the perfect laptop.
+          Website berbasis AI ini membantu Anda menemukan
+          rekomendasi laptop sesuai dengan anggaran dan kebutuhan.
+          Biarkan AI kami membantu Anda menemukan laptop yang paling tepat.
         </p>
       </div>
 
       <div className="right-side">
         <div className="login-card">
 
-          <h2>Login</h2>
+          <h2>Masuk</h2>
 
           <form onSubmit={handleLogin}>
 
@@ -49,17 +49,17 @@ function Login() {
 
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Masukkan email Anda"
                 required
               />
             </div>
 
             <div className="input-group">
-              <label>Password</label>
+              <label>Kata Sandi</label>
 
               <input
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Masukkan kata sandi"
                 required
               />
             </div>
@@ -70,13 +70,13 @@ function Login() {
 
                 <input type="checkbox" />
 
-                Remember Me
+                Ingat Saya
 
               </label>
 
               <a href="#">
 
-                Forgot Password?
+                Lupa Kata Sandi?
 
               </a>
 
@@ -84,13 +84,13 @@ function Login() {
 
             <button type="submit">
 
-              Login
+              Masuk
 
             </button>
 
             <div className="or">
 
-              <span>or continue with</span>
+              <span>atau lanjutkan dengan</span>
 
             </div>
 
@@ -98,18 +98,18 @@ function Login() {
               type="button"
               className="google"
             >
-              Continue with Google
+              Lanjutkan dengan Google
             </button>
 
             <p className="signup">
-              Don't have an account?
+              Belum memiliki akun?
 
               <span
                 onClick={() => navigate("/register")}
                 style={{ cursor: "pointer" }}
               >
                 {" "}
-                Sign Up
+                Daftar
               </span>
 
             </p>
