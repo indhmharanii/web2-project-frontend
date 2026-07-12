@@ -1,8 +1,10 @@
 import "./LaptopDetail.css";
 
-import Navbar from "../../components/Navbar/Navbar";
+import DashboardLayout from "../../layouts/DashboardLayout";
 
-import tuf from "../../assets/images/tuf.png";
+import { useParams } from "react-router-dom";
+
+import laptops from "../../data/laptops";
 
 import {
   FaStar,
@@ -11,129 +13,315 @@ import {
   FaHdd,
   FaDesktop,
   FaBatteryFull,
-  FaWeightHanging
+  FaWeightHanging,
+  FaHeart,
+  FaThumbsUp,
+  FaBalanceScale,
+  FaFire,
+  FaMedal,
+  FaUsers
 } from "react-icons/fa";
 
 function LaptopDetail() {
 
+  const { id } = useParams();
+
+  const laptop = laptops.find(
+    (item) => item.id === Number(id)
+  );
+
+  if (!laptop) {
+    return (
+      <DashboardLayout>
+        <div className="not-found">
+          <h1>404</h1>
+          <p>Laptop tidak ditemukan.</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
+
+  const formatPrice = (price) =>
+    new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      maximumFractionDigits: 0,
+    }).format(price);
+
   return (
+    <DashboardLayout>
 
-    <div className="detail">
+      <div className="detail-page">
 
-      <Navbar />
+        {/* HEADER */}
 
-      <section className="detail-container">
+        <div className="breadcrumb">
 
-        <div className="detail-image">
+          Dashboard
 
-          <img
-            src={tuf}
-            alt="ASUS TUF"
-          />
+          <span>/</span>
+
+          Laptop
+
+          <span>/</span>
+
+          {laptop.name}
 
         </div>
 
-        <div className="detail-info">
+        {/* HERO */}
 
-          <h1>ASUS TUF Gaming F15</h1>
+        <div className="detail-card">
 
-          <div className="rating">
+          {/* IMAGE */}
 
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
+          <div className="detail-left">
+
+            <div className="image-wrapper">
+
+              <img
+                src={laptop.image}
+                alt={laptop.name}
+              />
+
+            </div>
 
           </div>
 
-          <h2>Rp 15.499.000</h2>
+          {/* CONTENT */}
 
-          <div className="specs">
+          <div className="detail-right">
 
-            <div className="spec">
+            <span className="badge">
+
+              🔥 {laptop.category}
+
+            </span>
+
+            <h1>{laptop.name}</h1>
+
+            <div className="rating">
+
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+
+              <span>
+
+                {laptop.rating}
+
+              </span>
+
+            </div>
+
+            <h2>
+
+              {formatPrice(laptop.price)}
+
+            </h2>
+
+            {/* INFO */}
+
+            <div className="info-box">
+
+              <div className="mini-card">
+
+                <FaMedal />
+
+                <div>
+
+                  <small>Tier</small>
+
+                  <h4>{laptop.tier}</h4>
+
+                </div>
+
+              </div>
+
+              <div className="mini-card">
+
+                <FaUsers />
+
+                <div>
+
+                  <small>Total Vote</small>
+
+                  <h4>{laptop.votes}</h4>
+
+                </div>
+
+              </div>
+
+              <div className="mini-card">
+
+                <FaFire />
+
+                <div>
+
+                  <small>Kategori</small>
+
+                  <h4>{laptop.category}</h4>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SPEC */}
+
+        <div className="section">
+
+          <h3>Spesifikasi Laptop</h3>
+
+          <div className="spec-grid">
+
+            <div className="spec-card">
 
               <FaMicrochip />
 
-              <span>Intel Core i7-13620H</span>
+              <div>
+
+                <small>Processor</small>
+
+                <h4>{laptop.processor}</h4>
+
+              </div>
 
             </div>
 
-            <div className="spec">
-
-              <FaMemory />
-
-              <span>16 GB DDR5</span>
-
-            </div>
-
-            <div className="spec">
-
-              <FaHdd />
-
-              <span>512 GB SSD</span>
-
-            </div>
-
-            <div className="spec">
+            <div className="spec-card">
 
               <FaDesktop />
 
-              <span>NVIDIA RTX 4050</span>
+              <div>
+
+                <small>Graphics</small>
+
+                <h4>{laptop.gpu}</h4>
+
+              </div>
 
             </div>
 
-            <div className="spec">
+            <div className="spec-card">
+
+              <FaMemory />
+
+              <div>
+
+                <small>RAM</small>
+
+                <h4>{laptop.ram}</h4>
+
+              </div>
+
+            </div>
+
+            <div className="spec-card">
+
+              <FaHdd />
+
+              <div>
+
+                <small>Storage</small>
+
+                <h4>{laptop.storage}</h4>
+
+              </div>
+
+            </div>
+
+            <div className="spec-card">
 
               <FaBatteryFull />
 
-              <span>90Wh Battery</span>
+              <div>
+
+                <small>Battery</small>
+
+                <h4>{laptop.battery}</h4>
+
+              </div>
 
             </div>
 
-            <div className="spec">
+            <div className="spec-card">
 
               <FaWeightHanging />
 
-              <span>2.2 Kg</span>
+              <div>
+
+                <small>Weight</small>
+
+                <h4>{laptop.weight}</h4>
+
+              </div>
 
             </div>
-
-          </div>
-
-          <p className="description">
-
-            ASUS TUF Gaming F15 merupakan laptop
-            berperforma tinggi yang cocok untuk
-            gaming, programming, editing video,
-            desain grafis, hingga AI development.
-
-          </p>
-
-          <div className="buttons">
-
-            <button className="compare">
-
-              Compare
-
-            </button>
-
-            <button className="buy">
-
-              Buy Now
-
-            </button>
 
           </div>
 
         </div>
 
-      </section>
+        {/* DESCRIPTION */}
 
-    </div>
+        <div className="section">
 
-  )
+          <h3>Tentang Laptop</h3>
 
+          <div className="description-card">
+
+            <p>
+
+              {laptop.description}
+
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* ACTION */}
+
+        <div className="action-buttons">
+
+          <button className="favorite-btn">
+
+            <FaHeart />
+
+            Tambah Favorit
+
+          </button>
+
+          <button className="vote-btn">
+
+            <FaThumbsUp />
+
+            Vote Laptop
+
+          </button>
+
+          <button className="compare-btn">
+
+            <FaBalanceScale />
+
+            Bandingkan
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </DashboardLayout>
+  );
 }
 
 export default LaptopDetail;

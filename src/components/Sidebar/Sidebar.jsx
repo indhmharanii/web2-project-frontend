@@ -1,71 +1,56 @@
 import "./Sidebar.css";
 
 import {
-FaHouse,
-FaRankingStar,
-FaHeart,
-FaUser,
-FaRightFromBracket
+  FaHouse,
+  FaLaptop,
+  FaRankingStar,
+  FaHeart,
+  FaUser,
+  FaRightFromBracket,
 } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 
-function Sidebar(){
+function Sidebar() {
+  return (
+    <div className="sidebar">
 
-return(
+      <h2 className="logo">
+        TIERRA
+      </h2>
 
-<div className="sidebar">
+      <Link to="/dashboard">
+        <FaHouse />
+        <span>Dashboard</span>
+      </Link>
 
-<h2 className="logo">
+      <Link to="/laptop">
+        <FaLaptop />
+        <span>Jelajahi Laptop</span>
+      </Link>
 
-TIERRA
+      <Link to="/tierlist">
+        <FaRankingStar />
+        <span>Peringkat Laptop</span>
+      </Link>
 
-</h2>
+      <Link to="/favorite">
+        <FaHeart />
+        <span>Favorite</span>
+      </Link>
 
-<Link to="/dashboard">
+      <Link to="/profile">
+        <FaUser />
+        <span>Profile</span>
+      </Link>
 
-<FaHouse/>
+      <Link to="/">
+        <FaRightFromBracket />
+        <span>Logout</span>
+      </Link>
 
-<span>Dashboard</span>
-
-</Link>
-
-<Link to="/tierlist">
-
-<FaRankingStar/>
-
-<span>Tier List</span>
-
-</Link>
-
-<Link to="/favorite">
-
-<FaHeart/>
-
-<span>Favorite</span>
-
-</Link>
-
-<Link to="/profile">
-
-<FaUser/>
-
-<span>Profile</span>
-
-</Link>
-
-<Link to="/">
-
-<FaRightFromBracket/>
-
-<span>Logout</span>
-
-</Link>
-
-</div>
-
-)
-
+    </div>
+  );
 }
 
 export default Sidebar;

@@ -1,59 +1,117 @@
+/* ===========================
+   TOPBAR
+=========================== */
+
 .topbar{
-
-position:fixed;
-
-left:260px;
-
-right:0;
-
-top:0;
-
-height:80px;
-
-background:#111111;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:0 35px;
-
-border-bottom:1px solid rgba(255,255,255,.05);
-
-z-index:99;
-
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    background:#090B13;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.topbar input{
+/* ===========================
+   SEARCH
+=========================== */
 
-width:340px;
+.search-box{
+    width:580px;
+    height:52px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;
 
-padding:12px 20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 
-background:#1a1a1a;
-
-border:none;
-
-border-radius:12px;
-
-color:white;
-
-outline:none;
-
+    padding:0 18px;
 }
 
-.top-right{
+.search-box svg{
+    color:#9CA3AF;
+    font-size:18px;
+}
 
-display:flex;
+.search-box input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:15px;
+}
 
-gap:25px;
+.search-box input::placeholder{
+    color:#6B7280;
+}
 
-font-size:24px;
+/* ===========================
+   RIGHT
+=========================== */
 
-color:white;
+.topbar-right{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
 
-cursor:pointer;
+/* ===========================
+   NOTIFICATION
+=========================== */
+
+.notification{
+    position:relative;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.notification span{
+    width:8px;
+    height:8px;
+    background:#3B82F6;
+    border-radius:50%;
+
+    position:absolute;
+    top:-2px;
+    right:-2px;
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+}
+
+.profile svg{
+    font-size:44px;
+    color:#9CA3AF;
+}
+
+.profile h4{
+    color:#fff;
+    font-size:16px;
+    margin:0;
+}
+
+.profile p{
+    color:#9CA3AF;
+    font-size:13px;
+    margin:0;
+}
+.full-width{
+
+margin-left:auto;
 
 }

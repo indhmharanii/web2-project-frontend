@@ -1,0 +1,79 @@
+.tier-page{
+
+padding:35px;
+
+}
+
+.tier-page h1{
+
+color:white;
+
+font-size:40px;
+
+margin-bottom:10px;
+
+}
+
+.tier-page p{
+
+color:#94A3B8;
+
+margin-bottom:30px;
+
+}
+
+.tier-box{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:20px;
+
+padding:25px;
+
+margin-bottom:25px;
+
+transition:.3s;
+
+}
+
+.tier-box:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.2);
+
+}
+
+.tier-box h2{
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.s-tier{
+
+border-left:6px solid #F59E0B;
+
+}
+
+.a-tier{
+
+border-left:6px solid #2563EB;
+
+}
+
+.b-tier{
+
+border-left:6px solid #10B981;
+
+}
+
+.c-tier{
+
+border-left:6px solid #6B7280;
+
+}

@@ -1,29 +1,36 @@
 .dashboard-layout{
-
-display:flex;
-
-min-height:100vh;
-
-background:#090909;
-
+    display:flex;
+    min-height:100vh;
+    background:#090B13;
 }
 
+/* Sidebar fixed */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+/* Semua konten di sebelah kanan sidebar */
 .dashboard-content{
 
-flex:1;
+    flex:1;
 
-display:flex;
+    margin-left:260px;
 
-flex-direction:column;
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
 
 }
 
+/* Topbar */
 .dashboard-main{
 
-padding:30px;
+    padding:30px;
 
-margin-left:260px;
-
-margin-top:80px;
+    flex:1;
 
 }

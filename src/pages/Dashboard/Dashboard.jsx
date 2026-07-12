@@ -1,13 +1,13 @@
+import "./Dashboard.css";
+
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 import WelcomeCard from "../../components/WelcomeCard/WelcomeCard";
 import Stats from "../../components/Stats/Stats";
 import TierPreview from "../../components/TierPreview/TierPreview";
-
 import Activity from "../../components/Activity/Activity";
 import QuickAction from "../../components/QuickAction/QuickAction";
-
-import "./Dashboard.css";
+import Summary from "../../components/Summary/Summary";
 
 function Dashboard() {
   return (
@@ -18,9 +18,7 @@ function Dashboard() {
         <div className="dashboard-left">
 
           <WelcomeCard />
-
           <Stats />
-
           <TierPreview />
 
         </div>
@@ -28,8 +26,8 @@ function Dashboard() {
         <div className="dashboard-right">
 
           <Activity />
-
           <QuickAction />
+          <Summary />
 
         </div>
 

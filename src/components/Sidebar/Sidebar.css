@@ -1,36 +1,36 @@
 .sidebar{
 
-width:260px;
-
-height:100vh;
-
-background:#111111;
-
-border-right:1px solid rgba(255,255,255,.05);
-
-padding:35px;
-
 position:fixed;
 
 left:0;
 
 top:0;
 
+width:260px;
+
+height:100vh;
+
+background:#111827;
+
+border-right:1px solid rgba(255,255,255,.05);
+
+padding:30px 20px;
+
 display:flex;
 
 flex-direction:column;
-
-gap:18px;
 
 }
 
 .logo{
 
-font-size:30px;
+margin-bottom:50px;
 
-margin-bottom:40px;
+font-size:42px;
 
-color:#2D6CFF;
+font-weight:700;
+
+color:#3B82F6;
 
 }
 
