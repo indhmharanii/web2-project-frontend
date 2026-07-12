@@ -1,0 +1,182 @@
+.welcome-card{
+
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:50px 60px;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        #14162B 0%,
+        #1B1D44 45%,
+        #0F172A 100%
+    );
+
+    border:1px solid rgba(255,255,255,.05);
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    margin-bottom:35px;
+
+}
+
+/* ================= LEFT ================= */
+
+.welcome-left{
+
+    width:52%;
+
+}
+
+.welcome-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    background:linear-gradient(
+        90deg,
+        #3B82F6,
+        #4F46E5
+    );
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:999px;
+
+    box-shadow:0 8px 20px rgba(59,130,246,.35);
+
+    margin-bottom:28px;
+
+}
+
+.welcome-left h1{
+
+    color:#FFFFFF;
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+    line-height:1.2;
+
+}
+
+.brand{
+
+    color:#4D7CFF;
+
+}
+
+.welcome-left p{
+
+    color:#C9CED8;
+
+    font-size:20px;
+
+    line-height:38px;
+
+    margin-bottom:35px;
+
+}
+
+.welcome-btn{
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#3B82F6;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.welcome-btn:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-3px);
+
+}
+
+/* ================= RIGHT ================= */
+
+.welcome-right{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+/* Glow */
+
+.welcome-right::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:#2563EB;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    border-radius:50%;
+
+}
+
+.welcome-right img{
+
+    width:420px;
+
+    position:relative;
+
+    z-index:2;
+
+    filter:drop-shadow(
+        0 20px 40px rgba(0,0,0,.5)
+    );
+
+}
