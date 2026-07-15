@@ -1,79 +1,547 @@
+/* ==========================================
+   PAGE
+========================================== */
+
 .tier-page{
 
-padding:35px;
+    padding:35px;
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,#15233F 0%,#0B0F1A 45%,#080A12 100%);
 
 }
 
-.tier-page h1{
+/* ==========================================
+   BREADCRUMB
+========================================== */
 
-color:white;
+.breadcrumb{
 
-font-size:40px;
+    display:flex;
 
-margin-bottom:10px;
+    gap:12px;
 
-}
+    color:#94A3B8;
 
-.tier-page p{
+    font-size:15px;
 
-color:#94A3B8;
-
-margin-bottom:30px;
-
-}
-
-.tier-box{
-
-background:#111827;
-
-border:1px solid rgba(255,255,255,.05);
-
-border-radius:20px;
-
-padding:25px;
-
-margin-bottom:25px;
-
-transition:.3s;
+    margin-bottom:28px;
 
 }
 
-.tier-box:hover{
+.breadcrumb span{
 
-transform:translateY(-5px);
-
-box-shadow:0 15px 35px rgba(37,99,235,.2);
+    color:#3B82F6;
 
 }
 
-.tier-box h2{
+/* ==========================================
+   HEADER
+========================================== */
 
-color:white;
+.ranking-header{
 
-margin-bottom:10px;
-
-}
-
-.s-tier{
-
-border-left:6px solid #F59E0B;
+    margin-bottom:35px;
 
 }
 
-.a-tier{
+.header-left{
 
-border-left:6px solid #2563EB;
+    display:flex;
 
-}
+    align-items:center;
 
-.b-tier{
-
-border-left:6px solid #10B981;
+    gap:22px;
 
 }
 
-.c-tier{
+.header-icon{
 
-border-left:6px solid #6B7280;
+    width:80px;
+
+    height:80px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    background:
+    linear-gradient(135deg,#2563EB,#4F46E5);
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.25);
+
+}
+
+.header-left h1{
+
+    color:white;
+
+    font-size:50px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.header-left p{
+
+    color:#94A3B8;
+
+    font-size:17px;
+
+}
+/* ==========================================
+   STATS
+========================================== */
+
+.ranking-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:40px;
+
+}
+
+.stat-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+
+}
+
+.stat-icon{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    background:rgba(37,99,235,.15);
+
+}
+
+.stat-card h2{
+
+    color:white;
+
+    font-size:36px;
+
+    margin-bottom:4px;
+
+}
+
+.stat-card p{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+}
+/* ==========================================
+   TOP 3
+========================================== */
+
+.top-ranking{
+
+    margin-bottom:45px;
+
+}
+
+.section-title{
+
+    margin-bottom:22px;
+
+}
+
+.section-title h2{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.section-title p{
+
+    color:#94A3B8;
+
+}
+
+.top-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+}
+
+.top-card{
+
+    position:relative;
+
+    background:#111827;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.35s;
+
+    text-align:center;
+
+}
+
+.top-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.22);
+
+}
+
+.rank-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.rank-1 .rank-badge{
+
+    background:#F59E0B;
+
+}
+
+.rank-2 .rank-badge{
+
+    background:#9CA3AF;
+
+}
+
+.rank-3 .rank-badge{
+
+    background:#B45309;
+
+}
+
+.top-card img{
+
+    width:220px;
+
+    height:150px;
+
+    object-fit:contain;
+
+    margin:10px auto 25px;
+
+    display:block;
+
+}
+
+.top-card h3{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.top-card p{
+
+    color:#94A3B8;
+
+    margin-bottom:18px;
+
+}
+
+.top-rating{
+
+    color:#FACC15;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.top-rating span{
+
+    color:#94A3B8;
+
+    margin-left:10px;
+
+}
+
+.top-price{
+
+    color:#3B82F6;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+.top-card button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.top-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+/* ==========================================
+   TIER ROW
+========================================== */
+
+.tier-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    margin-top:40px;
+
+}
+
+.tier-row{
+
+    display:grid;
+
+    grid-template-columns:230px 1fr;
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+.tier-label{
+
+    border-radius:22px;
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+.tier-label h2{
+
+    margin:12px 0 8px;
+
+    font-size:30px;
+
+}
+
+.tier-label span{
+
+    font-size:14px;
+
+    opacity:.85;
+
+}
+
+.tier-label.s{
+
+    background:#F59E0B;
+
+}
+
+.tier-label.a{
+
+    background:#2563EB;
+
+}
+
+.tier-label.b{
+
+    background:#10B981;
+
+}
+
+/* ==========================================
+   MINI CARD
+========================================== */
+
+.tier-list{
+
+    display:flex;
+
+    gap:18px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+}
+
+.tier-list::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.mini-card{
+
+    min-width:210px;
+
+    background:#111827;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+}
+
+.mini-card img{
+
+    width:150px;
+
+    height:95px;
+
+    object-fit:contain;
+
+    margin-bottom:16px;
+
+}
+
+.mini-card h4{
+
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:6px;
+
+}
+
+.mini-card small{
+
+    color:#94A3B8;
 
 }

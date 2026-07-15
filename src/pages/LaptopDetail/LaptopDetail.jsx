@@ -290,33 +290,25 @@ function LaptopDetail() {
 
         {/* ACTION */}
 
-        <div className="action-buttons">
+       <div className="action-buttons">
 
-          <button className="favorite-btn">
+  <button className="vote-btn">
 
-            <FaHeart />
+    <FaThumbsUp />
 
-            Tambah Favorit
+    Vote Laptop
 
-          </button>
+  </button>
 
-          <button className="vote-btn">
+  <button className="compare-btn">
 
-            <FaThumbsUp />
+    <FaBalanceScale />
 
-            Vote Laptop
+    Bandingkan
 
-          </button>
+  </button>
 
-          <button className="compare-btn">
-
-            <FaBalanceScale />
-
-            Bandingkan
-
-          </button>
-
-        </div>
+</div>
 
       </div>
 

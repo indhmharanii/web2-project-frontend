@@ -19,7 +19,7 @@
    SEARCH
 =========================== */
 
-.search-box{
+.topbar-search{
     width:580px;
     height:52px;
     background:#111827;
@@ -33,12 +33,12 @@
     padding:0 18px;
 }
 
-.search-box svg{
+.topbar-search svg{
     color:#9CA3AF;
     font-size:18px;
 }
 
-.search-box input{
+.topbar-search input{
     flex:1;
     background:transparent;
     border:none;
@@ -47,7 +47,7 @@
     font-size:15px;
 }
 
-.search-box input::placeholder{
+.topbar-search input::placeholder{
     color:#6B7280;
 }
 

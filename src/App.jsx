@@ -8,27 +8,20 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Register from "./pages/Register/Register";
 import Laptop from "./pages/Laptop/Laptop";
 import TierList from "./pages/TierList/TierList";
+import Favorite from "./pages/Favorite/Favorite"; // Tambahkan import ini
 
 function App() {
   return (
     <Routes>
-
       <Route path="/" element={<Login />} />
-
       <Route path="/home" element={<Home />} />
-
       <Route path="/recommendation" element={<Recommendation />} />
-
       <Route path="/dashboard" element={<Dashboard />} />
-
       <Route path="/register" element={<Register />} />
-
       <Route path="/laptop" element={<Laptop />} />
-
       <Route path="/laptop/:id" element={<LaptopDetail />} />
-
+      <Route path="/favorite" element={<Favorite />} />
       <Route path="/tierlist" element={<TierList />} />
-
     </Routes>
   );
 }

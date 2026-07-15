@@ -1,0 +1,257 @@
+/* ==========================================
+   FAVORITE PAGE
+========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+.favorite-page{
+
+    min-height:100vh;
+
+    padding:35px;
+
+    background:
+    radial-gradient(circle at top,#15233F 0%,#0B0F1A 45%,#080A12 100%);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.favorite-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.breadcrumb{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+
+}
+
+.breadcrumb span{
+
+    margin:0 8px;
+
+    color:#3B82F6;
+
+}
+
+.favorite-header h1{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:white;
+
+    font-size:46px;
+
+    margin-bottom:10px;
+
+}
+
+.favorite-header h1 svg{
+
+    color:#EF4444;
+
+}
+
+.favorite-header p{
+
+    color:#94A3B8;
+
+    font-size:16px;
+
+}
+
+/* ==========================================
+   COUNT
+========================================== */
+
+.favorite-count{
+
+    width:170px;
+
+    height:120px;
+
+    border-radius:22px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.favorite-count h2{
+
+    color:white;
+
+    font-size:42px;
+
+}
+
+.favorite-count span{
+
+    color:#94A3B8;
+
+    margin-top:6px;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.favorite-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+/* ==========================================
+   EMPTY
+========================================== */
+
+.empty-state{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    background:#111827;
+
+    border-radius:24px;
+
+    padding:70px 40px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.empty-state h2{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.empty-state p{
+
+    color:#94A3B8;
+
+    margin-bottom:30px;
+
+}
+
+.empty-state button{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.empty-state button:hover{
+
+    transform:translateY(-3px);
+
+    background:#3B82F6;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .favorite-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:25px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .favorite-page{
+
+        padding:20px;
+
+    }
+
+    .favorite-header h1{
+
+        font-size:34px;
+
+    }
+
+    .favorite-count{
+
+        width:100%;
+
+    }
+
+}

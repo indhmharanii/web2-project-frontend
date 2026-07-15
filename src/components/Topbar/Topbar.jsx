@@ -21,7 +21,7 @@ function Topbar() {
 
       {showSearch && (
 
-        <div className="search-box">
+        <div className="topbar-search">
 
           <FaSearch />
 
