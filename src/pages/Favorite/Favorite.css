@@ -1,80 +1,92 @@
-/* ==========================================
+/* ===================================================
    FAVORITE PAGE
-========================================== */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
-}
+=================================================== */
 
 .favorite-page{
 
+    padding:32px;
+
     min-height:100vh;
 
-    padding:35px;
-
-    background:
-    radial-gradient(circle at top,#15233F 0%,#0B0F1A 45%,#080A12 100%);
+    background:#090B13;
 
 }
 
-/* ==========================================
-   HEADER
-========================================== */
+/* ===================================================
+   BREADCRUMB
+=================================================== */
 
-.favorite-header{
+.favorite-breadcrumb{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    margin-bottom:40px;
-
-}
-
-.breadcrumb{
+    gap:10px;
 
     color:#94A3B8;
 
     font-size:14px;
 
-    margin-bottom:18px;
+    margin-bottom:28px;
 
 }
 
-.breadcrumb span{
+.favorite-breadcrumb span:nth-child(2){
 
-    margin:0 8px;
-
-    color:#3B82F6;
+    color:#2563EB;
 
 }
 
-.favorite-header h1{
+/* ===================================================
+   HEADER
+=================================================== */
+
+.favorite-header{
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:22px;
 
-    color:white;
-
-    font-size:46px;
-
-    margin-bottom:10px;
+    margin-bottom:35px;
 
 }
 
-.favorite-header h1 svg{
+.favorite-header-icon{
 
-    color:#EF4444;
+    width:74px;
+
+    height:74px;
+
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:30px;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.28);
+
+}
+
+.favorite-header h1{
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
 
 }
 
@@ -86,117 +98,240 @@
 
 }
 
-/* ==========================================
-   COUNT
-========================================== */
+/* ===================================================
+   STATISTICS
+=================================================== */
 
-.favorite-count{
-
-    width:170px;
-
-    height:120px;
-
-    border-radius:22px;
-
-    background:#111827;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.favorite-count h2{
-
-    color:white;
-
-    font-size:42px;
-
-}
-
-.favorite-count span{
-
-    color:#94A3B8;
-
-    margin-top:6px;
-
-}
-
-/* ==========================================
-   GRID
-========================================== */
-
-.favorite-grid{
+.favorite-stats{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(4,1fr);
 
-    gap:28px;
-
-}
-
-/* ==========================================
-   EMPTY
-========================================== */
-
-.empty-state{
-
-    margin-top:80px;
-
-    text-align:center;
-
-    background:#111827;
-
-    border-radius:24px;
-
-    padding:70px 40px;
-
-    border:1px solid rgba(255,255,255,.05);
-
-}
-
-.empty-state h2{
-
-    color:white;
-
-    font-size:34px;
-
-    margin-bottom:12px;
-
-}
-
-.empty-state p{
-
-    color:#94A3B8;
+    gap:22px;
 
     margin-bottom:30px;
 
 }
 
-.empty-state button{
+.favorite-stat-card{
 
-    padding:15px 30px;
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:.3s;
+
+}
+
+.favorite-stat-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 15px 30px rgba(37,99,235,.20);
+
+}
+
+.favorite-stat-card .stat-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:2px solid #2563EB;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#3B82F6;
+
+    font-size:22px;
+
+}
+
+.favorite-stat-card h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:4px;
+
+}
+
+.favorite-stat-card p{
+
+    color:#94A3B8;
+
+}
+/* ===================================================
+   TOOLBAR
+=================================================== */
+
+.favorite-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:24px;
+
+}
+
+.favorite-search{
+
+    flex:1;
+
+    height:54px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 20px;
+
+    transition:.3s;
+
+}
+
+.favorite-search:focus-within{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.10);
+
+}
+
+.favorite-search svg{
+
+    color:#3B82F6;
+
+    font-size:18px;
+
+}
+
+.favorite-search input{
+
+    flex:1;
+
+    background:none;
 
     border:none;
 
-    border-radius:14px;
-
-    background:#2563EB;
+    outline:none;
 
     color:white;
 
     font-size:15px;
 
+}
+
+.favorite-search input::placeholder{
+
+    color:#64748B;
+
+}
+
+/* ===================================================
+   FILTER BUTTON
+=================================================== */
+
+.favorite-filter-btn{
+
+    height:54px;
+
+    padding:0 24px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
     font-weight:600;
 
-    display:inline-flex;
+    transition:.3s;
+
+}
+
+.favorite-filter-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 25px rgba(37,99,235,.25);
+
+}
+
+/* ===================================================
+   FILTER
+=================================================== */
+
+.favorite-filter{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.favorite-filter button{
+
+    height:46px;
+
+    padding:0 20px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#111827;
+
+    color:white;
+
+    display:flex;
 
     align-items:center;
 
@@ -206,29 +341,159 @@
 
     transition:.3s;
 
+    font-size:14px;
+
 }
 
-.empty-state button:hover{
+.favorite-filter button:hover{
+
+    background:#2563EB;
+
+}
+
+.favorite-filter .active{
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+}
+
+.favorite-filter svg{
+
+    font-size:14px;
+
+}
+/* ===================================================
+   FAVORITE GRID
+=================================================== */
+
+.favorite-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-top:20px;
+
+}
+
+/* ===================================================
+   EMPTY STATE
+=================================================== */
+
+.favorite-empty{
+
+    grid-column:1/-1;
+
+    background:#111827;
+
+    border:1px dashed rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:70px 30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.favorite-empty svg{
+
+    font-size:70px;
+
+    color:#EF4444;
+
+    margin-bottom:24px;
+
+}
+
+.favorite-empty h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:14px;
+
+}
+
+.favorite-empty p{
+
+    color:#94A3B8;
+
+    max-width:420px;
+
+    line-height:28px;
+
+    margin-bottom:30px;
+
+}
+
+.favorite-empty button{
+
+    height:52px;
+
+    padding:0 30px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.favorite-empty button:hover{
 
     transform:translateY(-3px);
 
-    background:#3B82F6;
+    box-shadow:0 16px 30px rgba(37,99,235,.30);
+
+}
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media(max-width:1400px){
+
+    .favorite-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
 
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+@media(max-width:1100px){
 
-@media(max-width:992px){
+    .favorite-stats{
 
-    .favorite-header{
+        grid-template-columns:repeat(2,1fr);
 
-        flex-direction:column;
+    }
 
-        align-items:flex-start;
+    .favorite-grid{
 
-        gap:25px;
+        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -238,7 +503,15 @@
 
     .favorite-page{
 
-        padding:20px;
+        padding:22px;
+
+    }
+
+    .favorite-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
 
     }
 
@@ -248,10 +521,98 @@
 
     }
 
-    .favorite-count{
+    .favorite-toolbar{
+
+        flex-direction:column;
+
+    }
+
+    .favorite-search{
 
         width:100%;
 
     }
+
+    .favorite-filter-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .favorite-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .favorite-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .favorite-filter{
+
+        justify-content:center;
+
+    }
+
+    .favorite-filter button{
+
+        flex:1;
+
+        justify-content:center;
+
+    }
+
+    .favorite-empty{
+
+        padding:50px 20px;
+
+    }
+
+    .favorite-empty h2{
+
+        font-size:24px;
+
+    }
+
+}
+.favorite-btn.active{
+
+    background:#EF4444;
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(239,68,68,.35);
+
+}
+
+.favorite-btn.active:hover{
+
+    background:#DC2626;
+
+}
+.laptop-card.compact{
+
+    min-height:500px;
+
+}
+
+.laptop-card.compact .image-area{
+
+    height:170px;
+
+}
+
+.laptop-card.compact .image-area img{
+
+    width:155px;
 
 }
