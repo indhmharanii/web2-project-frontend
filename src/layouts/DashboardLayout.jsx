@@ -7,14 +7,20 @@ function DashboardLayout({ children }) {
   return (
     <div className="dashboard-layout">
 
+      {/* Sidebar */}
       <Sidebar />
 
+      {/* Content */}
       <div className="dashboard-content">
 
+        {/* Topbar */}
         <Topbar />
 
+        {/* Main Content */}
         <main className="dashboard-main">
+
           {children}
+
         </main>
 
       </div>

@@ -8,7 +8,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Register from "./pages/Register/Register";
 import Laptop from "./pages/Laptop/Laptop";
 import TierList from "./pages/TierList/TierList";
-import Favorite from "./pages/Favorite/Favorite"; // Tambahkan import ini
+import Favorite from "./pages/Favorite/Favorite"; 
 
 function App() {
   return (

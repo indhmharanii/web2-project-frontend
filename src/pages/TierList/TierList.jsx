@@ -236,6 +236,13 @@ function TierList() {
         <FaCrown />
 
         <h3>S Tier</h3>
+        <p>
+
+{laptops.filter(item => item.tier === "S").length}
+
+Laptop
+
+</p>
 
         <p>Best Performance</p>
 
@@ -246,18 +253,14 @@ function TierList() {
     {
 
         laptops
-        .filter(item => item.tier === "S")
-        .map(laptop=>(
-
-            <TierLaptopCard
-
-                key={laptop.id}
-
-                laptop={laptop}
-
-            />
-
-        ))
+  .filter(item => item.tier === "S")
+  .slice(0, 4)
+  .map((laptop) => (
+    <TierLaptopCard
+      key={laptop.id}
+      laptop={laptop}
+    />
+  ))
 
     }
 
@@ -288,13 +291,14 @@ function TierList() {
   <div className="tier-laptops">
 
     {laptops
-      .filter((item) => item.tier === "A")
-      .map((laptop) => (
-        <TierLaptopCard
-          key={laptop.id}
-          laptop={laptop}
-        />
-      ))}
+  .filter(item => item.tier === "A")
+  .slice(0, 4)
+  .map((laptop) => (
+    <TierLaptopCard
+      key={laptop.id}
+      laptop={laptop}
+    />
+  ))}
 
   </div>
 
@@ -323,13 +327,14 @@ function TierList() {
   <div className="tier-laptops">
 
     {laptops
-      .filter((item) => item.tier === "B")
-      .map((laptop) => (
-        <TierLaptopCard
-          key={laptop.id}
-          laptop={laptop}
-        />
-      ))}
+  .filter(item => item.tier === "B")
+  .slice(0, 4)
+  .map((laptop) => (
+    <TierLaptopCard
+      key={laptop.id}
+      laptop={laptop}
+    />
+  ))}
 
   </div>
 
@@ -358,13 +363,14 @@ function TierList() {
   <div className="tier-laptops">
 
     {laptops
-      .filter((item) => item.tier === "C")
-      .map((laptop) => (
-        <TierLaptopCard
-          key={laptop.id}
-          laptop={laptop}
-        />
-      ))}
+  .filter(item => item.tier === "C")
+  .slice(0, 4)
+  .map((laptop) => (
+    <TierLaptopCard
+      key={laptop.id}
+      laptop={laptop}
+    />
+  ))}
 
   </div>
 

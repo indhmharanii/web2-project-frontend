@@ -1,8 +1,11 @@
 import "./TopLaptopCard.css";
 
 import { FaStar, FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function TopLaptopCard({ laptop, rank }) {
+
+  const navigate = useNavigate();
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat("id-ID", {
@@ -27,15 +30,33 @@ function TopLaptopCard({ laptop, rank }) {
         alt={laptop.name}
       />
 
-      <h3>{laptop.name}</h3>
+      <h3>
 
-      <span>{laptop.brand}</span>
+        {laptop.name}
+
+      </h3>
+
+      <span>
+
+        {laptop.brand}
+
+      </span>
 
       <div className="top-rating">
 
         <FaStar />
 
-        <p>{laptop.rating}</p>
+        <p>
+
+          {laptop.rating}
+
+        </p>
+
+        <small>
+
+          ({laptop.votes} Vote)
+
+        </small>
 
       </div>
 
@@ -45,7 +66,9 @@ function TopLaptopCard({ laptop, rank }) {
 
       </h2>
 
-      <button>
+      <button
+        onClick={() => navigate(`/laptop/${laptop.id}`)}
+      >
 
         Lihat Detail
 

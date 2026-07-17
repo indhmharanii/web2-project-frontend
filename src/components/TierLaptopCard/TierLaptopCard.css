@@ -1,6 +1,6 @@
-/* =====================================================
+/* ==========================================================
    TIER LAPTOP CARD
-===================================================== */
+========================================================== */
 
 .tier-card{
 
@@ -12,7 +12,7 @@
 
     background:#0F172A;
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.05);
 
     border-radius:18px;
 
@@ -22,13 +22,39 @@
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.tier-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:160px;
+
+    height:160px;
+
+    background:#2563EB;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.08;
+
+    left:-60px;
 
 }
 
 .tier-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
     border-color:#2563EB;
 
@@ -36,15 +62,15 @@
 
 }
 
-/* =========================
+/* ==========================
    IMAGE
-========================= */
+========================== */
 
 .tier-image{
 
-    width:78px;
+    width:82px;
 
-    height:78px;
+    height:82px;
 
     border-radius:14px;
 
@@ -58,17 +84,21 @@
 
     flex-shrink:0;
 
+    position:relative;
+
+    z-index:2;
+
 }
 
 .tier-image img{
 
     width:68px;
 
-    height:50px;
+    height:52px;
 
     object-fit:contain;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -78,33 +108,31 @@
 
 }
 
-/* =========================
+/* ==========================
    CONTENT
-========================= */
+========================== */
 
 .tier-content{
 
     flex:1;
 
-    display:flex;
+    position:relative;
 
-    flex-direction:column;
-
-    justify-content:center;
+    z-index:2;
 
 }
 
 .tier-content h4{
 
-    color:#FFFFFF;
+    color:white;
 
     font-size:15px;
 
-    font-weight:600;
+    font-weight:700;
 
-    line-height:20px;
+    line-height:22px;
 
-    margin:0 0 4px;
+    margin-bottom:5px;
 
 }
 
@@ -114,13 +142,15 @@
 
     font-size:13px;
 
+    display:block;
+
     margin-bottom:10px;
 
 }
 
-/* =========================
+/* ==========================
    RATING
-========================= */
+========================== */
 
 .tier-rating{
 
@@ -148,8 +178,6 @@
 
     font-weight:600;
 
-    margin:0;
-
 }
 
 .tier-rating small{
@@ -160,9 +188,9 @@
 
 }
 
-/* =========================
+/* ==========================
    RESPONSIVE
-========================= */
+========================== */
 
 @media(max-width:992px){
 
@@ -174,15 +202,17 @@
 
     .tier-image{
 
-        width:65px;
+        width:70px;
 
-        height:65px;
+        height:70px;
 
     }
 
     .tier-image img{
 
         width:56px;
+
+        height:42px;
 
     }
 
@@ -193,12 +223,6 @@
     .tier-card{
 
         padding:14px;
-
-    }
-
-    .tier-content h4{
-
-        font-size:14px;
 
     }
 
