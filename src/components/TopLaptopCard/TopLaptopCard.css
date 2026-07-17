@@ -1,0 +1,185 @@
+/* =========================================
+   TOP LAPTOP CARD
+========================================= */
+
+.top-card{
+
+    position:relative;
+
+    background:#111827;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    padding:24px;
+
+    transition:.3s;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.top-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 18px 35px rgba(37,99,235,.20);
+
+}
+
+.rank-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#F59E0B;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.top-card img{
+
+    width:170px;
+
+    height:120px;
+
+    object-fit:contain;
+
+    margin:20px auto;
+
+    transition:.3s;
+
+}
+
+.top-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.top-card h3{
+
+    color:white;
+
+    font-size:20px;
+
+    text-align:center;
+
+    margin-bottom:6px;
+
+}
+
+.top-card span{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    margin-bottom:14px;
+
+}
+
+.top-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:18px;
+
+}
+
+.top-rating svg{
+
+    color:#FACC15;
+
+}
+
+.top-rating p{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.top-rating small{
+
+    color:#94A3B8;
+
+}
+
+.top-card h2{
+
+    color:#3B82F6;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+.top-card button{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.top-card button:hover{
+
+    background:#3B82F6;
+
+}

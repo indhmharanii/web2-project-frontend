@@ -1,53 +1,48 @@
-/* ==========================================
+/* ========================================
    PAGE
-========================================== */
+======================================== */
 
 .tier-page{
 
-    padding:35px;
+    padding:32px;
 
     min-height:100vh;
 
-    background:
-    radial-gradient(circle at top,#15233F 0%,#0B0F1A 45%,#080A12 100%);
+    background:#090B13;
 
 }
 
-/* ==========================================
+/* ========================================
    BREADCRUMB
-========================================== */
+======================================== */
 
-.breadcrumb{
+.tier-breadcrumb{
 
     display:flex;
 
-    gap:12px;
+    align-items:center;
+
+    gap:10px;
 
     color:#94A3B8;
 
-    font-size:15px;
+    font-size:14px;
 
     margin-bottom:28px;
 
 }
 
-.breadcrumb span{
+.tier-breadcrumb span:nth-child(2){
 
-    color:#3B82F6;
+    color:#2563EB;
 
 }
 
-/* ==========================================
+/* ========================================
    HEADER
-========================================== */
+======================================== */
 
-.ranking-header{
-
-    margin-bottom:35px;
-
-}
-
-.header-left{
+.tier-header{
 
     display:flex;
 
@@ -55,15 +50,19 @@
 
     gap:22px;
 
+    margin-bottom:35px;
+
 }
 
-.header-icon{
+.tier-header-icon{
 
-    width:80px;
+    width:74px;
 
-    height:80px;
+    height:74px;
 
-    border-radius:22px;
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
 
     display:flex;
 
@@ -71,21 +70,19 @@
 
     align-items:center;
 
-    font-size:36px;
-
-    background:
-    linear-gradient(135deg,#2563EB,#4F46E5);
-
-    box-shadow:
-    0 18px 35px rgba(37,99,235,.25);
-
-}
-
-.header-left h1{
+    font-size:32px;
 
     color:white;
 
-    font-size:50px;
+    box-shadow:0 15px 35px rgba(37,99,235,.28);
+
+}
+
+.tier-header h1{
+
+    color:white;
+
+    font-size:46px;
 
     font-weight:700;
 
@@ -93,18 +90,19 @@
 
 }
 
-.header-left p{
+.tier-header p{
 
     color:#94A3B8;
 
     font-size:17px;
 
 }
-/* ==========================================
-   STATS
-========================================== */
 
-.ranking-stats{
+/* ========================================
+   STATISTICS
+======================================== */
+
+.tier-stats{
 
     display:grid;
 
@@ -112,15 +110,13 @@
 
     gap:22px;
 
-    margin-bottom:40px;
+    margin-bottom:34px;
 
 }
 
-.stat-card{
+.tier-stat-card{
 
     background:#111827;
-
-    border:1px solid rgba(255,255,255,.06);
 
     border-radius:22px;
 
@@ -132,27 +128,29 @@
 
     gap:18px;
 
+    border:1px solid rgba(255,255,255,.05);
+
     transition:.35s;
 
 }
 
-.stat-card:hover{
+.tier-stat-card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
-    border-color:#2563EB;
-
-    box-shadow:0 18px 35px rgba(37,99,235,.18);
+    box-shadow:0 16px 35px rgba(37,99,235,.20);
 
 }
 
 .stat-icon{
 
-    width:64px;
+    width:60px;
 
-    height:64px;
+    height:60px;
 
-    border-radius:18px;
+    border-radius:50%;
+
+    border:2px solid #2563EB;
 
     display:flex;
 
@@ -160,42 +158,62 @@
 
     align-items:center;
 
-    font-size:28px;
+    color:#3B82F6;
 
-    background:rgba(37,99,235,.15);
+    font-size:24px;
 
 }
 
-.stat-card h2{
+.tier-stat-card h2{
 
     color:white;
 
     font-size:36px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 
 }
 
-.stat-card p{
+.tier-stat-card p{
 
     color:#94A3B8;
 
-    font-size:15px;
-
 }
-/* ==========================================
+/* ========================================
    TOP 3
-========================================== */
+======================================== */
 
-.top-ranking{
+.top3-section{
 
-    margin-bottom:45px;
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-bottom:30px;
 
 }
 
 .section-title{
 
-    margin-bottom:22px;
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:8px;
+
+}
+
+.section-title svg{
+
+    color:#F59E0B;
+
+    font-size:22px;
 
 }
 
@@ -203,179 +221,73 @@
 
     color:white;
 
-    font-size:34px;
-
-    margin-bottom:8px;
+    font-size:30px;
 
 }
 
-.section-title p{
+.top3-section p{
 
     color:#94A3B8;
 
+    margin-bottom:26px;
+
 }
 
-.top-grid{
+.top3-grid{
 
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:24px;
+    gap:22px;
 
 }
 
-.top-card{
+/* ========================================
+   TOOLBAR
+======================================== */
 
-    position:relative;
-
-    background:#111827;
-
-    border-radius:24px;
-
-    padding:30px;
-
-    border:1px solid rgba(255,255,255,.06);
-
-    transition:.35s;
-
-    text-align:center;
-
-}
-
-.top-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:#2563EB;
-
-    box-shadow:0 20px 40px rgba(37,99,235,.22);
-
-}
-
-.rank-badge{
-
-    position:absolute;
-
-    top:18px;
-
-    left:18px;
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:50%;
+.tier-toolbar{
 
     display:flex;
 
-    justify-content:center;
+    justify-content:space-between;
 
     align-items:center;
 
-    color:white;
+    margin-bottom:28px;
 
-    font-weight:700;
-
-}
-
-.rank-1 .rank-badge{
-
-    background:#F59E0B;
+    gap:20px;
 
 }
 
-.rank-2 .rank-badge{
+.tier-filter{
 
-    background:#9CA3AF;
+    display:flex;
 
-}
-
-.rank-3 .rank-badge{
-
-    background:#B45309;
+    gap:14px;
 
 }
 
-.top-card img{
+.tier-filter button{
 
-    width:220px;
+    height:48px;
 
-    height:150px;
-
-    object-fit:contain;
-
-    margin:10px auto 25px;
-
-    display:block;
-
-}
-
-.top-card h3{
-
-    color:white;
-
-    font-size:24px;
-
-    margin-bottom:10px;
-
-}
-
-.top-card p{
-
-    color:#94A3B8;
-
-    margin-bottom:18px;
-
-}
-
-.top-rating{
-
-    color:#FACC15;
-
-    font-weight:600;
-
-    margin-bottom:18px;
-
-}
-
-.top-rating span{
-
-    color:#94A3B8;
-
-    margin-left:10px;
-
-}
-
-.top-price{
-
-    color:#3B82F6;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    margin-bottom:24px;
-
-}
-
-.top-card button{
-
-    width:100%;
-
-    height:52px;
+    padding:0 20px;
 
     border:none;
 
-    border-radius:14px;
+    border-radius:999px;
 
-    background:linear-gradient(135deg,#2563EB,#3B82F6);
+    background:#111827;
 
     color:white;
 
-    font-size:15px;
+    display:flex;
 
-    font-weight:600;
+    align-items:center;
+
+    gap:10px;
 
     cursor:pointer;
 
@@ -383,44 +295,108 @@
 
 }
 
-.top-card button:hover{
+.tier-filter button:hover{
 
-    transform:translateY(-3px);
+    background:#1D4ED8;
 
 }
-/* ==========================================
-   TIER ROW
-========================================== */
 
-.tier-container{
+.tier-filter .active{
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+}
+
+.tier-search{
+
+    width:340px;
+
+    height:50px;
+
+    border-radius:16px;
+
+    background:#111827;
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
-    gap:28px;
+    gap:12px;
 
-    margin-top:40px;
+    padding:0 18px;
+
+    border:1px solid rgba(255,255,255,.05);
 
 }
 
-.tier-row{
+.tier-search svg{
+
+    color:#2563EB;
+
+}
+
+.tier-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:white;
+
+}
+
+.tier-search input::placeholder{
+
+    color:#64748B;
+
+}
+/* ========================================
+   TIER SECTION
+======================================== */
+
+.tier-section{
 
     display:grid;
 
-    grid-template-columns:230px 1fr;
+    grid-template-columns:220px 1fr 60px;
 
-    gap:22px;
+    gap:20px;
 
-    align-items:stretch;
+    align-items:center;
 
-}
+    background:#111827;
 
-.tier-label{
+    border:1px solid rgba(255,255,255,.05);
 
     border-radius:22px;
 
-    padding:28px;
+    padding:18px;
+
+    margin-bottom:22px;
+
+    transition:.35s;
+
+}
+
+.tier-section:hover{
+
+    border-color:#2563EB;
+
+}
+
+/* ========================================
+   LEFT INFO
+======================================== */
+
+.tier-info{
+
+    height:120px;
+
+    border-radius:18px;
 
     display:flex;
 
@@ -434,114 +410,206 @@
 
 }
 
-.tier-label h2{
+.tier-info svg{
 
-    margin:12px 0 8px;
+    font-size:36px;
 
-    font-size:30px;
+    margin-bottom:12px;
 
 }
 
-.tier-label span{
+.tier-info h2{
+
+    font-size:34px;
+
+    margin-bottom:4px;
+
+}
+
+.tier-info h3{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.tier-info p{
+
+    color:#CBD5E1;
 
     font-size:14px;
 
-    opacity:.85;
+}
+
+/* ========================================
+   TIER COLORS
+======================================== */
+
+.s-tier .tier-info{
+
+    background:linear-gradient(135deg,#F59E0B,#B45309);
 
 }
 
-.tier-label.s{
+.a-tier .tier-info{
 
-    background:#F59E0B;
-
-}
-
-.tier-label.a{
-
-    background:#2563EB;
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
 
 }
 
-.tier-label.b{
+.b-tier .tier-info{
 
-    background:#10B981;
-
-}
-
-/* ==========================================
-   MINI CARD
-========================================== */
-
-.tier-list{
-
-    display:flex;
-
-    gap:18px;
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
+    background:linear-gradient(135deg,#10B981,#047857);
 
 }
 
-.tier-list::-webkit-scrollbar{
+.c-tier .tier-info{
 
-    display:none;
+    background:linear-gradient(135deg,#6B7280,#374151);
 
 }
 
-.mini-card{
+/* ========================================
+   LAPTOP LIST
+======================================== */
 
-    min-width:210px;
+.tier-laptops{
 
-    background:#111827;
+    display:grid;
 
-    border-radius:18px;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+/* ========================================
+   SMALL CARD
+======================================== */
+
+.tier-small-card{
+
+    height:120px;
+
+    background:#0F172A;
+
+    border-radius:16px;
 
     border:1px solid rgba(255,255,255,.05);
 
-    padding:18px;
+    display:flex;
 
-    text-align:center;
+    align-items:center;
 
-    transition:.35s;
+    gap:14px;
 
-    cursor:pointer;
+    padding:14px;
+
+    transition:.3s;
 
 }
 
-.mini-card:hover{
+.tier-small-card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-4px);
 
     border-color:#2563EB;
 
 }
 
-.mini-card img{
+.tier-small-card img{
 
-    width:150px;
+    width:72px;
 
-    height:95px;
+    height:72px;
 
     object-fit:contain;
 
-    margin-bottom:16px;
+}
+
+.small-info{
+
+    flex:1;
 
 }
 
-.mini-card h4{
+.small-info h4{
 
     color:white;
 
-    font-size:16px;
+    font-size:15px;
 
     margin-bottom:6px;
 
+    line-height:20px;
+
 }
 
-.mini-card small{
+.small-info span{
+
+    display:block;
 
     color:#94A3B8;
+
+    font-size:13px;
+
+    margin-bottom:8px;
+
+}
+
+.small-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#FACC15;
+
+    font-size:13px;
+
+}
+
+.small-rating p{
+
+    color:#94A3B8;
+
+}
+
+/* ========================================
+   NEXT BUTTON
+======================================== */
+
+.tier-next{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#1E293B;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tier-next:hover{
+
+    background:#2563EB;
 
 }

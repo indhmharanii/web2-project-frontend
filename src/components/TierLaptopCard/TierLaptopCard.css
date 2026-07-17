@@ -1,0 +1,205 @@
+/* =====================================================
+   TIER LAPTOP CARD
+===================================================== */
+
+.tier-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:16px;
+
+    min-height:110px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tier-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 12px 28px rgba(37,99,235,.18);
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.tier-image{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:14px;
+
+    background:#162033;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.tier-image img{
+
+    width:68px;
+
+    height:50px;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+.tier-card:hover .tier-image img{
+
+    transform:scale(1.08);
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.tier-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.tier-content h4{
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    line-height:20px;
+
+    margin:0 0 4px;
+
+}
+
+.tier-content span{
+
+    color:#94A3B8;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+}
+
+/* =========================
+   RATING
+========================= */
+
+.tier-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.tier-rating svg{
+
+    color:#FACC15;
+
+    font-size:13px;
+
+}
+
+.tier-rating p{
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin:0;
+
+}
+
+.tier-rating small{
+
+    color:#94A3B8;
+
+    font-size:12px;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .tier-card{
+
+        min-height:100px;
+
+    }
+
+    .tier-image{
+
+        width:65px;
+
+        height:65px;
+
+    }
+
+    .tier-image img{
+
+        width:56px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .tier-card{
+
+        padding:14px;
+
+    }
+
+    .tier-content h4{
+
+        font-size:14px;
+
+    }
+
+}

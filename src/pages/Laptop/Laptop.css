@@ -57,7 +57,11 @@
 
 .page-header{
 
-    margin-bottom:35px;
+padding-bottom:18px;
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+margin-bottom:35px;
 
 }
 
@@ -415,13 +419,13 @@
 
 .laptop-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
 
-    gap:26px;
+gap:32px;
 
-    align-items:start;
+align-items:start;
 
 }
 
@@ -507,9 +511,15 @@
 
     .stats-grid{
 
-        grid-template-columns:1fr;
+display:grid;
 
-    }
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:24px;
+
+margin-bottom:45px;
+
+}
 
     .section-header{
 

@@ -1,335 +1,385 @@
 import "./TierList.css";
+import TierLaptopCard from "../../components/TierLaptopCard/TierLaptopCard";
+import TopLaptopCard from "../../components/TopLaptopCard/TopLaptopCard";
 
-import DashboardLayout from "../../layouts/DashboardLayout";
 import laptops from "../../data/laptops";
+import DashboardLayout from "../../layouts/DashboardLayout";
+
+import {
+  FaTrophy,
+  FaLaptop,
+  FaUsers,
+  FaStar,
+  FaCrown,
+  FaSearch,
+  FaGamepad,
+  FaBriefcase,
+  FaPaintBrush,
+  FaChevronRight,
+} from "react-icons/fa";
 
 function TierList() {
-
   return (
-
     <DashboardLayout>
 
       <div className="tier-page">
 
         {/* Breadcrumb */}
 
-        <div className="breadcrumb">
+        <div className="tier-breadcrumb">
 
-          Dashboard
+          <span>Dashboard</span>
 
           <span>/</span>
 
-          Peringkat Laptop
+          <span>Peringkat Laptop</span>
 
         </div>
 
-        {/* Header */}
+        {/* Hero */}
 
-       <section className="ranking-header">
+        <div className="tier-header">
 
-  <div className="header-left">
+          <div className="tier-header-icon">
 
-    <div className="header-icon">
-      🏆
-    </div>
+            <FaTrophy />
 
-    <div>
+          </div>
 
-      <h1>PERINGKAT LAPTOP</h1>
+          <div>
 
-      <p>
-        Peringkat laptop terbaik berdasarkan hasil voting komunitas TIERRA.
-      </p>
+            <h1>PERINGKAT LAPTOP</h1>
 
-    </div>
+            <p>
 
-  </div>
+              Peringkat laptop terbaik berdasarkan hasil voting komunitas TIERRA.
 
-</section>
+            </p>
 
-        {/* Statistik */}
+          </div>
 
-       <section className="ranking-stats">
+        </div>
 
-  <div className="stat-card">
+        {/* Statistics */}
 
-    <div className="stat-icon">
-      💻
-    </div>
+        <div className="tier-stats">
 
-    <div>
+          <div className="tier-stat-card">
 
-      <h2>8</h2>
+            <div className="stat-icon">
 
-      <p>Total Laptop</p>
+              <FaLaptop />
 
-    </div>
+            </div>
 
-  </div>
+            <div>
 
-  <div className="stat-card">
+              <h2>8</h2>
 
-    <div className="stat-icon">
-      👥
-    </div>
+              <p>Total Laptop</p>
 
-    <div>
+            </div>
 
-      <h2>8540</h2>
+          </div>
 
-      <p>Total Vote</p>
+          <div className="tier-stat-card">
 
-    </div>
+            <div className="stat-icon">
 
-  </div>
+              <FaUsers />
 
-  <div className="stat-card">
+            </div>
 
-    <div className="stat-icon">
-      ⭐
-    </div>
+            <div>
 
-    <div>
+              <h2>8540</h2>
 
-      <h2>4.8</h2>
+              <p>Total Vote</p>
 
-      <p>Rating Rata-rata</p>
+            </div>
 
-    </div>
+          </div>
 
-  </div>
+          <div className="tier-stat-card">
 
-  <div className="stat-card">
+            <div className="stat-icon">
 
-    <div className="stat-icon">
-      👑
-    </div>
+              <FaStar />
 
-    <div>
+            </div>
 
-      <h2>S Tier</h2>
+            <div>
 
-      <p>Tier Teratas</p>
+              <h2>4.8</h2>
 
-    </div>
+              <p>Rating Rata-rata</p>
 
-  </div>
+            </div>
 
-</section>
+          </div>
+
+          <div className="tier-stat-card">
+
+            <div className="stat-icon">
+
+              <FaCrown />
+
+            </div>
+
+            <div>
+
+              <h2>S Tier</h2>
+
+              <p>Tier Teratas</p>
+
+            </div>
+
+          </div>
+
+        </div>
 
         {/* Top 3 */}
 
-        <section className="top-ranking">
+        <div className="top3-section">
 
-  <div className="section-title">
+          <div className="section-title">
 
-    <h2>✨ Top 3 Laptop Minggu Ini</h2>
+            <FaTrophy />
 
-    <p>Laptop dengan vote terbanyak minggu ini.</p>
-
-  </div>
-
-  <div className="top-grid">
-
-    {laptops
-      .sort((a, b) => b.votes - a.votes)
-      .slice(0, 3)
-      .map((laptop, index) => (
-
-        <div
-          key={laptop.id}
-          className={`top-card rank-${index + 1}`}
-        >
-
-          <div className="rank-badge">
-
-            {index + 1}
+            <h2>Top 3 Laptop Minggu Ini</h2>
 
           </div>
 
-          <img
-            src={laptop.image}
-            alt={laptop.name}
-          />
+          <p>
 
-          <h3>{laptop.name}</h3>
+            Laptop dengan jumlah vote terbanyak minggu ini.
 
-          <p>{laptop.brand}</p>
+          </p>
 
-          <div className="top-rating">
+         <div className="top3-grid">
 
-            ⭐ {laptop.rating}
+  {laptops
+    .sort((a, b) => b.votes - a.votes)
+    .slice(0, 3)
+    .map((laptop, index) => (
+      <TopLaptopCard
+        key={laptop.id}
+        laptop={laptop}
+        rank={index + 1}
+      />
+    ))}
 
-            <span>
-
-              {laptop.votes} Vote
-
-            </span>
-
-          </div>
-
-          <div className="top-price">
-
-            {new Intl.NumberFormat("id-ID",{
-              style:"currency",
-              currency:"IDR",
-              maximumFractionDigits:0
-            }).format(laptop.price)}
-
-          </div>
-
-          <button>
-
-            Lihat Detail
-
-          </button>
+</div>
 
         </div>
 
+        {/* Filter */}
+
+        <div className="tier-toolbar">
+
+          <div className="tier-filter">
+
+            <button className="active">
+
+              Semua
+
+            </button>
+
+            <button>
+
+              <FaGamepad />
+
+              Gaming
+
+            </button>
+
+            <button>
+
+              <FaBriefcase />
+
+              Office
+
+            </button>
+
+            <button>
+
+              <FaPaintBrush />
+
+              Creator
+
+            </button>
+
+          </div>
+
+          <div className="tier-search">
+
+            <FaSearch />
+
+            <input
+
+              type="text"
+
+              placeholder="Cari laptop..."
+
+            />
+
+          </div>
+
+        </div>
+
+        {/* S Tier */}
+
+        <div className="tier-section s-tier">
+
+    <div className="tier-info">
+
+        <FaCrown />
+
+        <h3>S Tier</h3>
+
+        <p>Best Performance</p>
+
+    </div>
+
+    <div className="tier-laptops">
+
+    {
+
+        laptops
+        .filter(item => item.tier === "S")
+        .map(laptop=>(
+
+            <TierLaptopCard
+
+                key={laptop.id}
+
+                laptop={laptop}
+
+            />
+
+        ))
+
+    }
+
+</div>
+
+    <button className="tier-next">
+
+        <FaChevronRight />
+
+    </button>
+
+</div>
+
+        {/* A Tier */}
+
+       <div className="tier-section a-tier">
+
+  <div className="tier-info">
+
+    <FaStar />
+
+    <h3>A Tier</h3>
+
+    <p>Excellent Choice</p>
+
+  </div>
+
+  <div className="tier-laptops">
+
+    {laptops
+      .filter((item) => item.tier === "A")
+      .map((laptop) => (
+        <TierLaptopCard
+          key={laptop.id}
+          laptop={laptop}
+        />
       ))}
 
   </div>
 
-</section>
+  <button className="tier-next">
 
-        {/* Tier List */}
+    <FaChevronRight />
 
-        <section className="tier-container">
+  </button>
 
-  {/* S Tier */}
+</div>
 
-  <div className="tier-row">
+        {/* B Tier */}
 
-    <div className="tier-label s">
+      <div className="tier-section b-tier">
 
-      🏆
+  <div className="tier-info">
 
-      <h2>S Tier</h2>
+    <FaLaptop />
 
-      <span>Best Performance</span>
+    <h3>B Tier</h3>
 
-    </div>
-
-    <div className="tier-list">
-
-      {laptops
-        .filter((item) => item.tier === "S")
-        .map((item) => (
-
-          <div
-            key={item.id}
-            className="mini-card"
-          >
-
-            <img
-              src={item.image}
-              alt={item.name}
-            />
-
-            <h4>{item.name}</h4>
-
-            <small>{item.brand}</small>
-
-          </div>
-
-        ))}
-
-    </div>
+    <p>Good Performance</p>
 
   </div>
 
-  {/* A Tier */}
+  <div className="tier-laptops">
 
-  <div className="tier-row">
-
-    <div className="tier-label a">
-
-      🥈
-
-      <h2>A Tier</h2>
-
-      <span>Recommended</span>
-
-    </div>
-
-    <div className="tier-list">
-
-      {laptops
-        .filter((item) => item.tier === "A")
-        .map((item) => (
-
-          <div
-            key={item.id}
-            className="mini-card"
-          >
-
-            <img
-              src={item.image}
-              alt={item.name}
-            />
-
-            <h4>{item.name}</h4>
-
-            <small>{item.brand}</small>
-
-          </div>
-
-        ))}
-
-    </div>
+    {laptops
+      .filter((item) => item.tier === "B")
+      .map((laptop) => (
+        <TierLaptopCard
+          key={laptop.id}
+          laptop={laptop}
+        />
+      ))}
 
   </div>
 
-  {/* B Tier */}
+  <button className="tier-next">
 
-  <div className="tier-row">
+    <FaChevronRight />
 
-    <div className="tier-label b">
+  </button>
 
-      🥉
+</div>
 
-      <h2>B Tier</h2>
+        {/* C Tier */}
 
-      <span>Good Value</span>
+       <div className="tier-section c-tier">
 
-    </div>
+  <div className="tier-info">
 
-    <div className="tier-list">
+    <FaLaptop />
 
-      {laptops
-        .filter((item) => item.tier === "B")
-        .map((item) => (
+    <h3>C Tier</h3>
 
-          <div
-            key={item.id}
-            className="mini-card"
-          >
-
-            <img
-              src={item.image}
-              alt={item.name}
-            />
-
-            <h4>{item.name}</h4>
-
-            <small>{item.brand}</small>
-
-          </div>
-
-        ))}
-
-    </div>
+    <p>Entry Level</p>
 
   </div>
 
-</section>
+  <div className="tier-laptops">
+
+    {laptops
+      .filter((item) => item.tier === "C")
+      .map((laptop) => (
+        <TierLaptopCard
+          key={laptop.id}
+          laptop={laptop}
+        />
+      ))}
+
+  </div>
+
+  <button className="tier-next">
+
+    <FaChevronRight />
+
+  </button>
+
+</div>
 
       </div>
 
     </DashboardLayout>
-
   );
-
 }
 
 export default TierList;

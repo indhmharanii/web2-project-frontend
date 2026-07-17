@@ -1,9 +1,18 @@
 import "./LaptopCard.css";
 
-import { FaStar, FaArrowRight, FaRegHeart } from "react-icons/fa";
+import {
+  FaStar,
+  FaHeart,
+  FaArrowRight,
+  FaMicrochip,
+  FaMemory,
+  FaDesktop
+} from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 
 function LaptopCard({ laptop }) {
+
   const navigate = useNavigate();
 
   const formatPrice = (price) => {
@@ -15,100 +24,139 @@ function LaptopCard({ laptop }) {
   };
 
   return (
+
     <div className="laptop-card">
 
       {/* Tier */}
-      <span className={`tier ${laptop.tier.toLowerCase()}`}>
+
+      <div className={`tier-badge ${laptop.tier.toLowerCase()}`}>
+
         {laptop.tier} Tier
-      </span>
+
+      </div>
 
       {/* Favorite */}
+
       <button className="favorite-btn">
 
-    🤍
+        <FaHeart />
 
-</button>
+      </button>
 
       {/* Image */}
+
       <div className="image-area">
+
         <img
           src={laptop.image}
           alt={laptop.name}
         />
+
       </div>
 
       {/* Body */}
-      <div className="card-body">
 
-        {/* Category */}
+      <div className="card-content">
+
         <span className="category">
+
           {laptop.category}
+
         </span>
 
-        {/* Title */}
         <h3 className="title">
+
           {laptop.name}
+
         </h3>
 
-        {/* Brand + Rating */}
-        <div className="brand-rating">
+        <p className="brand">
 
-          <span className="brand">
-            {laptop.brand}
-          </span>
+          {laptop.brand}
 
-          <div className="rating">
-            <FaStar />
-            <span>{laptop.rating}</span>
-            <small>({laptop.votes})</small>
+        </p>
+
+        <div className="rating">
+
+          <FaStar />
+
+          <span>{laptop.rating}</span>
+
+          <small>
+
+            ({laptop.votes} Vote)
+
+          </small>
+
+        </div>
+
+        <div className="divider"></div>
+
+        <div className="spec-list">
+
+          <div>
+
+            <FaMicrochip />
+
+            <span>{laptop.processor}</span>
+
+          </div>
+
+          <div>
+
+            <FaDesktop />
+
+            <span>{laptop.gpu}</span>
+
+          </div>
+
+          <div>
+
+            <FaMemory />
+
+            <span>{laptop.ram}</span>
+
           </div>
 
         </div>
 
-        {/* Specification */}
+        <div className="divider"></div>
 
-        <div className="spec-grid">
-
-          <div className="spec">
-            {laptop.processor}
-          </div>
-
-          <div className="spec">
-            {laptop.gpu}
-          </div>
-
-          <div className="spec">
-            {laptop.ram}
-          </div>
-
-          <div className="spec">
-            {laptop.storage}
-          </div>
-
-        </div>
-
-        {/* Price */}
-
-        <div className="price">
+        <h2 className="price">
 
           {formatPrice(laptop.price)}
 
+        </h2>
+
+        <div className="card-buttons">
+
+          <button className="wishlist">
+
+            <FaHeart />
+
+          </button>
+
+          <button
+            className="detail-btn"
+            onClick={() =>
+              navigate(`/laptop/${laptop.id}`)
+            }
+          >
+
+            Lihat Detail
+
+            <FaArrowRight />
+
+          </button>
+
         </div>
-
-        {/* Button */}
-
-        <button
-          className="detail-btn"
-          onClick={() => navigate(`/laptop/${laptop.id}`)}
-        >
-          Lihat Detail
-          <FaArrowRight />
-        </button>
 
       </div>
 
     </div>
+
   );
+
 }
 
 export default LaptopCard;
