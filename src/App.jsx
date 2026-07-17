@@ -9,6 +9,8 @@ import Register from "./pages/Register/Register";
 import Laptop from "./pages/Laptop/Laptop";
 import TierList from "./pages/TierList/TierList";
 import Favorite from "./pages/Favorite/Favorite"; 
+import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route path="/laptop/:id" element={<LaptopDetail />} />
       <Route path="/favorite" element={<Favorite />} />
       <Route path="/tierlist" element={<TierList />} />
+      <Route path="/profile"element={<Profile />}/>
+      <Route path="/edit-profile"element={<EditProfile />}/>
     </Routes>
   );
 }
