@@ -11,7 +11,11 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-function LaptopCard({ laptop }) {
+function LaptopCard({
+  laptop,
+  compact = false,
+  isFavorite = false,
+}) {
 
   const navigate = useNavigate();
 
@@ -25,7 +29,7 @@ function LaptopCard({ laptop }) {
 
   return (
 
-    <div className="laptop-card">
+    <div className={`laptop-card ${compact ? "compact" : ""}`}>
 
       {/* Tier */}
 
@@ -37,11 +41,13 @@ function LaptopCard({ laptop }) {
 
       {/* Favorite */}
 
-      <button className="favorite-btn">
-
-        <FaHeart />
-
-      </button>
+      <button
+  className={`favorite-btn ${
+    isFavorite ? "active" : ""
+  }`}
+>
+  <FaHeart />
+</button>
 
       {/* Image */}
 

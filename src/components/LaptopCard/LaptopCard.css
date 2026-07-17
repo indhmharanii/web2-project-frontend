@@ -628,3 +628,82 @@
     }
 
 }
+/* ===========================================
+   COMPACT MODE (Favorite Page)
+=========================================== */
+
+.laptop-card.compact{
+
+    min-height:500px;
+
+}
+
+.laptop-card.compact .image-area{
+
+    height:170px;
+
+}
+
+.laptop-card.compact .image-area img{
+
+    width:155px;
+
+}
+
+.laptop-card.compact .card-content{
+
+    padding:18px;
+
+}
+
+.laptop-card.compact .title{
+
+    font-size:22px;
+
+    line-height:30px;
+
+    min-height:60px;
+
+}
+
+.laptop-card.compact .brand{
+
+    margin:8px 0 14px;
+
+}
+
+.laptop-card.compact .divider{
+
+    margin:14px 0;
+
+}
+
+.laptop-card.compact .spec-list{
+
+    gap:10px;
+
+    margin-bottom:16px;
+
+}
+
+.laptop-card.compact .spec-list div{
+
+    padding:10px;
+
+}
+
+.laptop-card.compact .price{
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+.laptop-card.compact .detail-btn,
+
+.laptop-card.compact .wishlist{
+
+    height:48px;
+
+}

@@ -1,148 +1,255 @@
 import "./Favorite.css";
 
+import { useState } from "react";
+
 import DashboardLayout from "../../layouts/DashboardLayout";
 import LaptopCard from "../../components/LaptopCard/LaptopCard";
-
 import laptops from "../../data/laptops";
 
 import {
-    FaHeart,
-    FaArrowRight
+  FaHeart,
+  FaSearch,
+  FaFilter,
+  FaGamepad,
+  FaBriefcase,
+  FaPaintBrush,
+  FaGraduationCap,
+  FaStar,
+  FaUsers,
 } from "react-icons/fa";
 
-import { useNavigate } from "react-router-dom";
+function Favorite() {
+    const [search, setSearch] = useState("");
 
-function Favorite(){
+  return (
 
-    const navigate = useNavigate();
+    <DashboardLayout>
 
-    // sementara dummy
-    const favoriteLaptop = laptops.slice(0,3);
+      <div className="favorite-page">
 
-    return(
+        {/* Breadcrumb */}
 
-        <DashboardLayout>
+        <div className="favorite-breadcrumb">
 
-            <div className="favorite-page">
+          <span>Dashboard</span>
 
-                <div className="favorite-header">
+          <span>/</span>
 
-                    <div>
+          <span>Favorite</span>
 
-                        <div className="breadcrumb">
+        </div>
 
-                            Dashboard
+        {/* Header */}
 
-                            <span>/</span>
+        <div className="favorite-header">
 
-                            Favorite
+          <div className="favorite-header-icon">
 
-                        </div>
+            <FaHeart />
 
-                        <h1>
+          </div>
 
-                            <FaHeart/>
+          <div>
 
-                            Favorite Saya
+           <h1>LAPTOP FAVORIT</h1>
 
-                        </h1>
+<p>
 
-                        <p>
+  Kelola koleksi laptop favoritmu dan temukan kembali pilihan terbaik dengan mudah.
 
-                            Laptop yang telah Anda simpan.
+</p>
 
-                        </p>
+          </div>
 
-                    </div>
+        </div>
 
-                    <div className="favorite-count">
+        {/* Statistik */}
 
-                        <h2>
+        <div className="favorite-stats">
 
-                            {favoriteLaptop.length}
+          <div className="favorite-stat-card">
 
-                        </h2>
+            <div className="stat-icon">
 
-                        <span>
-
-                            Laptop
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                {
-                    favoriteLaptop.length===0?
-
-                    (
-
-                        <div className="empty-state">
-
-                            <h2>
-
-                                Belum ada laptop favorit
-
-                            </h2>
-
-                            <p>
-
-                                Tambahkan laptop favorit dari halaman detail.
-
-                            </p>
-
-                            <button
-
-                                onClick={()=>navigate("/laptop")}
-
-                            >
-
-                                Jelajahi Laptop
-
-                                <FaArrowRight/>
-
-                            </button>
-
-                        </div>
-
-                    )
-
-                    :
-
-                    (
-
-                        <div className="favorite-grid">
-
-                            {
-
-                                favoriteLaptop.map(
-
-                                    laptop=>
-
-                                    <LaptopCard
-
-                                        key={laptop.id}
-
-                                        laptop={laptop}
-
-                                    />
-
-                                )
-
-                            }
-
-                        </div>
-
-                    )
-
-                }
+              <FaHeart />
 
             </div>
 
-        </DashboardLayout>
+            <div>
 
-    );
+              <h2>{laptops.length}</h2>
+
+              <p>Total Favorite</p>
+
+            </div>
+
+          </div>
+
+          <div className="favorite-stat-card">
+
+            <div className="stat-icon">
+
+              <FaStar />
+
+            </div>
+
+            <div>
+
+              <h2>4.8</h2>
+
+              <p>Rating Rata-rata</p>
+
+            </div>
+
+          </div>
+
+          <div className="favorite-stat-card">
+
+            <div className="stat-icon">
+
+              <FaUsers />
+
+            </div>
+
+            <div>
+
+              <h2>8540</h2>
+
+              <p>Total Vote</p>
+
+            </div>
+
+          </div>
+
+          <div className="favorite-stat-card">
+
+            <div className="stat-icon">
+
+              <FaHeart />
+
+            </div>
+
+            <div>
+
+              <h2>S Tier</h2>
+
+<p>Tier Favorit</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Toolbar */}
+
+        <div className="favorite-toolbar">
+
+          <div className="favorite-search">
+
+            <FaSearch />
+
+           <input
+    type="text"
+    placeholder="Cari laptop favorit..."
+    value={search}
+    onChange={(e)=>setSearch(e.target.value)}
+/>
+
+          </div>
+
+          <button className="favorite-filter-btn">
+
+            <FaFilter />
+
+            Filter
+
+          </button>
+
+        </div>
+
+        {/* Filter */}
+
+        <div className="favorite-filter">
+
+          <button className="active">
+
+            Semua
+
+          </button>
+
+          <button>
+
+            <FaGamepad />
+
+            Gaming
+
+          </button>
+
+          <button>
+
+            <FaBriefcase />
+
+            Office
+
+          </button>
+
+          <button>
+
+            <FaPaintBrush />
+
+            Creator
+
+          </button>
+
+          <button>
+
+            <FaGraduationCap />
+
+            Student
+
+          </button>
+
+        </div>
+
+        {/* Favorite Grid */}
+
+      <div className="favorite-grid">
+
+ {laptops
+
+.filter((laptop)=>{
+
+return (
+
+laptop.name.toLowerCase().includes(search.toLowerCase())
+
+||
+
+laptop.brand.toLowerCase().includes(search.toLowerCase())
+
+);
+
+})
+
+.map((laptop)=>(
+
+<LaptopCard
+    key={laptop.id}
+    laptop={laptop}
+    compact={true}
+    isFavorite={true}
+/>
+
+))}
+
+</div>
+
+      </div>
+
+    </DashboardLayout>
+
+  );
 
 }
 
