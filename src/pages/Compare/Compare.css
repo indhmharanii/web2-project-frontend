@@ -1,0 +1,484 @@
+.compare-page{
+
+    padding:32px;
+
+    min-height:100vh;
+
+    background:#090B13;
+
+}
+
+.compare-breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    margin-bottom:28px;
+
+}
+
+.compare-breadcrumb span:nth-child(2){
+
+    color:#2563EB;
+
+}
+
+.compare-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.compare-header-icon{
+
+    width:74px;
+
+    height:74px;
+
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:30px;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.28);
+
+}
+
+.compare-header h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:8px;
+
+}
+
+.compare-header p{
+
+    color:#94A3B8;
+
+    font-size:16px;
+
+}
+/* ===========================================
+   STATISTICS
+=========================================== */
+
+.compare-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.compare-stat-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:.3s;
+
+}
+
+.compare-stat-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 15px 30px rgba(37,99,235,.18);
+
+}
+
+.compare-stat-card svg{
+
+    font-size:30px;
+
+    color:#3B82F6;
+
+}
+
+.compare-stat-card h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:4px;
+
+}
+
+.compare-stat-card p{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+}
+/* ===========================================
+   COMPARE FORM
+=========================================== */
+
+.compare-box{
+
+    display:grid;
+
+    grid-template-columns:1fr 90px 1fr;
+
+    gap:25px;
+
+    align-items:end;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+}
+
+.compare-select{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.compare-select label{
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.compare-select select{
+
+    height:58px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    padding:0 18px;
+
+    background:#1F2937;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+.compare-select select:focus{
+
+    border:1px solid #2563EB;
+
+}
+
+.compare-vs{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin:auto;
+
+}
+
+.compare-button{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:40px;
+
+}
+
+.compare-button button{
+
+    height:58px;
+
+    padding:0 36px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.compare-button button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.25);
+
+}
+/* ===========================================
+   RESULT
+=========================================== */
+
+.compare-result{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+    margin-bottom:40px;
+
+}
+
+.compare-card{
+
+    position:relative;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:24px;
+
+    padding:36px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+
+}
+
+.compare-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+
+}
+
+.compare-card img{
+
+    width:240px;
+
+    height:180px;
+
+    object-fit:contain;
+
+    margin-bottom:22px;
+
+     margin:auto;
+
+}
+
+.compare-card h2{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.compare-card span{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:#60A5FA;
+
+    background:rgba(37,99,235,.15);
+
+    padding:6px 16px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+}
+
+.compare-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+    text-align:left;
+
+}
+
+.compare-card li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    color:#E5E7EB;
+
+    font-size:15px;
+
+}
+
+.compare-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.18);
+
+}
+
+.compare-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.winner-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:#F59E0B;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+.compare-result-title{
+
+    margin-bottom:24px;
+
+}
+
+.compare-result-title h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.compare-result-title p{
+
+    color:#94A3B8;
+
+}
