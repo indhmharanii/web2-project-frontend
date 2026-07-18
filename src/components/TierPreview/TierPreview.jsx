@@ -16,12 +16,8 @@ function TierPreview() {
 
         <h2>
           Peringkat Tier
-          <span>(Berdasarkan Total Vote Pengguna)</span>
+          <span>  (Berdasarkan Total Vote Pengguna)</span>
         </h2>
-
-        <button>
-          Lihat Semua Tier →
-        </button>
 
       </div>
 
@@ -29,12 +25,13 @@ function TierPreview() {
 
         {tiers.map((tier) => (
 
-          <div className={`tier-card ${tier.color}`} key={tier.title}>
+          <div
+            className={`tier-card ${tier.color}`}
+            key={tier.title}
+          >
 
             <div className="tier-title">
-
               {tier.title}
-
             </div>
 
             <div className="tier-empty">
