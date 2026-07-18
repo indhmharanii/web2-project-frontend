@@ -5,6 +5,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import { useNavigate, useParams } from "react-router-dom";
 
 import laptops from "../../data/laptops";
+import Review from "../../components/Review/Review";
 
 import {
   FaStar,
@@ -291,6 +292,7 @@ function LaptopDetail() {
 
         </div>
         
+        <Review />
 
         {/* ACTION */}
 
