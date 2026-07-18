@@ -57,15 +57,15 @@ function LaptopDetail() {
 
         <div className="breadcrumb">
 
-          Dashboard
+         Dashboard
 
-          <span>/</span>
+        <span>/</span>
 
-          Laptop
+        Jelajahi Laptop
 
-          <span>/</span>
+        <span>/</span>
 
-          {laptop.name}
+        {laptop.name}
 
         </div>
 
@@ -94,7 +94,7 @@ function LaptopDetail() {
 
             <span className="badge">
 
-              🔥 {laptop.category}
+               {laptop.category}
 
             </span>
 
@@ -121,6 +121,8 @@ function LaptopDetail() {
               {formatPrice(laptop.price)}
 
             </h2>
+
+            <div className="price-divider"></div>
 
             {/* INFO */}
 
@@ -287,16 +289,17 @@ function LaptopDetail() {
           </div>
 
         </div>
+        
 
         {/* ACTION */}
 
-       <div className="action-buttons">
+      <div className="action-buttons">
 
-  <button className="vote-btn">
+  <button className="favorite-btn">
 
-    <FaThumbsUp />
+    <FaHeart />
 
-    Vote Laptop
+    Favorite
 
   </button>
 
@@ -308,8 +311,15 @@ function LaptopDetail() {
 
   </button>
 
-</div>
+  <button className="vote-btn">
 
+    <FaThumbsUp />
+
+    Vote Laptop
+
+  </button>
+
+</div>
       </div>
 
     </DashboardLayout>
