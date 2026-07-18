@@ -62,8 +62,6 @@ return(
 
 <h2>Aktivitas Terbaru</h2>
 
-<a href="#">Lihat semua</a>
-
 </div>
 
 {

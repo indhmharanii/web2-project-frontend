@@ -260,13 +260,11 @@
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    gap:20px;
+    gap:18px;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
 }
 
@@ -282,13 +280,13 @@
 
 .tier-filter button{
 
-    height:48px;
+    height:58px;
 
-    padding:0 20px;
+    padding:0 30px;
 
     border:none;
 
-    border-radius:999px;
+    border-radius:18px;
 
     background:#111827;
 
@@ -298,11 +296,23 @@
 
     align-items:center;
 
-    gap:10px;
+    justify-content:center;
+
+    gap:12px;
 
     cursor:pointer;
 
     transition:.3s;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.tier-filter button svg{
+
+    font-size:18px;
 
 }
 
@@ -317,56 +327,6 @@
     background:linear-gradient(135deg,#2563EB,#4F46E5);
 
 }
-
-.tier-search{
-
-    width:320px;
-
-    height:52px;
-
-    border-radius:16px;
-
-    background:#111827;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:0 18px;
-
-}
-
-.tier-search svg{
-
-    color:#3B82F6;
-
-}
-
-.tier-search input{
-
-    flex:1;
-
-    border:none;
-
-    outline:none;
-
-    background:none;
-
-    color:white;
-
-    font-size:15px;
-
-}
-
-.tier-search input::placeholder{
-
-    color:#64748B;
-
-}
 /* ==========================================================
    TIER SECTION
 ========================================================== */
@@ -375,9 +335,9 @@
 
     display:grid;
 
-    grid-template-columns:230px 1fr 70px;
+    grid-template-columns:240px 1fr 80px;
 
-    align-items:center;
+    align-items:stretch;
 
     gap:22px;
 
@@ -409,7 +369,7 @@
 
 .tier-info{
 
-    height:150px;
+    height:180px;
 
     border-radius:22px;
 
@@ -425,23 +385,23 @@
 
     color:white;
 
-    padding:20px;
+    padding:24px;
 
 }
 
 .tier-info svg{
 
-    font-size:36px;
+    font-size:44px;
 
-    margin-bottom:14px;
+    margin-bottom:16px;
 
 }
 
 .tier-info h3{
 
-    font-size:30px;
+    font-size:36px;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
     font-weight:700;
 
@@ -449,12 +409,13 @@
 
 .tier-info p{
 
-    font-size:14px;
+    font-size:15px;
 
     color:#E5E7EB;
 
     line-height:22px;
 
+     font-weight:500;
 }
 
 /* ==========================================================
@@ -503,7 +464,7 @@
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:18px;
+    gap:24px;
 
 }
 
@@ -513,9 +474,9 @@
 
 .tier-next{
 
-    width:54px;
+    width:68px;
 
-    height:54px;
+    height:68px;
 
     border:none;
 
@@ -530,6 +491,10 @@
     justify-content:center;
 
     align-items:center;
+
+    margin:auto;
+
+    align-self:center;
 
     cursor:pointer;
 
@@ -547,7 +512,7 @@
 
 .tier-next svg{
 
-    font-size:18px;
+    font-size:22px;
 
 }
 
@@ -645,12 +610,6 @@
         flex-direction:column;
 
         align-items:stretch;
-
-    }
-
-    .tier-search{
-
-        width:100%;
 
     }
 

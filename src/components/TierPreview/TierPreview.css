@@ -58,6 +58,36 @@ border:1px solid rgba(255,255,255,.05);
 
 }
 
+.tier-header button{
+
+    background:none;
+
+    border:none;
+
+    color:#3B82F6;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+    margin-top:8px;
+
+}
+
+.tier-header button:hover{
+
+    color:#60A5FA;
+
+    transform:translateX(5px);
+
+}
+
 .tier-grid{
 
 display:grid;

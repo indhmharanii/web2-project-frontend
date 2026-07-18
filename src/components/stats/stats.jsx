@@ -1,5 +1,4 @@
 import "./Stats.css";
-
 import {
   FaLaptop,
   FaVoteYea,
@@ -7,82 +6,53 @@ import {
   FaStar,
 } from "react-icons/fa";
 
+const statsData = [
+  {
+    icon: <FaLaptop />,
+    color: "blue",
+    title: "Laptop Terdaftar",
+    value: "520",
+    desc: "Total laptop dalam sistem",
+  },
+  {
+    icon: <FaVoteYea />,
+    color: "green",
+    title: "Total Vote",
+    value: "1.540",
+    desc: "Vote dari semua pengguna",
+  },
+  {
+    icon: <FaComments />,
+    color: "orange",
+    title: "Komentar",
+    value: "356",
+    desc: "Komentar pengguna",
+  },
+  {
+    icon: <FaStar />,
+    color: "purple",
+    title: "Rating",
+    value: "4.8",
+    desc: "Berdasarkan vote",
+  },
+];
+
 function Stats() {
   return (
     <section className="stats">
+      {statsData.map((item, index) => (
+        <div className="stat-card" key={index}>
+          <div className={`icon ${item.color}`}>
+            {item.icon}
+          </div>
 
-      <div className="stat-card">
-
-        <div className="icon blue">
-          <FaLaptop />
+          <div className="stat-content">
+            <span>{item.title}</span>
+            <h2>{item.value}</h2>
+            <p>{item.desc}</p>
+          </div>
         </div>
-
-        <div className="stat-content">
-
-          <span>Laptop Terdaftar</span>
-
-          <h2>520</h2>
-
-          <p>Total laptop dalam sistem</p>
-
-        </div>
-
-      </div>
-
-      <div className="stat-card">
-
-        <div className="icon green">
-          <FaVoteYea />
-        </div>
-
-        <div className="stat-content">
-
-          <span>Total Vote</span>
-
-          <h2>1.540</h2>
-
-          <p>Vote dari semua pengguna</p>
-
-        </div>
-
-      </div>
-
-      <div className="stat-card">
-
-        <div className="icon orange">
-          <FaComments />
-        </div>
-
-        <div className="stat-content">
-
-          <span>Komentar</span>
-
-          <h2>356</h2>
-
-          <p>Komentar pengguna</p>
-
-        </div>
-
-      </div>
-
-      <div className="stat-card">
-
-        <div className="icon purple">
-          <FaStar />
-        </div>
-
-        <div className="stat-content">
-
-          <span>Rating</span>
-
-          <h2>4.8</h2>
-
-          <p>Berdasarkan vote</p>
-
-        </div>
-
-      </div>
-
+      ))}
     </section>
   );
 }

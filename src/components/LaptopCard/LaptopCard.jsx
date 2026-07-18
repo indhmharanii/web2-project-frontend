@@ -134,28 +134,19 @@ function LaptopCard({
 
         </h2>
 
-        <div className="card-buttons">
+       <div className="card-buttons">
 
-          <button className="wishlist">
+  <button
+    className="detail-btn"
+    onClick={() =>
+      navigate(`/laptop/${laptop.id}`)
+    }
+  >
+    Lihat Detail
+    <FaArrowRight />
+  </button>
 
-            <FaHeart />
-
-          </button>
-
-          <button
-            className="detail-btn"
-            onClick={() =>
-              navigate(`/laptop/${laptop.id}`)
-            }
-          >
-
-            Lihat Detail
-
-            <FaArrowRight />
-
-          </button>
-
-        </div>
+</div>
 
       </div>
 

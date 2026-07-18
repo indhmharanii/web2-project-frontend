@@ -20,6 +20,38 @@ import {
 
 function Favorite() {
     const [search, setSearch] = useState("");
+    const favoriteLaptop = laptops.filter((laptop) => {
+
+    return (
+
+        laptop.name.toLowerCase().includes(search.toLowerCase()) ||
+
+        laptop.brand.toLowerCase().includes(search.toLowerCase())
+
+    );
+
+});
+if(favoriteLaptop.length===0){
+
+return(
+
+<div className="favorite-empty">
+
+<FaHeart/>
+
+<h2>Belum Ada Laptop Favorit</h2>
+
+<p>
+
+Tambahkan laptop favoritmu dengan menekan ikon ❤️.
+
+</p>
+
+</div>
+
+)
+
+}
 
   return (
 
@@ -77,7 +109,7 @@ function Favorite() {
 
             <div>
 
-              <h2>{laptops.length}</h2>
+              <h2>{favoriteLaptop.length}</h2>
 
               <p>Total Favorite</p>
 
@@ -158,14 +190,6 @@ function Favorite() {
 
           </div>
 
-          <button className="favorite-filter-btn">
-
-            <FaFilter />
-
-            Filter
-
-          </button>
-
         </div>
 
         {/* Filter */}
@@ -216,23 +240,7 @@ function Favorite() {
 
       <div className="favorite-grid">
 
- {laptops
-
-.filter((laptop)=>{
-
-return (
-
-laptop.name.toLowerCase().includes(search.toLowerCase())
-
-||
-
-laptop.brand.toLowerCase().includes(search.toLowerCase())
-
-);
-
-})
-
-.map((laptop)=>(
+{favoriteLaptop.map((laptop)=>(
 
 <LaptopCard
     key={laptop.id}
