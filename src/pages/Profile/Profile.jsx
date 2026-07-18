@@ -183,7 +183,7 @@ function Profile() {
           </div>
 <div
   className="menu-item"
-  onClick={() => navigate("/ranking")}
+  onClick={() => navigate("/TierList")}
 >
 
             <div>

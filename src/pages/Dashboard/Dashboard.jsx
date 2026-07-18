@@ -7,7 +7,7 @@ import Stats from "../../components/Stats/Stats";
 import TierPreview from "../../components/TierPreview/TierPreview";
 import Activity from "../../components/Activity/Activity";
 import QuickAction from "../../components/QuickAction/QuickAction";
-import Summary from "../../components/Summary/Summary";
+// import Summary from "../../components/Summary/Summary";
 
 function Dashboard() {
   return (
@@ -27,7 +27,6 @@ function Dashboard() {
 
           <Activity />
           <QuickAction />
-          <Summary />
 
         </div>
 
