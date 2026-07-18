@@ -2,7 +2,7 @@ import "./LaptopDetail.css";
 
 import DashboardLayout from "../../layouts/DashboardLayout";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import laptops from "../../data/laptops";
 
@@ -25,6 +25,7 @@ import {
 function LaptopDetail() {
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const laptop = laptops.find(
     (item) => item.id === Number(id)
@@ -295,22 +296,27 @@ function LaptopDetail() {
 
       <div className="action-buttons">
 
-  <button className="compare-btn">
+ <button
+    className="compare-btn"
+    onClick={() => navigate("/compare")}
+>
 
     <FaBalanceScale />
 
     Bandingkan
 
-  </button>
+</button>
 
-  <button className="vote-btn">
+<button
+    className="vote-btn"
+    onClick={() => navigate(`/vote/${laptop.id}`)}
+>
 
     <FaThumbsUp />
 
     Vote Laptop
 
-  </button>
-
+</button>
 </div>
       </div>
 

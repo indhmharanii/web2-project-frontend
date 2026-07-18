@@ -12,6 +12,7 @@ import Favorite from "./pages/Favorite/Favorite";
 import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import Vote from "./pages/Vote/Vote";
+import Compare from "./pages/Compare/Compare";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/profile"element={<Profile />}/>
       <Route path="/edit-profile"element={<EditProfile />}/>
       <Route path="/vote/:id"element={<Vote />}/>
+      <Route path="/compare" element={<Compare />} />
     </Routes>
   );
 }
