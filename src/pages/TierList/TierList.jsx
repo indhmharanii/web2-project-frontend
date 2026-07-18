@@ -19,6 +19,14 @@ import {
 } from "react-icons/fa";
 
 function TierList() {
+  const topLaptop = [...laptops]
+  .sort((a, b) => b.votes - a.votes)
+  .slice(0, 3);
+
+const sTier = laptops.filter(item => item.tier === "S");
+const aTier = laptops.filter(item => item.tier === "A");
+const bTier = laptops.filter(item => item.tier === "B");
+const cTier = laptops.filter(item => item.tier === "C");
   return (
     <DashboardLayout>
 
@@ -74,7 +82,7 @@ function TierList() {
 
             <div>
 
-              <h2>8</h2>
+              <h2>{laptops.length}</h2>
 
               <p>Total Laptop</p>
 
@@ -157,11 +165,7 @@ function TierList() {
           </p>
 
          <div className="top3-grid">
-
-  {laptops
-    .sort((a, b) => b.votes - a.votes)
-    .slice(0, 3)
-    .map((laptop, index) => (
+{topLaptop.map((laptop, index) => (
       <TopLaptopCard
         key={laptop.id}
         laptop={laptop}
@@ -210,21 +214,6 @@ function TierList() {
             </button>
 
           </div>
-
-          <div className="tier-search">
-
-            <FaSearch />
-
-            <input
-
-              type="text"
-
-              placeholder="Cari laptop..."
-
-            />
-
-          </div>
-
         </div>
 
         {/* S Tier */}
@@ -236,33 +225,20 @@ function TierList() {
         <FaCrown />
 
         <h3>S Tier</h3>
-        <p>
-
-{laptops.filter(item => item.tier === "S").length}
-
-Laptop
-
-</p>
-
         <p>Best Performance</p>
 
     </div>
 
     <div className="tier-laptops">
 
-    {
+  {sTier.map((laptop) => (
 
-        laptops
-  .filter(item => item.tier === "S")
-  .slice(0, 4)
-  .map((laptop) => (
-    <TierLaptopCard
-      key={laptop.id}
-      laptop={laptop}
-    />
-  ))
+<TierLaptopCard
+    key={laptop.id}
+    laptop={laptop}
+/>
 
-    }
+))}
 
 </div>
 
@@ -290,15 +266,14 @@ Laptop
 
   <div className="tier-laptops">
 
-    {laptops
-  .filter(item => item.tier === "A")
-  .slice(0, 4)
-  .map((laptop) => (
-    <TierLaptopCard
-      key={laptop.id}
-      laptop={laptop}
-    />
-  ))}
+    {aTier.map((laptop) => (
+
+  <TierLaptopCard
+    key={laptop.id}
+    laptop={laptop}
+  />
+
+))}
 
   </div>
 
@@ -326,15 +301,14 @@ Laptop
 
   <div className="tier-laptops">
 
-    {laptops
-  .filter(item => item.tier === "B")
-  .slice(0, 4)
-  .map((laptop) => (
-    <TierLaptopCard
-      key={laptop.id}
-      laptop={laptop}
-    />
-  ))}
+    {bTier.map((laptop) => (
+
+  <TierLaptopCard
+    key={laptop.id}
+    laptop={laptop}
+  />
+
+))}
 
   </div>
 
@@ -362,15 +336,14 @@ Laptop
 
   <div className="tier-laptops">
 
-    {laptops
-  .filter(item => item.tier === "C")
-  .slice(0, 4)
-  .map((laptop) => (
-    <TierLaptopCard
-      key={laptop.id}
-      laptop={laptop}
-    />
-  ))}
+    {cTier.map((laptop) => (
+
+  <TierLaptopCard
+    key={laptop.id}
+    laptop={laptop}
+  />
+
+))}
 
   </div>
 

@@ -594,25 +594,3 @@
 
 }
 
-.favorite-btn.active:hover{
-
-    background:#DC2626;
-
-}
-.laptop-card.compact{
-
-    min-height:500px;
-
-}
-
-.laptop-card.compact .image-area{
-
-    height:170px;
-
-}
-
-.laptop-card.compact .image-area img{
-
-    width:155px;
-
-}

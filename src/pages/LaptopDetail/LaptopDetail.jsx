@@ -295,14 +295,6 @@ function LaptopDetail() {
 
       <div className="action-buttons">
 
-  <button className="favorite-btn">
-
-    <FaHeart />
-
-    Favorite
-
-  </button>
-
   <button className="compare-btn">
 
     <FaBalanceScale />

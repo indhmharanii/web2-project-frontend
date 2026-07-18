@@ -38,6 +38,10 @@
    FAVORITE
 =================================================== */
 
+/* ===================================================
+   FAVORITE BUTTON
+=================================================== */
+
 .favorite-btn{
 
     position:absolute;
@@ -46,17 +50,15 @@
 
     right:18px;
 
-    width:44px;
+    width:48px;
 
-    height:44px;
+    height:48px;
 
-    border:none;
+    border:1.5px solid #3B82F6;
 
-    border-radius:50%;
+    border-radius:14px;
 
-    background:#1C2436;
-
-    color:#B8C5D8;
+    background:rgba(18,26,44,.90);
 
     display:flex;
 
@@ -66,9 +68,23 @@
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
 
-    z-index:20;
+    z-index:100;
+
+}
+
+.favorite-btn svg{
+
+    width:22px;
+
+    height:22px;
+
+    font-size:22px;
+
+    color:white;
+
+    flex-shrink:0;
 
 }
 
@@ -76,13 +92,29 @@
 
     background:#EF4444;
 
+    border-color:#EF4444;
+
+    transform:scale(1.08);
+
+}
+
+.favorite-btn:hover svg{
+
     color:white;
 
 }
 
-.favorite-btn svg{
+.favorite-btn.active{
 
-    font-size:17px;
+    background:#EF4444;
+
+    border-color:#EF4444;
+
+}
+
+.favorite-btn.active svg{
+
+    color:white;
 
 }
 
@@ -424,42 +456,6 @@
 
 }
 
-.wishlist{
-
-    width:54px;
-
-    height:54px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:#1C2436;
-
-    color:#EF4444;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.wishlist:hover{
-
-    background:#EF4444;
-
-    color:white;
-
-    transform:translateY(-2px);
-
-}
-
 .detail-btn{
 
     flex:1;
@@ -705,5 +701,27 @@
 .laptop-card.compact .wishlist{
 
     height:48px;
+
+}
+.favorite-btn.active:hover{
+
+    background:#DC2626;
+
+}
+.laptop-card.compact{
+
+    min-height:500px;
+
+}
+
+.laptop-card.compact .image-area{
+
+    height:170px;
+
+}
+
+.laptop-card.compact .image-area img{
+
+    width:155px;
 
 }
