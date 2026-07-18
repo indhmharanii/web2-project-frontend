@@ -151,19 +151,22 @@ function Profile() {
 
         <div className="profile-menu">
 
-          <div className="menu-item">
+         <div
+    className="menu-item"
+    onClick={() => navigate("/edit-profile")}
+>
 
-            <div>
+    <div>
 
-              <FaUser />
+        <FaUser />
 
-              <span>Informasi Akun</span>
+        <span>Informasi Akun</span>
 
-            </div>
+    </div>
 
-            <FaChevronRight />
+    <FaChevronRight />
 
-          </div>
+</div>
 
          <div
   className="menu-item"
