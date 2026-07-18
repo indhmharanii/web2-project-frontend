@@ -17,7 +17,7 @@ function Stats() {
           <FaLaptop />
         </div>
 
-        <div>
+        <div className="stat-content">
 
           <span>Laptop Terdaftar</span>
 
@@ -35,7 +35,7 @@ function Stats() {
           <FaVoteYea />
         </div>
 
-        <div>
+        <div className="stat-content">
 
           <span>Total Vote</span>
 
@@ -53,7 +53,7 @@ function Stats() {
           <FaComments />
         </div>
 
-        <div>
+        <div className="stat-content">
 
           <span>Komentar</span>
 
@@ -71,7 +71,7 @@ function Stats() {
           <FaStar />
         </div>
 
-        <div>
+        <div className="stat-content">
 
           <span>Rating</span>
 

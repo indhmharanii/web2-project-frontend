@@ -1,3 +1,7 @@
+/* =====================================================
+   WELCOME CARD
+===================================================== */
+
 .welcome-card{
 
     width:100%;
@@ -25,15 +29,57 @@
 
     box-shadow:0 20px 50px rgba(0,0,0,.35);
 
-    margin-bottom:35px;
+    transition:.35s;
 
 }
 
-/* ================= LEFT ================= */
+.welcome-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 24px 60px rgba(37,99,235,.20);
+
+}
+
+/* Glow Background */
+
+.welcome-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+
+    right:-120px;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    filter:blur(140px);
+
+    opacity:.15;
+
+}
+
+/* =====================================================
+   LEFT
+===================================================== */
 
 .welcome-left{
 
     width:52%;
+
+    position:relative;
+
+    z-index:2;
 
 }
 
@@ -59,6 +105,8 @@
 
     font-weight:600;
 
+    letter-spacing:.4px;
+
     border-radius:999px;
 
     box-shadow:0 8px 20px rgba(59,130,246,.35);
@@ -73,11 +121,11 @@
 
     font-size:52px;
 
-    font-weight:700;
+    font-weight:800;
+
+    line-height:1.15;
 
     margin-bottom:25px;
-
-    line-height:1.2;
 
 }
 
@@ -97,7 +145,13 @@
 
     margin-bottom:35px;
 
+    max-width:650px;
+
 }
+
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .welcome-btn{
 
@@ -117,7 +171,9 @@
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
+
+    box-shadow:0 12px 28px rgba(37,99,235,.28);
 
 }
 
@@ -127,9 +183,13 @@
 
     transform:translateY(-3px);
 
+    box-shadow:0 18px 35px rgba(37,99,235,.35);
+
 }
 
-/* ================= RIGHT ================= */
+/* =====================================================
+   RIGHT
+===================================================== */
 
 .welcome-right{
 
@@ -142,6 +202,8 @@
     align-items:center;
 
     position:relative;
+
+    z-index:2;
 
 }
 
@@ -175,8 +237,119 @@
 
     z-index:2;
 
+    transition:.4s;
+
     filter:drop-shadow(
         0 20px 40px rgba(0,0,0,.5)
     );
+
+}
+
+.welcome-card:hover .welcome-right img{
+
+    transform:scale(1.05) rotate(-2deg);
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .welcome-card{
+
+        padding:40px;
+
+    }
+
+    .welcome-left h1{
+
+        font-size:44px;
+
+    }
+
+    .welcome-left p{
+
+        font-size:18px;
+
+        line-height:32px;
+
+    }
+
+    .welcome-right img{
+
+        width:340px;
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .welcome-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:40px;
+
+    }
+
+    .welcome-left,
+    .welcome-right{
+
+        width:100%;
+
+    }
+
+    .welcome-left p{
+
+        margin:0 auto 30px;
+
+    }
+
+    .welcome-right{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .welcome-card{
+
+        padding:30px 25px;
+
+    }
+
+    .welcome-left h1{
+
+        font-size:36px;
+
+    }
+
+    .welcome-left p{
+
+        font-size:16px;
+
+        line-height:28px;
+
+    }
+
+    .welcome-right img{
+
+        width:280px;
+
+    }
+
+    .welcome-btn{
+
+        width:100%;
+
+    }
 
 }

@@ -1,46 +1,67 @@
-/* =========================
+/* ==========================================
    DASHBOARD
-========================= */
+========================================== */
 
 .dashboard-grid{
+
     display:grid;
-    grid-template-columns:2.2fr 380px;
-    gap:25px;
+
+    grid-template-columns:2.2fr 360px;
+
+    gap:18px;
+
     align-items:start;
+
 }
 
-/* =========================
+/* ==========================================
    LEFT
-========================= */
+========================================== */
 
 .dashboard-left{
+
     display:flex;
+
     flex-direction:column;
-    gap:25px;
+
+    gap:18px;
+
+    width:100%;
+
 }
 
-/* =========================
+/* ==========================================
    RIGHT
-========================= */
+========================================== */
 
 .dashboard-right{
+
     display:flex;
+
     flex-direction:column;
-    gap:25px;
+
+    gap:18px;
+
+    width:100%;
+
 }
 
-/* =========================
+/* ==========================================
    RESPONSIVE
-========================= */
+========================================== */
 
 @media(max-width:1400px){
 
     .dashboard-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .dashboard-right{
+
         width:100%;
+
     }
 
 }
@@ -48,8 +69,11 @@
 @media(max-width:992px){
 
     .dashboard-grid{
+
         display:flex;
+
         flex-direction:column;
+
     }
 
 }
@@ -57,12 +81,16 @@
 @media(max-width:768px){
 
     .dashboard-grid{
-        gap:20px;
+
+        gap:16px;
+
     }
 
     .dashboard-left,
     .dashboard-right{
-        gap:20px;
+
+        gap:16px;
+
     }
 
 }

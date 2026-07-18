@@ -1,71 +1,203 @@
+/* ==========================================
+   SUMMARY
+========================================== */
+
 .summary{
 
-background:#111827;
+    background:#111827;
 
-border-radius:20px;
+    border-radius:24px;
 
-padding:25px;
+    padding:28px;
 
-border:1px solid rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
 
 }
+
+.summary:hover{
+
+    border-color:#2563EB;
+
+    box-shadow:0 18px 40px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .summary h2{
 
-color:white;
+    color:white;
 
-margin-bottom:25px;
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:24px;
 
 }
 
+/* ==========================================
+   ITEM
+========================================== */
+
 .summary-item{
 
-display:flex;
+    position:relative;
 
-align-items:center;
+    display:flex;
 
-gap:15px;
+    align-items:center;
 
-padding:16px;
+    gap:16px;
 
-margin-bottom:15px;
+    padding:16px;
 
-background:#181F2A;
+    margin-bottom:14px;
 
-border-radius:14px;
+    border-radius:18px;
 
-transition:.3s;
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+.summary-item:last-child{
+
+    margin-bottom:0;
 
 }
 
 .summary-item:hover{
 
-transform:translateX(5px);
+    transform:translateX(6px);
 
-border-left:4px solid #2563EB;
+    border-color:#2563EB;
+
+    background:#16213A;
+
+    box-shadow:0 12px 30px rgba(37,99,235,.18);
 
 }
+
+/* Glow */
+
+.summary-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-60px;
+
+    top:-60px;
+
+    width:140px;
+
+    height:140px;
+
+    background:#2563EB;
+
+    filter:blur(70px);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.summary-item:hover::before{
+
+    opacity:.12;
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
 
 .summary-item svg{
 
-font-size:22px;
+    width:52px;
 
-color:#3B82F6;
+    height:52px;
+
+    padding:14px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #3B82F6,
+        #2563EB
+    );
+
+    color:white;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+    transition:.35s;
+
+    box-sizing:border-box;
 
 }
 
+.summary-item:hover svg{
+
+    transform:scale(1.08) rotate(-8deg);
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
 .summary-item span{
 
-font-size:13px;
+    display:block;
 
-color:#9CA3AF;
+    color:#94A3B8;
+
+    font-size:13px;
+
+    margin-bottom:5px;
 
 }
 
 .summary-item h4{
 
-color:white;
+    color:white;
 
-margin-top:4px;
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.summary-item::after{
+
+    content:"●";
+
+    margin-left:auto;
+
+    color:#22C55E;
+
+    font-size:12px;
 
 }

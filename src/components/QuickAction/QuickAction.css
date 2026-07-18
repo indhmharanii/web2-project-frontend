@@ -1,85 +1,229 @@
+/* ==========================================
+   QUICK ACTION
+========================================== */
+
 .quick{
 
-background:#111827;
+    background:#111827;
 
-border-radius:20px;
+    border-radius:24px;
 
-padding:25px;
+    padding:28px;
 
-border:1px solid rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
 
 }
+
+.quick:hover{
+
+    border-color:#2563EB;
+
+    box-shadow:0 18px 40px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .quick h2{
 
-color:white;
+    color:white;
 
-margin-bottom:20px;
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:24px;
 
 }
 
+/* ==========================================
+   ITEM
+========================================== */
+
 .quick-item{
 
-display:flex;
+    position:relative;
 
-align-items:center;
+    display:flex;
 
-gap:15px;
+    align-items:center;
 
-padding:15px;
+    gap:16px;
 
-border-radius:14px;
+    padding:16px;
 
-margin-bottom:12px;
+    margin-bottom:14px;
 
-background:#181F2A;
+    border-radius:18px;
 
-transition:.3s;
+    background:#0F172A;
 
-cursor:pointer;
+    border:1px solid rgba(255,255,255,.05);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.quick-item:last-child{
+
+    margin-bottom:0;
 
 }
 
 .quick-item:hover{
 
-background:#2563EB;
+    transform:translateX(6px);
+
+    border-color:#2563EB;
+
+    background:#16213A;
+
+    box-shadow:0 12px 30px rgba(37,99,235,.18);
 
 }
+
+/* Glow */
+
+.quick-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-60px;
+
+    top:-60px;
+
+    width:140px;
+
+    height:140px;
+
+    background:#2563EB;
+
+    filter:blur(70px);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.quick-item:hover::before{
+
+    opacity:.12;
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
 
 .quick-icon{
 
-width:45px;
+    width:52px;
 
-height:45px;
+    height:52px;
 
-border-radius:12px;
+    border-radius:16px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    justify-content:center;
 
-justify-content:center;
+    align-items:center;
 
-background:#2563EB;
+    background:linear-gradient(
+        135deg,
+        #3B82F6,
+        #2563EB
+    );
 
-color:white;
+    color:white;
 
-font-size:18px;
+    font-size:20px;
+
+    flex-shrink:0;
+
+    transition:.35s;
 
 }
 
+.quick-item:hover .quick-icon{
+
+    transform:scale(1.08) rotate(-8deg);
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
 .quick-item h4{
 
-color:white;
+    color:white;
 
-margin-bottom:4px;
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-bottom:5px;
 
 }
 
 .quick-item p{
 
-color:#9CA3AF;
+    color:#94A3B8;
 
-font-size:13px;
+    font-size:13px;
+
+    line-height:20px;
+
+}
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.quick-item::after{
+
+    content:"→";
+
+    margin-left:auto;
+
+    color:#60A5FA;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.quick-item:hover::after{
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .quick{
+
+        padding:22px;
+
+    }
 
 }

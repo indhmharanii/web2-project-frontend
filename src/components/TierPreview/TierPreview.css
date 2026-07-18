@@ -14,47 +14,47 @@ border:1px solid rgba(255,255,255,.05);
 
 .tier-header{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:center;
+    align-items:flex-start;
 
-margin-bottom:25px;
+    margin-bottom:32px;
 
 }
 
 .tier-header h2{
 
-color:white;
+    color:white;
 
-font-size:26px;
+    font-size:28px;
+
+    font-weight:700;
+
+    margin:0;
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    line-height:1.3;
 
 }
 
 .tier-header span{
 
-color:#8D99AE;
+    color:#94A3B8;
 
-font-size:16px;
+    font-size:16px;
 
-margin-left:10px;
+    font-weight:400;
 
-font-weight:400;
-
-}
-
-.tier-header button{
-
-background:none;
-
-border:none;
-
-color:#3B82F6;
-
-cursor:pointer;
-
-font-size:16px;
+    margin:0;
 
 }
 
