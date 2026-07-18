@@ -1,98 +1,250 @@
 import "./Recommendation.css";
 
-import Navbar from "../../components/Navbar/Navbar";
+import DashboardLayout from "../../layouts/DashboardLayout";
 
-import ai from "../../assets/images/ai.png";
+import {
+  FaPlusCircle,
+  FaLaptop,
+  FaMicrochip,
+  FaMemory,
+  FaHdd,
+  FaDesktop,
+  FaMoneyBillWave,
+  FaImage,
+  FaAlignLeft,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 function Recommendation() {
+
   return (
-    <div className="recommendation">
 
-      <Navbar />
+    <DashboardLayout>
 
-      <section className="recommendation-container">
+      <div className="recommendation-page">
 
-        <div className="left">
+        {/* Breadcrumb */}
 
-          <img src={ai} alt="AI" />
+        <div className="recommendation-breadcrumb">
 
-          <h1>AI Laptop Recommendation</h1>
+          <span>Dashboard</span>
 
-          <p>
-            Find the perfect laptop based on your budget,
-            preferred brand, and primary use.
-          </p>
+          <span>/</span>
+
+          <span>Tambah Rekomendasi</span>
 
         </div>
 
-        <div className="right">
+        {/* Header */}
 
-          <div className="card">
+        <div className="recommendation-header">
 
-            <h2>Recommendation Form</h2>
+          <div className="recommendation-header-icon">
 
-            <label>Budget</label>
+            <FaPlusCircle />
 
-            <select>
+          </div>
 
-              <option>Under Rp5 Million</option>
+          <div>
 
-              <option>Rp5M - Rp10M</option>
+            <h1>TAMBAH REKOMENDASI LAPTOP</h1>
 
-              <option>Rp10M - Rp15M</option>
+            <p>
 
-              <option>Above Rp15M</option>
+              Ajukan laptop baru untuk ditinjau oleh Admin sebelum dipublikasikan.
 
-            </select>
-
-            <label>Purpose</label>
-
-            <select>
-
-              <option>Gaming</option>
-
-              <option>Programming</option>
-
-              <option>Editing</option>
-
-              <option>Office</option>
-
-              <option>Student</option>
-
-            </select>
-
-            <label>Preferred Brand</label>
-
-            <select>
-
-              <option>Any Brand</option>
-
-              <option>ASUS</option>
-
-              <option>Lenovo</option>
-
-              <option>Acer</option>
-
-              <option>HP</option>
-
-              <option>MSI</option>
-
-            </select>
-
-            <button>
-
-              Get Recommendation
-
-            </button>
+            </p>
 
           </div>
 
         </div>
 
-      </section>
+        {/* Form */}
 
-    </div>
+        <div className="recommendation-form">
+
+          <div className="form-group">
+
+            <label>
+
+              <FaLaptop />
+
+              Nama Laptop
+
+            </label>
+
+            <input
+              type="text"
+              placeholder="Contoh: ASUS ROG Strix G16"
+            />
+
+          </div>
+
+          <div className="form-group">
+
+            <label>Brand</label>
+
+            <input
+              type="text"
+              placeholder="ASUS"
+            />
+
+          </div>
+
+          <div className="form-group">
+
+            <label>Kategori</label>
+
+            <select>
+
+              <option>Gaming</option>
+
+              <option>Office</option>
+
+              <option>Content Creator</option>
+
+              <option>Ultrabook</option>
+
+            </select>
+
+          </div>
+
+          <div className="form-grid">
+
+            <div className="form-group">
+
+              <label>
+
+                <FaMicrochip />
+
+                Processor
+
+              </label>
+
+              <input type="text" />
+
+            </div>
+
+            <div className="form-group">
+
+              <label>
+
+                <FaDesktop />
+
+                GPU
+
+              </label>
+
+              <input type="text" />
+
+            </div>
+
+            <div className="form-group">
+
+              <label>
+
+                <FaMemory />
+
+                RAM
+
+              </label>
+
+              <input type="text" />
+
+            </div>
+
+            <div className="form-group">
+
+              <label>
+
+                <FaHdd />
+
+                Storage
+
+              </label>
+
+              <input type="text" />
+
+            </div>
+
+          </div>
+
+          <div className="form-group">
+
+            <label>
+
+              <FaMoneyBillWave />
+
+              Harga
+
+            </label>
+
+            <input
+              type="number"
+            />
+
+          </div>
+
+          <div className="form-group">
+
+            <label>
+
+              <FaImage />
+
+              Upload Gambar
+
+            </label>
+
+            <input
+              type="file"
+            />
+
+          </div>
+
+          <div className="form-group">
+
+            <label>
+
+              <FaAlignLeft />
+
+              Deskripsi
+
+            </label>
+
+            <textarea
+              rows="6"
+            ></textarea>
+
+          </div>
+
+          <div className="checkbox">
+
+            <input type="checkbox" />
+
+            <span>
+
+              Saya memastikan data yang saya kirim benar.
+
+            </span>
+
+          </div>
+
+          <button className="submit-btn">
+
+            <FaPaperPlane />
+
+            Kirim Rekomendasi
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </DashboardLayout>
+
   );
+
 }
 
 export default Recommendation;
