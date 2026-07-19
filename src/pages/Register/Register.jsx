@@ -17,75 +17,83 @@ function Register() {
 
       {/* ================= LEFT ================= */}
 
-      <div className="register-left">
+     <div className="register-left">
 
-        <div className="logo">
+  <div className="left-content">
 
-          <FaLaptop />
+    <div className="logo">
 
-          <h1>TIERRA</h1>
+      <FaLaptop />
 
-        </div>
+      <h1>TIERRA</h1>
 
-        <h2>
-          Bergabunglah
-          <br />
-          bersama <span>TIERRA</span>
-        </h2>
+    </div>
 
-        <p>
-          Platform voting laptop berbasis komunitas
-          untuk membantu pengguna menemukan laptop
-          terbaik sesuai kebutuhan.
-        </p>
+    <h2>
+      Bergabunglah
+      <br />
+      bersama <span>TIERRA</span>
+    </h2>
 
-        <div className="feature">
+    <p>
+      Bergabunglah dengan komunitas TIERRA untuk
+      memberikan vote, mengajukan rekomendasi laptop,
+      menyusun peringkat tier, dan membantu pengguna lain
+      menemukan laptop terbaik.
+    </p>
 
-          <FaTrophy />
+    <div className="feature">
 
-          <div>
+      <FaTrophy />
 
-            <h4>Tier List Akurat</h4>
+      <div>
 
-            <span>Ranking berdasarkan voting pengguna.</span>
+        <h4>Tier List Akurat</h4>
 
-          </div>
-
-        </div>
-
-        <div className="feature">
-
-          <FaUsers />
-
-          <div>
-
-            <h4>Komunitas Aktif</h4>
-
-            <span>Berbagi pengalaman bersama pengguna lain.</span>
-
-          </div>
-
-        </div>
-
-        <div className="feature">
-
-          <FaLaptop />
-
-          <div>
-
-            <h4>100% Gratis</h4>
-
-            <span>Seluruh fitur dapat digunakan tanpa biaya.</span>
-
-          </div>
-
-        </div>
+        <span>Ranking berdasarkan voting pengguna.</span>
 
       </div>
+
+    </div>
+
+    <div className="feature">
+
+      <FaUsers />
+
+      <div>
+
+        <h4>Komunitas Aktif</h4>
+
+        <span>Berbagi pengalaman bersama pengguna lain.</span>
+
+      </div>
+
+    </div>
+
+    <div className="feature">
+
+      <FaLaptop />
+
+      <div>
+
+        <h4>100% Gratis</h4>
+
+        <span>Seluruh fitur dapat digunakan tanpa biaya.</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
       {/* ================= RIGHT ================= */}
 
       <div className="register-right">
+
+        <div className="right-content">
+
 
         <h1>Buat Akun Baru</h1>
 
@@ -179,8 +187,9 @@ function Register() {
           </Link>
 
         </p>
-
       </div>
+      
+    </div>
 
     </div>
   );

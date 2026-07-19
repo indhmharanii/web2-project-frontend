@@ -13,43 +13,43 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <aside className="sidebar">
 
-      <h2 className="logo">
+      <h2 className="sidebar-logo">
         TIERRA
       </h2>
 
-      <Link to="/dashboard">
-        <FaHouse />
+      <Link className="sidebar-link" to="/dashboard">
+        <FaHouse className="sidebar-icon" />
         <span>Dashboard</span>
       </Link>
 
-      <Link to="/laptop">
-        <FaLaptop />
+      <Link className="sidebar-link" to="/laptop">
+        <FaLaptop className="sidebar-icon" />
         <span>Jelajahi Laptop</span>
       </Link>
 
-      <Link to="/tierlist">
-        <FaRankingStar />
+      <Link className="sidebar-link" to="/tierlist">
+        <FaRankingStar className="sidebar-icon" />
         <span>Peringkat Laptop</span>
       </Link>
 
-      <Link to="/favorite">
-        <FaHeart />
-        <span>Favorite</span>
+      <Link className="sidebar-link" to="/favorite">
+        <FaHeart className="sidebar-icon" />
+        <span>Favorit</span>
       </Link>
 
-      <Link to="/profile">
-        <FaUser />
-        <span>Profile</span>
+      <Link className="sidebar-link" to="/profile">
+        <FaUser className="sidebar-icon" />
+        <span>Profil</span>
       </Link>
 
-      <Link to="/">
-        <FaRightFromBracket />
+      <Link className="sidebar-link sidebar-logout" to="/">
+        <FaRightFromBracket className="sidebar-icon" />
         <span>Logout</span>
       </Link>
 
-    </div>
+    </aside>
   );
 }
 

@@ -1,28 +1,33 @@
 import "./Features.css";
 
 import {
-  FaRobot,
+  FaVoteYea,
   FaBalanceScale,
-  FaDatabase,
+  FaTrophy,
 } from "react-icons/fa";
 
 function Features() {
   return (
-    <section className="features">
+    <section className="features" id="features">
 
-      <h2>Fitur</h2>
+      <h2>Fitur TIERRA</h2>
+
+      <p className="feature-subtitle">
+        Jelajahi berbagai fitur yang membantu Anda memilih laptop terbaik
+        berdasarkan pengalaman dan rekomendasi komunitas.
+      </p>
 
       <div className="feature-grid">
 
         <div className="feature-card">
 
-          <FaRobot className="feature-icon"/>
+          <FaVoteYea className="feature-icon"/>
 
-          <h3>Rekomendasi AI</h3>
+          <h3>Vote Laptop</h3>
 
           <p>
-            Temukan laptop yang paling
-            sesuai dengan kebutuhan Anda.
+            Berikan vote pada laptop favoritmu agar memperoleh posisi terbaik
+            dalam Tier List komunitas.
           </p>
 
         </div>
@@ -34,19 +39,21 @@ function Features() {
           <h3>Bandingkan Laptop</h3>
 
           <p>
-            Bandingkan spesifikasi dengan mudah.
+            Bandingkan spesifikasi, harga, dan performa beberapa laptop sebelum
+            menentukan pilihan.
           </p>
 
         </div>
 
         <div className="feature-card">
 
-          <FaDatabase className="feature-icon"/>
+          <FaTrophy className="feature-icon"/>
 
-          <h3>Data Terbaru</h3>
+          <h3>Tier List Komunitas</h3>
 
           <p>
-            Harga dan spesifikasi yang akurat.
+            Lihat peringkat laptop berdasarkan hasil voting seluruh pengguna
+            TIERRA secara real-time.
           </p>
 
         </div>

@@ -1,81 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
 .navbar{
 
-width:100%;
+    position:fixed;
+    top:0;
+    left:0;
 
-height:80px;
+    width:100%;
+    height:80px;
 
-display:flex;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-justify-content:space-between;
+    padding:0 70px;
 
-align-items:center;
+    background:rgba(9,11,19,.82);
+    backdrop-filter:blur(18px);
 
-padding:0 70px;
+    border-bottom:1px solid rgba(255,255,255,.05);
 
-position:absolute;
-
-top:0;
-
-left:0;
-
-z-index:100;
+    z-index:999;
 
 }
+
+/* ===========================
+   LOGO
+=========================== */
 
 .logo{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
 
-color:white;
+    height:100%;
 
-font-size:22px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:34px;
+    font-weight:700;
+    line-height:1;
 
-font-weight:700;
+    color:#3B82F6;
+
+    position:relative;
+    top:30px;      
+}
+
+.logo:hover{
+
+    color:#60A5FA;
 
 }
+
+/* ===========================
+   MENU
+=========================== */
 
 .navbar ul{
 
-display:flex;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-gap:45px;
+    gap:42px;
 
-list-style:none;
+    list-style:none;
+
+    height:100%;
 
 }
 
 .navbar li{
 
-color:#c8c8c8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-cursor:pointer;
+    position:relative;
 
-transition:.3s;
+    height:100%;
+
+    color:#CBD5E1;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:500;
+    line-height:1;
+
+    transition:.3s;
+
+}
+
+.navbar li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:18px;
+
+    width:0;
+    height:2px;
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+    transition:.3s;
 
 }
 
 .navbar li:hover{
 
-color:white;
+    color:white;
+
+}
+
+.navbar li:hover::after{
+
+    width:100%;
 
 }
 
 .active{
 
-color:#2d6cff !important;
+    color:#3B82F6 !important;
+
+    font-weight:600;
 
 }
 
+.active::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
 .navbar button{
 
-padding:12px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-background:transparent;
+    width:115px;
+    height:48px;
 
-border:1px solid #2d6cff;
+    padding:0;
 
-color:white;
+    line-height:1;
 
-border-radius:12px;
+    border-radius:14px;
 
-cursor:pointer;
+    background:transparent;
+    border:1px solid #2563EB;
+
+    color:white;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    position:relative;
+    top:-17px;   /* naikkan sedikit */
+
+    transition:.35s;
+
+}
+
+.navbar button:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .navbar{
+
+        padding:0 35px;
+
+    }
+
+    .navbar ul{
+
+        gap:26px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+
+        padding:0 20px;
+
+    }
+
+    .navbar ul{
+
+        display:none;
+
+    }
 
 }

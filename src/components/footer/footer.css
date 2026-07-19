@@ -1,159 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   FOOTER
+========================================== */
+
 .footer{
 
-width:90%;
+    width:100%;
 
-margin:120px auto 40px;
+    padding:90px 80px 35px;
 
-padding-top:50px;
+    border-top:1px solid rgba(255,255,255,.08);
 
-border-top:1px solid rgba(255,255,255,.08);
+    background:#090909;
 
 }
+
+/* ==========================================
+   GRID
+========================================== */
 
 .footer-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:2fr 1fr 1fr 2fr;
+    grid-template-columns:2fr 1fr 1fr 2fr;
 
-gap:50px;
+    gap:60px;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.footer-logo h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#fff;
+
+    font-size:36px;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    margin-bottom:22px;
 
 }
 
-.footer h2{
+.footer-logo h2 svg{
 
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-margin-bottom:20px;
+    color:#3B82F6;
 
 }
+
+.footer-logo p{
+
+    color:#9CA3AF;
+
+    line-height:30px;
+
+    max-width:420px;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .footer h3{
 
-margin-bottom:20px;
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:22px;
+
+    font-family:'Space Grotesk',sans-serif;
 
 }
 
-.footer p{
-
-color:#bdbdbd;
-
-line-height:28px;
-
-}
+/* ==========================================
+   MENU
+========================================== */
 
 .footer ul{
 
-list-style:none;
+    list-style:none;
+
+    padding:0;
 
 }
 
 .footer li{
 
-margin-bottom:15px;
+    margin-bottom:16px;
 
-color:#bdbdbd;
+    color:#CBD5E1;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.3s;
+    transition:.3s;
 
 }
 
 .footer li:hover{
 
-color:#2d6cff;
+    color:#3B82F6;
+
+    transform:translateX(6px);
 
 }
 
+/* ==========================================
+   SOCIAL
+========================================== */
+
 .social{
 
-display:flex;
+    display:flex;
 
-gap:20px;
+    gap:16px;
 
-font-size:22px;
-
-margin-top:25px;
+    margin-top:30px;
 
 }
 
 .social svg{
 
-cursor:pointer;
+    width:48px;
 
-transition:.3s;
+    height:48px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    color:#fff;
+
+    transition:.35s;
+
+    cursor:pointer;
 
 }
 
 .social svg:hover{
 
-color:#2d6cff;
+    background:#2563EB;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
 
 }
 
-.newsletter{
+/* ==========================================
+   HUBUNGI KAMI
+========================================== */
 
-display:flex;
+.footer-contact p{
 
-margin-top:20px;
+    color:#9CA3AF;
 
-gap:10px;
+    line-height:30px;
 
-}
-
-.newsletter input{
-
-flex:1;
-
-padding:14px;
-
-background:#151515;
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:10px;
-
-color:white;
+    margin-bottom:22px;
 
 }
 
-.newsletter button{
+.contact-box{
 
-padding:14px 22px;
+    display:flex;
 
-border:none;
+    align-items:center;
 
-background:#2d6cff;
+    gap:14px;
 
-color:white;
+    width:100%;
 
-border-radius:10px;
+    min-height:58px;
 
-cursor:pointer;
+    padding:0 20px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.35s;
 
 }
+
+.contact-box:hover{
+
+    border-color:#3B82F6;
+
+    transform:translateY(-3px);
+
+}
+
+.contact-box svg{
+
+    font-size:18px;
+
+    color:#3B82F6;
+
+}
+
+.contact-box span{
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   LINE
+========================================== */
 
 .footer hr{
 
-margin:45px 0 20px;
+    margin:60px 0 25px;
 
-border:none;
+    border:none;
 
-height:1px;
+    height:1px;
 
-background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
 
 }
 
+/* ==========================================
+   COPYRIGHT
+========================================== */
+
 .copyright{
 
-text-align:center;
+    text-align:center;
 
-color:#9d9d9d;
+    color:#94A3B8;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1200px){
+
+    .footer{
+
+        padding:80px 40px 30px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:45px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer{
+
+        padding:70px 25px 25px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .newsletter{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .newsletter button{
+
+        width:100%;
+
+    }
+
+    .footer-logo p{
+
+        max-width:100%;
+
+    }
 
 }

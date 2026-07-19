@@ -1,4 +1,5 @@
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/Navbar";
 import hero from "../../assets/images/hero-laptop.png";
@@ -15,6 +16,8 @@ import {
 } from "react-icons/fa";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
 
@@ -22,30 +25,43 @@ function Home() {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="hero">
+      <section className="hero" id="home">
 
         <div className="hero-left">
 
           <h1>
             Temukan
-            <span>Laptop Impianmu</span>
+            <span>Laptop Terbaik</span>
+            Bersama TIERRA
           </h1>
 
           <p>
-            Platform rekomendasi berbasis AI yang membantu Anda
-            memilih laptop terbaik sesuai anggaran,
-            kebutuhan gaming, pemrograman, editing,
-            maupun produktivitas.
-          </p>
+          TIERRA adalah platform komunitas yang membantu Anda menemukan
+          laptop terbaik melalui sistem voting, tier list, rekomendasi,
+          dan ulasan dari pengguna lain sehingga Anda dapat menentukan
+          pilihan dengan lebih percaya diri.
+        </p>
 
           <div className="buttons">
 
-            <button className="start">
-              Mulai Sekarang
+            <button
+              className="start"
+              onClick={() => navigate("/")}
+            >
+              Jelajahi Laptop
             </button>
 
-            <button className="learn">
-              Pelajari Lebih Lanjut
+            <button
+              className="learn"
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                  })
+              }
+            >
+              Tentang TIERRA
             </button>
 
           </div>
@@ -63,61 +79,29 @@ function Home() {
 
       </section>
 
-      {/* ================= STATS ================= */}
-
-      <section className="stats">
-
-        <div className="stat-card">
-
-          <FaLaptop className="icon" />
-
-          <h2>1000+</h2>
-
-          <p>Laptop Telah Ditinjau</p>
-
-        </div>
-
-        <div className="stat-card">
-
-          <FaChartBar className="icon" />
-
-          <h2>500+</h2>
-
-          <p>Rekomendasi Diberikan</p>
-
-        </div>
-
-        <div className="stat-card">
-
-          <FaBullseye className="icon" />
-
-          <h2>95%</h2>
-
-          <p>Tingkat Akurasi</p>
-
-        </div>
-
-      </section>
-
       {/* ================= ABOUT ================= */}
 
-      <section className="about">
+      <section
+        className="about"
+        id="about"
+      >
 
         <div className="about-left">
 
-          <h2>Tentang Budget2Build</h2>
+          <h2>Tentang TIERRA</h2>
 
-          <p>
-            Budget2Build adalah platform rekomendasi laptop
-            berbasis AI yang dirancang untuk membantu pengguna
-            menemukan laptop terbaik sesuai dengan anggaran
-            dan kebutuhan masing-masing.
+         <p>
+          TIERRA adalah platform komunitas yang membantu pengguna menemukan
+          laptop terbaik berdasarkan pengalaman nyata, sistem voting,
+          peringkat tier, rekomendasi komunitas, dan ulasan pengguna.
 
-            Baik Anda seorang pelajar, programmer, gamer,
-            content creator, maupun pekerja kantoran,
-            sistem rekomendasi kami akan memberikan pilihan
-            laptop yang paling sesuai secara cepat dan akurat.
-          </p>
+          <br /><br />
+
+          Dengan informasi yang lebih objektif dan mudah dipahami,
+          TIERRA membantu pelajar, programmer, gamer, content creator,
+          maupun pekerja profesional memilih laptop yang paling sesuai
+          dengan kebutuhan dan anggaran mereka.
+        </p>
 
         </div>
 
@@ -125,7 +109,7 @@ function Home() {
 
           <img
             src={about}
-            alt="Tentang Budget2Build"
+            alt="Tentang TIERRA"
           />
 
         </div>
