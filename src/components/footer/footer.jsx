@@ -5,11 +5,12 @@ import {
   FaFacebookF,
   FaInstagram,
   FaGithub,
+  FaEnvelope,
 } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
 
       <div className="footer-grid">
 
@@ -18,16 +19,14 @@ function Footer() {
         <div className="footer-logo">
 
           <h2>
-
             <FaLaptop />
-
-            Budget2Build
-
+            TIERRA
           </h2>
 
           <p>
-            Helping you find the best laptop
-            based on your budget and needs.
+            TIERRA merupakan platform komunitas yang membantu pengguna
+            menemukan laptop terbaik melalui sistem voting, tier list,
+            rekomendasi, dan ulasan dari pengguna lainnya.
           </p>
 
           <div className="social">
@@ -42,64 +41,60 @@ function Footer() {
 
         </div>
 
-        {/* Quick Links */}
+        {/* Menu */}
 
-        <div>
+        <div className="footer-menu">
 
-          <h3>Quick Links</h3>
+          <h3>Menu</h3>
 
           <ul>
 
-            <li>Home</li>
+            <li>Beranda</li>
 
-            <li>About</li>
+            <li>Tentang</li>
 
-            <li>Features</li>
+            <li>Laptop Populer</li>
 
-            <li>Contact</li>
+            <li>Ulasan Pengguna</li>
 
           </ul>
 
         </div>
 
-        {/* Support */}
+        {/* Informasi */}
 
-        <div>
+        <div className="footer-info">
 
-          <h3>Support</h3>
+          <h3>Informasi</h3>
 
           <ul>
 
-            <li>Privacy Policy</li>
+            <li>Kebijakan Privasi</li>
 
-            <li>Terms</li>
+            <li>Syarat & Ketentuan</li>
 
-            <li>Contact</li>
+            <li>Pusat Bantuan</li>
 
           </ul>
 
         </div>
 
-        {/* Newsletter */}
+        {/* Hubungi */}
 
-        <div>
+        <div className="footer-contact">
 
-          <h3>Newsletter</h3>
+          <h3>Hubungi Kami</h3>
 
-          <p>Get the latest laptop recommendations.</p>
+          <p>
+            Memiliki pertanyaan atau saran mengenai TIERRA?
+            Hubungi kami melalui email berikut.
+          </p>
 
-          <div className="newsletter">
+          <div className="contact-box">
 
-            <input
-              type="email"
-              placeholder="Your Email"
-            />
+            <FaEnvelope />
 
-            <button>
-
-              Subscribe
-
-            </button>
+            <span>tierra.support@gmail.com</span>
 
           </div>
 
@@ -111,7 +106,7 @@ function Footer() {
 
       <div className="copyright">
 
-        © 2026 Budget2Build. All Rights Reserved.
+        © 2026 TIERRA • Dibuat untuk Mata Kuliah Pemrograman Web II
 
       </div>
 

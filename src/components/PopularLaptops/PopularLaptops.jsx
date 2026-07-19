@@ -1,67 +1,104 @@
 import "./PopularLaptops.css";
 
-import tuf from "../../assets/images/tuf.png";
-import legion from "../../assets/images/legion.png";
-import nitro from "../../assets/images/nitro.png";
-import victus from "../../assets/images/victus.png";
-
+import laptops from "../../data/laptops";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaFire } from "react-icons/fa";
 
-const laptops = [
-  {
-    name: "ASUS TUF F15",
-    price: "Rp 15.499.000",
-    image: tuf,
-  },
-  {
-    name: "Lenovo LOQ 15",
-    price: "Rp 13.299.000",
-    image: legion,
-  },
-  {
-    name: "Acer Nitro 5",
-    price: "Rp 14.999.000",
-    image: nitro,
-  },
-  {
-    name: "HP Victus 15",
-    price: "Rp 12.999.000",
-    image: victus,
-  },
-];
+const popularLaptops = [...laptops]
+  .sort((a, b) => b.votes - a.votes)
+  .slice(0, 4);
+
+const formatPrice = (price) =>
+  new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  }).format(price);
 
 function PopularLaptops() {
   return (
-    <section className="popular">
-      <div className="title">
-        <h2>Popular Laptops</h2>
-        <p>View All</p>
+    <section className="popular-section" id="popular">
+
+      <div className="popular-header">
+
+        <h2 className="popular-heading">
+          Laptop Populer
+        </h2>
+
+        <button className="popular-see-all">
+          Lihat Semua →
+        </button>
+
       </div>
 
-      <div className="laptop-grid">
-        {laptops.map((item, index) => (
-          <div className="laptop-card" key={index}>
-            <img src={item.image} alt={item.name} />
+      <div className="popular-grid">
 
-            <h3>{item.name}</h3>
+        {popularLaptops.map((item) => (
 
-            <div className="stars">
+          <div
+            className="popular-card"
+            key={item.id}
+          >
+
+            <img
+              className="popular-image"
+              src={item.image}
+              alt={item.name}
+            />
+
+            <span className="popular-category">
+
+              {item.category}
+
+            </span>
+
+            <h3 className="popular-title">
+
+              {item.name}
+
+            </h3>
+
+            <div className="popular-stars">
+
               <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
+
+              <span>{item.rating}</span>
+
             </div>
 
-            <h4>{item.price}</h4>
+            <div className="popular-tier">
 
-            <Link to="/laptop">
-              <button>View Details</button>
+              <FaFire />
+
+              Tier {item.tier}
+
+            </div>
+
+            <h4 className="popular-price">
+
+              {formatPrice(item.price)}
+
+            </h4>
+
+            <Link
+              className="popular-link"
+              to={`/laptop/${item.id}`}
+            >
+
+              <button className="popular-button">
+
+                Lihat Detail
+
+              </button>
+
             </Link>
+
           </div>
+
         ))}
+
       </div>
+
     </section>
   );
 }

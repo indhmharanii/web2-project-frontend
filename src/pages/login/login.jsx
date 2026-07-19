@@ -1,6 +1,7 @@
 import "./Login.css";
 import laptop from "../../assets/images/rog.png";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
 
@@ -75,6 +76,17 @@ function Login() {
 
       <div className="left-side">
 
+        <button
+          className="back-home"
+          onClick={() => navigate("/")}
+        >
+
+          <FaArrowLeft />
+
+          Kembali ke Beranda
+
+        </button>
+
         <div className="grid-bg"></div>
 
         <img
@@ -95,9 +107,8 @@ function Login() {
 
         <p>
 
-          Website berbasis komunitas ini membantu Anda
-          menemukan rekomendasi laptop terbaik berdasarkan
-          voting pengguna.
+          Temukan laptop terbaik sesuai kebutuhanmu melalui rekomendasi komunitas, 
+          sistem voting, peringkat tier,serta ulasan dari pengguna TIERRA.
 
         </p>
 

@@ -1,65 +1,104 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
 .sidebar{
 
-position:fixed;
+    position:fixed;
 
-left:0;
+    top:0;
+    left:0;
 
-top:0;
+    width:260px;
+    height:100vh;
 
-width:260px;
+    padding:30px 20px;
 
-height:100vh;
+    display:flex;
+    flex-direction:column;
 
-background:#111827;
+    background:#111827;
 
-border-right:1px solid rgba(255,255,255,.05);
-
-padding:30px 20px;
-
-display:flex;
-
-flex-direction:column;
+    border-right:1px solid rgba(255,255,255,.06);
 
 }
 
-.logo{
+/* ==========================================
+   LOGO
+========================================== */
 
-margin-bottom:50px;
+.sidebar-logo{
 
-font-size:42px;
+    margin-bottom:45px;
 
-font-weight:700;
+    font-size:36px;
 
-color:#3B82F6;
+    font-weight:700;
 
-}
+    color:#3B82F6;
 
-.sidebar a{
+    font-family:'Space Grotesk',sans-serif;
 
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:14px 18px;
-
-text-decoration:none;
-
-color:#c8c8c8;
-
-border-radius:12px;
-
-transition:.3s;
-
-font-size:16px;
+    letter-spacing:1px;
 
 }
 
-.sidebar a:hover{
+/* ==========================================
+   MENU
+========================================== */
 
-background:#2D6CFF;
+.sidebar-link{
 
-color:white;
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:#CBD5E1;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.sidebar-link:hover{
+
+    background:#2563EB;
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.sidebar-icon{
+
+    font-size:18px;
+
+}
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.sidebar-logout{
+
+    margin-top:auto;
 
 }
