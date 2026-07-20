@@ -1,1 +1,71 @@
-/* DashboardAdmin.css */
+/* ==========================================
+   MANAGE RECOMMENDATION
+========================================== */
+
+.manage-recommendation-container{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.manage-recommendation-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.manage-recommendation-title{
+
+    color:#FFFFFF;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.manage-recommendation-subtitle{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    line-height:24px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .manage-recommendation-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .manage-recommendation-title{
+
+        font-size:28px;
+
+    }
+
+}

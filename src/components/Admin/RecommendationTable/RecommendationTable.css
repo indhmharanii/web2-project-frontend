@@ -1,0 +1,317 @@
+/* ==========================================
+   RECOMMENDATION TABLE
+========================================== */
+
+.admin-recommendation-table-container{
+
+    width:100%;
+
+    margin-top:30px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.admin-recommendation-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+.admin-recommendation-table thead{
+
+    background:#0F172A;
+
+}
+
+.admin-recommendation-table th{
+
+    height:64px;
+
+    padding:0 20px;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-align:left;
+
+    vertical-align:middle;
+
+}
+
+.admin-recommendation-table td{
+
+    height:82px;
+
+    padding:0 20px;
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+    vertical-align:middle;
+
+}
+
+.admin-recommendation-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.admin-recommendation-table tbody tr:hover{
+
+    background:#172033;
+
+}
+
+/* ==========================================
+   WIDTH COLUMN
+========================================== */
+
+.admin-recommendation-table th:nth-child(1),
+.admin-recommendation-table td:nth-child(1){
+
+    width:19%;
+
+}
+
+.admin-recommendation-table th:nth-child(2),
+.admin-recommendation-table td:nth-child(2){
+
+    width:16%;
+
+}
+
+.admin-recommendation-table th:nth-child(3),
+.admin-recommendation-table td:nth-child(3){
+
+    width:13%;
+
+}
+
+.admin-recommendation-table th:nth-child(4),
+.admin-recommendation-table td:nth-child(4){
+
+    width:13%;
+
+}
+
+.admin-recommendation-table th:nth-child(5),
+.admin-recommendation-table td:nth-child(5){
+
+    width:14%;
+
+    text-align:center;
+
+}
+
+.admin-recommendation-table th:nth-child(6),
+.admin-recommendation-table td:nth-child(6){
+
+    width:25%;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.recommendation-status{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:90px;
+
+    height:36px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.recommendation-status.pending{
+
+    background:rgba(245,158,11,.15);
+
+    color:#F59E0B;
+
+}
+
+.recommendation-status.approve{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22C55E;
+
+}
+
+.recommendation-status.reject{
+
+    background:rgba(239,68,68,.15);
+
+    color:#EF4444;
+
+}
+
+/* ==========================================
+   ACTION
+========================================== */
+
+.admin-recommendation-table td:last-child{
+
+    padding:0;
+
+}
+
+.recommendation-action-buttons{
+
+    width:100%;
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.recommendation-action-buttons button{
+
+    width:82px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:0;
+
+    margin:0;
+
+    line-height:1;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    flex-shrink:0;
+
+}
+
+/* Pending */
+
+.recommendation-pending-button{
+
+    background:rgba(245,158,11,.15);
+
+    color:#F59E0B;
+
+}
+
+.recommendation-pending-button:hover{
+
+    background:#F59E0B;
+
+    color:#FFFFFF;
+
+}
+
+/* Approve */
+
+.recommendation-approve-button{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22C55E;
+
+}
+
+.recommendation-approve-button:hover{
+
+    background:#22C55E;
+
+    color:#FFFFFF;
+
+}
+
+/* Reject */
+
+.recommendation-reject-button{
+
+    background:rgba(239,68,68,.15);
+
+    color:#EF4444;
+
+}
+
+.recommendation-reject-button:hover{
+
+    background:#EF4444;
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .admin-recommendation-table-container{
+
+        overflow-x:auto;
+
+    }
+
+    .admin-recommendation-table{
+
+        min-width:1150px;
+
+    }
+
+}
