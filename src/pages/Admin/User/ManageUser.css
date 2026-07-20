@@ -1,1 +1,71 @@
-/* DashboardAdmin.css */
+/* ==========================================
+   MANAGE USER
+========================================== */
+
+.manage-user-container{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.manage-user-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.manage-user-title{
+
+    color:#FFFFFF;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.manage-user-subtitle{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    line-height:24px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .manage-user-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .manage-user-title{
+
+        font-size:28px;
+
+    }
+
+}
