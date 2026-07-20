@@ -1,6 +1,6 @@
 import "./Register.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   FaUser,
@@ -11,82 +11,143 @@ import {
   FaTrophy,
 } from "react-icons/fa";
 
+import { useState } from "react";
+import axios from "axios";
+
 function Register() {
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] =
+    useState("");
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    setError("");
+    setLoading(true);
+
+    // Validasi password dan konfirmasi password
+    if (password !== passwordConfirmation) {
+      setError("Password dan konfirmasi password tidak sama.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/register`,
+        {
+          name,
+          username,
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        }
+      );
+
+      alert("Registrasi berhasil! Silakan login.");
+
+      navigate("/");
+
+    } catch (err) {
+      if (err.response?.data?.errors) {
+        setError(
+          Object.values(err.response.data.errors)[0][0]
+        );
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError("Gagal terhubung ke server.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="register-page">
 
       {/* ================= LEFT ================= */}
 
-     <div className="register-left">
+      <div className="register-left">
 
-  <div className="left-content">
+        <div className="left-content">
 
-    <div className="logo">
+          <div className="logo">
 
-      <FaLaptop />
+            <FaLaptop />
+            <h1>TIERRA</h1>
 
-      <h1>TIERRA</h1>
+          </div>
 
-    </div>
+          <h2>
+            Bergabunglah
+            <br />
+            bersama <span>TIERRA</span>
+          </h2>
 
-    <h2>
-      Bergabunglah
-      <br />
-      bersama <span>TIERRA</span>
-    </h2>
+          <p>
+            Bergabunglah dengan komunitas TIERRA untuk
+            memberikan vote, mengajukan rekomendasi laptop,
+            menyusun peringkat tier, dan membantu pengguna lain
+            menemukan laptop terbaik.
+          </p>
 
-    <p>
-      Bergabunglah dengan komunitas TIERRA untuk
-      memberikan vote, mengajukan rekomendasi laptop,
-      menyusun peringkat tier, dan membantu pengguna lain
-      menemukan laptop terbaik.
-    </p>
+          <div className="feature">
 
-    <div className="feature">
+            <FaTrophy />
 
-      <FaTrophy />
+            <div>
 
-      <div>
+              <h4>Tier List Akurat</h4>
+              <span>
+                Ranking berdasarkan voting pengguna.
+              </span>
 
-        <h4>Tier List Akurat</h4>
+            </div>
 
-        <span>Ranking berdasarkan voting pengguna.</span>
+          </div>
+
+          <div className="feature">
+
+            <FaUsers />
+
+            <div>
+
+              <h4>Komunitas Aktif</h4>
+              <span>
+                Berbagi pengalaman bersama pengguna lain.
+              </span>
+
+            </div>
+
+          </div>
+
+          <div className="feature">
+
+            <FaLaptop />
+
+            <div>
+
+              <h4>100% Gratis</h4>
+              <span>
+                Seluruh fitur dapat digunakan tanpa biaya.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
-
-    </div>
-
-    <div className="feature">
-
-      <FaUsers />
-
-      <div>
-
-        <h4>Komunitas Aktif</h4>
-
-        <span>Berbagi pengalaman bersama pengguna lain.</span>
-
-      </div>
-
-    </div>
-
-    <div className="feature">
-
-      <FaLaptop />
-
-      <div>
-
-        <h4>100% Gratis</h4>
-
-        <span>Seluruh fitur dapat digunakan tanpa biaya.</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
 
       {/* ================= RIGHT ================= */}
 
@@ -94,102 +155,140 @@ function Register() {
 
         <div className="right-content">
 
+          <h1>Buat Akun Baru</h1>
 
-        <h1>Buat Akun Baru</h1>
+          <p>
+            Daftar dan mulai pengalaman terbaikmu di TIERRA.
+          </p>
 
-        <p>
-          Daftar dan mulai pengalaman terbaikmu di TIERRA.
-        </p>
+          <form onSubmit={handleRegister}>
 
-        <form>
+            {error && (
+              <p
+                style={{
+                  color: "#f87171",
+                  marginBottom: "16px",
+                  fontSize: "14px",
+                }}
+              >
+                {error}
+              </p>
+            )}
 
-          <label>Nama Lengkap</label>
+            <label>Nama Lengkap</label>
 
-          <div className="input-box">
+            <div className="input-box">
 
-            <FaUser />
+              <FaUser />
 
-            <input
-              type="text"
-              placeholder="Masukkan nama lengkap"
-            />
+              <input
+                type="text"
+                placeholder="Masukkan nama lengkap"
+                value={name}
+                onChange={(e) =>
+                  setName(e.target.value)
+                }
+                required
+              />
 
-          </div>
+            </div>
 
-          <label>Username</label>
+            <label>Username</label>
 
-          <div className="input-box">
+            <div className="input-box">
 
-            <FaUser />
+              <FaUser />
 
-            <input
-              type="text"
-              placeholder="Masukkan username"
-            />
+              <input
+                type="text"
+                placeholder="Masukkan username"
+                value={username}
+                onChange={(e) =>
+                  setUsername(e.target.value)
+                }
+                required
+              />
 
-          </div>
+            </div>
 
-          <label>Email</label>
+            <label>Email</label>
 
-          <div className="input-box">
+            <div className="input-box">
 
-            <FaEnvelope />
+              <FaEnvelope />
 
-            <input
-              type="email"
-              placeholder="Masukkan email"
-            />
+              <input
+                type="email"
+                placeholder="Masukkan email"
+                value={email}
+                onChange={(e) =>
+                  setEmail(e.target.value)
+                }
+                required
+              />
 
-          </div>
+            </div>
 
-          <label>Password</label>
+            <label>Password</label>
 
-          <div className="input-box">
+            <div className="input-box">
 
-            <FaLock />
+              <FaLock />
 
-            <input
-              type="password"
-              placeholder="Masukkan password"
-            />
+              <input
+                type="password"
+                placeholder="Masukkan password"
+                value={password}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
+                required
+              />
 
-          </div>
+            </div>
 
-          <label>Konfirmasi Password</label>
+            <label>Konfirmasi Password</label>
 
-          <div className="input-box">
+            <div className="input-box">
 
-            <FaLock />
+              <FaLock />
 
-            <input
-              type="password"
-              placeholder="Konfirmasi password"
-            />
+              <input
+                type="password"
+                placeholder="Konfirmasi password"
+                value={passwordConfirmation}
+                onChange={(e) =>
+                  setPasswordConfirmation(
+                    e.target.value
+                  )
+                }
+                required
+              />
 
-          </div>
+            </div>
 
-          <button type="submit">
+            <button
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Memproses..." : "Daftar"}
+            </button>
 
-            Daftar
+          </form>
 
-          </button>
+          <p className="login-link">
 
-        </form>
+            Sudah punya akun?
 
-        <p className="login-link">
+            <Link to="/">
+              Masuk di sini
+            </Link>
 
-          Sudah punya akun?
+          </p>
 
-          <Link to="/">
+        </div>
 
-            Masuk di sini
-
-          </Link>
-
-        </p>
       </div>
-      
-    </div>
 
     </div>
   );
