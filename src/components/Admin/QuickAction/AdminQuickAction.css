@@ -1,0 +1,117 @@
+.admin-quick-container{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.admin-quick-title{
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.admin-quick-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.admin-quick-item{
+
+    height:62px;
+
+    border-radius:14px;
+
+    background:transparent;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    color:white;
+
+}
+
+.admin-quick-item div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.admin-quick-item svg{
+
+    font-size:18px;
+
+}
+
+.admin-quick-item:hover{
+
+    transform:translateX(5px);
+
+}
+
+.admin-quick-item.blue{
+
+    border:1px solid #2563EB;
+
+    color:#60A5FA;
+
+}
+
+.admin-quick-item.purple{
+
+    border:1px solid #7C3AED;
+
+    color:#A78BFA;
+
+}
+
+.admin-quick-item.orange{
+
+    border:1px solid #F59E0B;
+
+    color:#FBBF24;
+
+}
+
+.admin-quick-item.green{
+
+    border:1px solid #22C55E;
+
+    color:#4ADE80;
+
+}

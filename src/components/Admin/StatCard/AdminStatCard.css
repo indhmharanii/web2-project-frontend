@@ -1,0 +1,85 @@
+/* ==========================================
+   ADMIN STAT CARD
+========================================== */
+
+.admin-stat-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:.35s;
+
+}
+
+.admin-stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.18);
+
+}
+
+.admin-stat-card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+}
+
+.admin-stat-card-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.admin-stat-card-title{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+.admin-stat-card-value{
+
+    color:white;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}

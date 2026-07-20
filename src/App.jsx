@@ -13,6 +13,12 @@ import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import Vote from "./pages/Vote/Vote";
 import Compare from "./pages/Compare/Compare";
+// ================= ADMIN =================
+import DashboardAdmin from "./pages/Admin/Dashboard/DashboardAdmin";
+import ManageLaptop from "./pages/Admin/Laptop/ManageLaptop";
+import ManageRecommendation from "./pages/Admin/Recommendation/ManageRecommendation";
+import ManageUser from "./pages/Admin/User/ManageUser";
+import AdminProfile from "./pages/Admin/Profile/AdminProfile";
 
 function App() {
   return (
@@ -30,6 +36,11 @@ function App() {
       <Route path="/edit-profile"element={<EditProfile />}/>
       <Route path="/vote/:id"element={<Vote />}/>
       <Route path="/compare" element={<Compare />} />
+      <Route path="/admin" element={<DashboardAdmin />} />
+      <Route path="/admin/laptop" element={<ManageLaptop />} />
+      <Route path="/admin/recommendation" element={<ManageRecommendation />} />
+      <Route path="/admin/user" element={<ManageUser />} />
+      <Route path="/admin/profile" element={<AdminProfile />} />
     </Routes>
   );
 }
