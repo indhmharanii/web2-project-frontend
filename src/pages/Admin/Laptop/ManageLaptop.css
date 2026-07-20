@@ -1,1 +1,139 @@
-/* DashboardAdmin.css */
+/* ==========================================
+   MANAGE LAPTOP
+========================================== */
+
+.manage-laptop-container{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.manage-laptop-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.manage-laptop-title{
+
+    color:#FFFFFF;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.manage-laptop-subtitle{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    line-height:24px;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.manage-laptop-add-button{
+
+    min-width:190px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:0 24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.manage-laptop-add-button svg{
+
+    width:15px;
+
+    height:15px;
+
+    flex-shrink:0;
+
+}
+
+.manage-laptop-add-button span{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.manage-laptop-add-button:hover{
+
+    background:#3B82F6;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .manage-laptop-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .manage-laptop-add-button{
+
+        width:100%;
+
+    }
+
+}
