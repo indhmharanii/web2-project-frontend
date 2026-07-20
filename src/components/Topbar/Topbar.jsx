@@ -2,7 +2,6 @@ import "./Topbar.css";
 
 import {
   FaSearch,
-  FaBell,
   FaUserCircle
 } from "react-icons/fa";
 
@@ -39,14 +38,6 @@ function Topbar() {
           !showSearch ? "full-width" : ""
         }`}
       >
-
-        <div className="notification">
-
-          <FaBell />
-
-          <span></span>
-
-        </div>
 
         <div className="profile">
 

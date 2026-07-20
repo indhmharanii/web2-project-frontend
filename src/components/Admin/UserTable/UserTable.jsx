@@ -37,7 +37,11 @@ const users = [
     },
 ];
 
-function UserTable() {
+function UserTable({
+
+    onEdit = () => {},
+
+}) {
 
     return (
 
@@ -50,10 +54,15 @@ function UserTable() {
                     <tr>
 
                         <th>Nama</th>
+
                         <th>Email</th>
+
                         <th>Role</th>
+
                         <th>Status</th>
+
                         <th>Bergabung</th>
+
                         <th>Aksi</th>
 
                     </tr>
@@ -96,14 +105,21 @@ function UserTable() {
 
                             <td>{user.joined}</td>
 
-                            <td className="user-action-cell">
+                            <td>
 
-                                <button
-                                    type="button"
-                                    className="user-edit-button"
-                                >
-                                    <FaEdit />
-                                </button>
+                                <div className="user-action">
+
+                                    <button
+                                        type="button"
+                                        className="user-edit-button"
+                                        onClick={() => onEdit(user)}
+                                    >
+
+                                        <FaEdit />
+
+                                    </button>
+
+                                </div>
 
                             </td>
 

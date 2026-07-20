@@ -1,0 +1,223 @@
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.delete-laptop-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.delete-laptop-modal{
+
+    width:420px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    padding:32px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.delete-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:rgba(239,68,68,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.delete-laptop-modal h2{
+
+    color:#FFFFFF;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.delete-laptop-modal p{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:32px;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.delete-laptop-footer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.cancel-delete-btn{
+
+    width:130px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#4B5563;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cancel-delete-btn:hover{
+
+    background:#6B7280;
+
+}
+
+.confirm-delete-btn{
+
+    width:140px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#DC2626;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.confirm-delete-btn:hover{
+
+    background:#EF4444;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(239,68,68,.28);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:600px){
+
+    .delete-laptop-modal{
+
+        width:92%;
+
+        padding:24px;
+
+    }
+
+    .delete-laptop-footer{
+
+        flex-direction:column;
+
+    }
+
+    .cancel-delete-btn,
+
+    .confirm-delete-btn{
+
+        width:100%;
+
+    }
+
+}
