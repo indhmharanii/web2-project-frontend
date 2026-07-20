@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.admin-recommendation-table-container{
+
+    width:100%;
+
+    background:#171B28;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    margin-top:30px;
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.admin-recommendation-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.admin-recommendation-table thead{
+
+    background:#1C2133;
+
+}
+
+.admin-recommendation-table th{
+
+    padding:20px 22px;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-align:left;
+
+    font-family:'Plus Jakarta Sans',sans-serif;
+
+}
+
+.admin-recommendation-table th:last-child{
+
+    width:180px;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+.admin-recommendation-table tbody tr{
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.admin-recommendation-table tbody tr:hover{
+
+    background:#1D2334;
+
+}
+
+.admin-recommendation-table td{
+
+    padding:22px;
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    vertical-align:middle;
+
+}
+
+.admin-recommendation-table td:last-child{
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.recommendation-status{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:95px;
+
+    height:38px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.recommendation-status.pending{
+
+    color:#FBBF24;
+
+    background:rgba(251,191,36,.15);
+
+}
+
+.recommendation-status.approve{
+
+    color:#4ADE80;
+
+    background:rgba(74,222,128,.15);
+
+}
+
+.recommendation-status.reject{
+
+    color:#F87171;
+
+    background:rgba(248,113,113,.15);
+
+}
+
+/* ==========================================
+   ACTION
+========================================== */
+
+.recommendation-action-buttons{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.recommendation-approve-button{
+
+    min-width:95px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.recommendation-approve-button:hover{
+
+    background:#3B82F6;
+
+}
+
+.recommendation-reject-button{
+
+    min-width:90px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#DC2626;
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.recommendation-reject-button:hover{
+
+    background:#EF4444;
+
+}
+
+.recommendation-empty-action{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    color:#64748B;
+
+    font-size:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+    .admin-recommendation-table-container{
+
+        overflow-x:auto;
+
+    }
+
+    .admin-recommendation-table{
+
+        min-width:850px;
+
+    }
+
+}
