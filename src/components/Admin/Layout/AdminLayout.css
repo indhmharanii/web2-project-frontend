@@ -1,0 +1,83 @@
+/* ==========================================
+   ADMIN LAYOUT
+========================================== */
+
+.admin-layout-container{
+
+    display:flex;
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#090B13;
+
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.admin-layout-sidebar{
+
+    width:280px;
+
+    min-width:280px;
+
+    background:#111827;
+
+    border-right:1px solid rgba(255,255,255,.05);
+
+}
+
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.admin-layout-wrapper{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.admin-layout-topbar{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 35px;
+
+    background:#0D111C;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.admin-layout-content{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+}

@@ -1,0 +1,152 @@
+.admin-activity-container{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:24px;
+
+}
+
+.admin-activity-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.admin-activity-header h3{
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.admin-activity-header button{
+
+    border:none;
+
+    background:none;
+
+    color:#3B82F6;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.admin-activity-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.admin-activity-item{
+
+    display:grid;
+
+    grid-template-columns:55px 1fr auto;
+
+    gap:16px;
+
+    align-items:center;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.admin-activity-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.admin-activity-icon{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+.admin-activity-icon.green{
+
+    background:#22C55E;
+
+}
+
+.admin-activity-icon.yellow{
+
+    background:#F59E0B;
+
+}
+
+.admin-activity-icon.blue{
+
+    background:#2563EB;
+
+}
+
+.admin-activity-icon.purple{
+
+    background:#7C3AED;
+
+}
+
+.admin-activity-content h4{
+
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:5px;
+
+}
+
+.admin-activity-content p{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+}
+
+.admin-activity-item span{
+
+    color:#94A3B8;
+
+    font-size:13px;
+
+}
+.admin-activity-container{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
