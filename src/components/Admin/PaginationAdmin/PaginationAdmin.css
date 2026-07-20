@@ -1,0 +1,61 @@
+/* ==========================================
+   PAGINATION
+========================================== */
+
+.admin-pagination{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:10px;
+
+}
+
+.admin-pagination-arrow,
+.admin-pagination-number{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    background:#111827;
+
+    color:#CBD5E1;
+
+}
+
+.admin-pagination-arrow:hover,
+.admin-pagination-number:hover{
+
+    background:#1E40AF;
+
+    color:white;
+
+}
+
+.admin-pagination-number.active{
+
+    background:#2563EB;
+
+    color:white;
+
+}
