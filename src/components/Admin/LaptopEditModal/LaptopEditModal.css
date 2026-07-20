@@ -1,0 +1,283 @@
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.laptop-edit-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.laptop-edit-modal{
+
+    width:520px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.laptop-edit-modal h2{
+
+    color:#FFFFFF;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    margin-bottom:24px;
+
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.laptop-edit-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.laptop-edit-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.laptop-edit-group label{
+
+    color:#CBD5E1;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:7px;
+
+}
+
+.laptop-edit-group input,
+
+.laptop-edit-group select,
+
+.laptop-edit-group textarea{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    box-sizing:border-box;
+
+    transition:.3s;
+
+}
+
+.laptop-edit-group textarea{
+
+    resize:none;
+
+    min-height:90px;
+
+    font-family:inherit;
+
+}
+
+.laptop-edit-group input:focus,
+
+.laptop-edit-group select:focus,
+
+.laptop-edit-group textarea:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+.full-width{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+
+.laptop-edit-group input[type=file]{
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.laptop-edit-footer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-top:28px;
+
+}
+
+.cancel-laptop-btn{
+
+    width:125px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#4B5563;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cancel-laptop-btn:hover{
+
+    background:#6B7280;
+
+}
+
+.save-laptop-btn{
+
+    width:150px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.save-laptop-btn:hover{
+
+    background:#3B82F6;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(37,99,235,.28);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:700px){
+
+    .laptop-edit-modal{
+
+        width:92%;
+
+        padding:22px;
+
+    }
+
+    .laptop-edit-footer{
+
+        flex-direction:column;
+
+    }
+
+    .cancel-laptop-btn,
+
+    .save-laptop-btn{
+
+        width:100%;
+
+    }
+
+}

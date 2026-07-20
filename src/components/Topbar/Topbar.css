@@ -62,28 +62,6 @@
 }
 
 /* ===========================
-   NOTIFICATION
-=========================== */
-
-.notification{
-    position:relative;
-    color:#fff;
-    font-size:22px;
-    cursor:pointer;
-}
-
-.notification span{
-    width:8px;
-    height:8px;
-    background:#3B82F6;
-    border-radius:50%;
-
-    position:absolute;
-    top:-2px;
-    right:-2px;
-}
-
-/* ===========================
    PROFILE
 =========================== */
 

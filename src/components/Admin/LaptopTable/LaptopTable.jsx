@@ -1,156 +1,156 @@
 import "./LaptopTable.css";
 
 import {
-  FaEdit,
-  FaTrash,
+    FaEdit,
+    FaTrash,
 } from "react-icons/fa";
 
 const laptops = [
-  {
-    id: 1,
-    name: "ASUS ROG Zephyrus G14",
-    category: "Gaming",
-    tier: "S",
-    vote: 1450,
-    status: "Aktif",
-  },
-  {
-    id: 2,
-    name: "Lenovo LOQ 15",
-    category: "Gaming",
-    tier: "A",
-    vote: 1228,
-    status: "Aktif",
-  },
-  {
-    id: 3,
-    name: "Acer Nitro V15",
-    category: "Gaming",
-    tier: "B",
-    vote: 982,
-    status: "Aktif",
-  },
-  {
-    id: 4,
-    name: "ASUS Vivobook 14",
-    category: "Produktivitas",
-    tier: "A",
-    vote: 760,
-    status: "Nonaktif",
-  },
+    {
+        id: 1,
+        name: "ASUS ROG Zephyrus G14",
+        category: "Gaming",
+        tier: "S",
+        vote: 1450,
+        status: "Aktif",
+    },
+    {
+        id: 2,
+        name: "Lenovo LOQ 15",
+        category: "Gaming",
+        tier: "A",
+        vote: 1228,
+        status: "Aktif",
+    },
+    {
+        id: 3,
+        name: "Acer Nitro V15",
+        category: "Gaming",
+        tier: "B",
+        vote: 982,
+        status: "Aktif",
+    },
+    {
+        id: 4,
+        name: "ASUS Vivobook 14",
+        category: "Produktivitas",
+        tier: "A",
+        vote: 760,
+        status: "Nonaktif",
+    },
 ];
 
 function LaptopTable({
 
-  onEdit = () => {},
+    onEdit = () => {},
 
-  onDelete = () => {},
+    onDelete = () => {},
 
 }) {
 
-  return (
+    return (
 
-    <div className="admin-laptop-table-container">
+        <div className="admin-laptop-table-container">
 
-      <table className="admin-laptop-table">
+            <table className="admin-laptop-table">
 
-        <thead>
+                <thead>
 
-          <tr>
+                    <tr>
 
-            <th>Nama Laptop</th>
+                        <th>Nama Laptop</th>
 
-            <th>Kategori</th>
+                        <th>Kategori</th>
 
-            <th>Tier</th>
+                        <th>Tier</th>
 
-            <th>Vote</th>
+                        <th>Vote</th>
 
-            <th>Status</th>
+                        <th>Status</th>
 
-            <th>Aksi</th>
+                        <th>Aksi</th>
 
-          </tr>
+                    </tr>
 
-        </thead>
+                </thead>
 
-        <tbody>
+                <tbody>
 
-          {laptops.map((item) => (
+                    {laptops.map((item) => (
 
-            <tr key={item.id}>
+                        <tr key={item.id}>
 
-              <td>{item.name}</td>
+                            <td>{item.name}</td>
 
-              <td>{item.category}</td>
+                            <td>{item.category}</td>
 
-              <td>
+                            <td>
 
-                <span
-                  className={`admin-tier-badge tier-${item.tier.toLowerCase()}`}
-                >
-                  {item.tier}
-                </span>
+                                <span
+                                    className={`admin-tier-badge tier-${item.tier.toLowerCase()}`}
+                                >
+                                    {item.tier}
+                                </span>
 
-              </td>
+                            </td>
 
-              <td>{item.vote}</td>
+                            <td>{item.vote}</td>
 
-              <td>
+                            <td>
 
-                <span
-                  className={`admin-status-badge ${
-                    item.status === "Aktif"
-                      ? "active"
-                      : "inactive"
-                  }`}
-                >
-                  {item.status}
-                </span>
+                                <span
+                                    className={`admin-status-badge ${
+                                        item.status === "Aktif"
+                                            ? "active"
+                                            : "inactive"
+                                    }`}
+                                >
+                                    {item.status}
+                                </span>
 
-              </td>
+                            </td>
 
-              <td>
+                            <td>
 
-                <div className="admin-action-buttons">
+                                <div className="admin-action-buttons">
 
-                  <button
-                    type="button"
-                    className="admin-edit-button"
-                    title="Edit Laptop"
-                    onClick={() => onEdit(item)}
-                  >
+                                    <button
+                                        type="button"
+                                        className="admin-edit-button"
+                                        title="Edit Laptop"
+                                        onClick={() => onEdit(item)}
+                                    >
 
-                    <FaEdit />
+                                        <FaEdit />
 
-                  </button>
+                                    </button>
 
-                  <button
-                    type="button"
-                    className="admin-delete-button"
-                    title="Hapus Laptop"
-                    onClick={() => onDelete(item)}
-                  >
+                                    <button
+                                        type="button"
+                                        className="admin-delete-button"
+                                        title="Hapus Laptop"
+                                        onClick={() => onDelete(item)}
+                                    >
 
-                    <FaTrash />
+                                        <FaTrash />
 
-                  </button>
+                                    </button>
 
-                </div>
+                                </div>
 
-              </td>
+                            </td>
 
-            </tr>
+                        </tr>
 
-          ))}
+                    ))}
 
-        </tbody>
+                </tbody>
 
-      </table>
+            </table>
 
-    </div>
+        </div>
 
-  );
+    );
 
 }
 
