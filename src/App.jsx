@@ -17,7 +17,7 @@ import Compare from "./pages/Compare/Compare";
 import DashboardAdmin from "./pages/Admin/Dashboard/DashboardAdmin";
 import ManageLaptop from "./pages/Admin/Laptop/ManageLaptop";
 import ManageRecommendation from "./pages/Admin/Recommendation/ManageRecommendation";
-import ManageUser from "./pages/Admin/User/ManageUser";
+import ManageUser from "./pages/Admin/ManageUser/ManageUser";
 import AdminProfile from "./pages/Admin/Profile/AdminProfile";
 
 function App() {
