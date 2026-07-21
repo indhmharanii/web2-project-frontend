@@ -1,6 +1,6 @@
 import "./EditProfile.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DashboardLayout from "../../layouts/DashboardLayout";
@@ -18,6 +18,25 @@ function EditProfile() {
   const navigate = useNavigate();
 
   const [photo, setPhoto] = useState(profile);
+
+  // ==========================
+  // AMBIL DATA USER YANG LOGIN
+  // ==========================
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  if (!user) {
+    return null;
+  }
 
   const handlePhotoChange = (e) => {
 
@@ -41,6 +60,8 @@ function EditProfile() {
 
     e.preventDefault();
 
+    // NOTE: ini masih demo, belum kirim perubahan ke backend.
+    // Perlu endpoint khusus (misalnya PUT /api/profile) kalau mau benar-benar update data.
     alert("Profil berhasil diperbarui (Demo UI)");
 
     navigate("/profile");
@@ -131,9 +152,9 @@ function EditProfile() {
           >
             <h2 className="form-title">
 
-    Informasi Akun
+              Informasi Akun
 
-</h2>
+            </h2>
 
             <div className="input-group">
 
@@ -142,7 +163,7 @@ function EditProfile() {
               <input
                 type="text"
                 placeholder="Masukkan nama lengkap"
-                defaultValue="Rani"
+                defaultValue={user.name}
                 required
               />
 
@@ -155,7 +176,7 @@ function EditProfile() {
               <input
                 type="email"
                 placeholder="Masukkan email"
-                defaultValue="rani@gmail.com"
+                defaultValue={user.email}
                 required
               />
 
@@ -168,7 +189,7 @@ function EditProfile() {
               <input
                 type="text"
                 placeholder="Masukkan nomor HP"
-                defaultValue="081234567890"
+                defaultValue={user.phone || ""}
                 required
               />
 
@@ -181,7 +202,7 @@ function EditProfile() {
               <input
                 type="text"
                 placeholder="Masukkan lokasi"
-                defaultValue="Makassar"
+                defaultValue={user.location || ""}
                 required
               />
 

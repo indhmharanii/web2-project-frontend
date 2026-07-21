@@ -1,6 +1,9 @@
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import DashboardLayout from "../../layouts/DashboardLayout";
+import { FaUserCircle } from "react-icons/fa";
 import profile from "../../assets/images/profile.jpeg";
 
 import {
@@ -17,7 +20,46 @@ import {
 
 function Profile() {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/me`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setUser(response.data);
+        // sinkronkan juga ke localStorage biar Topbar ikut update
+        localStorage.setItem("user", JSON.stringify(response.data));
+      })
+      .catch(() => {
+        // token invalid/expired
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        navigate("/login");
+      });
+  }, [navigate]);
+
+  if (!user) {
+    return null;
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
   return (
 
@@ -64,34 +106,25 @@ function Profile() {
         <div className="profile-card">
 
           <div className="profile-image">
-
-            <img
-    src={profile}
-    alt="Profile"
-/>
-
-          </div>
+            <img src={user.photo || profile} alt="Profile" />
+        </div>
 
           <div className="profile-info">
 
-            <h2>Rani</h2>
-
-            <span>Frontend Developer</span>
+            <h2>{user.name}</h2>
+            <span>{user.email}</span>
 
             <p>
-
               <FaMapMarkerAlt />
-
-              Makassar, Indonesia
-
+              {user.location ? user.location : "Lokasi belum diisi"}
             </p>
 
           </div>
 
-         <button
-  className="edit-profile"
-  onClick={() => navigate("/edit-profile")}
->
+          <button
+            className="edit-profile"
+            onClick={() => navigate("/edit-profile")}
+          >
 
             <FaEdit />
 
@@ -151,27 +184,27 @@ function Profile() {
 
         <div className="profile-menu">
 
-         <div
-    className="menu-item"
-    onClick={() => navigate("/edit-profile")}
->
+          <div
+            className="menu-item"
+            onClick={() => navigate("/edit-profile")}
+          >
 
-    <div>
+            <div>
 
-        <FaUser />
+              <FaUser />
 
-        <span>Informasi Akun</span>
+              <span>Informasi Akun</span>
 
-    </div>
+            </div>
 
-    <FaChevronRight />
+            <FaChevronRight />
 
-</div>
+          </div>
 
-         <div
-  className="menu-item"
-  onClick={() => navigate("/favorite")}
->
+          <div
+            className="menu-item"
+            onClick={() => navigate("/favorite")}
+          >
 
             <div>
 
@@ -184,10 +217,11 @@ function Profile() {
             <FaChevronRight />
 
           </div>
-<div
-  className="menu-item"
-  onClick={() => navigate("/TierList")}
->
+
+          <div
+            className="menu-item"
+            onClick={() => navigate("/TierList")}
+          >
 
             <div>
 
@@ -201,10 +235,10 @@ function Profile() {
 
           </div>
 
-        <div
-  className="menu-item logout"
-  onClick={() => navigate("/")}
->
+          <div
+            className="menu-item logout"
+            onClick={handleLogout}
+          >
 
             <div>
 
