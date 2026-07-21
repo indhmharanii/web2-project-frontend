@@ -1,104 +1,86 @@
 import "./Activity.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/id";
 
 import {
-    FaThumbsUp,
-    FaCommentDots,
-    FaLaptop,
-    FaArrowUp,
-    FaHeart
+  FaThumbsUp,
+  FaCommentDots,
+  FaLaptop,
+  FaArrowUp,
+  FaHeart,
 } from "react-icons/fa";
 
-const activities=[
+dayjs.extend(relativeTime);
+dayjs.locale("id");
 
-{
-icon:<FaThumbsUp/>,
-title:"Kamu memberi vote pada",
-name:"ASUS TUF Gaming F15",
-time:"2 menit lalu",
-color:"green"
-},
+const iconMap = {
+  vote: { icon: <FaThumbsUp />, color: "green" },
+  comment: { icon: <FaCommentDots />, color: "purple" },
+  laptop_added: { icon: <FaLaptop />, color: "blue" },
+  tier_changed: { icon: <FaArrowUp />, color: "yellow" },
+  favorited: { icon: <FaHeart />, color: "pink" },
+};
 
-{
-icon:<FaCommentDots/>,
-title:"Rani memberi komentar pada",
-name:"Lenovo Legion Pro",
-time:"15 menit lalu",
-color:"purple"
-},
+function Activity() {
+  const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-{
-icon:<FaLaptop/>,
-title:"Laptop baru ditambahkan",
-name:"Acer Predator Helios Neo 16",
-time:"1 jam lalu",
-color:"blue"
-},
+  useEffect(() => {
+    const fetchActivities = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/activity-logs?limit=5`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        setActivities(response.data);
+      } catch (err) {
+        console.error("Gagal memuat aktivitas:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-{
-icon:<FaArrowUp/>,
-title:"Lenovo LOQ naik ke",
-name:"Tier S",
-time:"2 jam lalu",
-color:"yellow"
-},
+    fetchActivities();
+  }, []);
 
-{
-icon:<FaHeart/>,
-title:"Kamu menyukai",
-name:"ASUS ROG Zephyrus G14",
-time:"3 jam lalu",
-color:"pink"
-}
+  return (
+    <div className="activity">
+      <div className="activity-header">
+        <h2>Aktivitas Terbaru</h2>
+      </div>
 
-];
+      {loading ? (
+        <p style={{ color: "#888", fontSize: "13px", padding: "10px" }}>
+          Memuat aktivitas...
+        </p>
+      ) : activities.length === 0 ? (
+        <p style={{ color: "#888", fontSize: "13px", padding: "10px" }}>
+          Belum ada aktivitas.
+        </p>
+      ) : (
+        activities.map((item) => {
+          const meta = iconMap[item.type] || iconMap.vote;
 
-function Activity(){
+          return (
+            <div className="activity-item" key={item.id}>
+              <div className={`activity-icon ${meta.color}`}>{meta.icon}</div>
 
-return(
+              <div className="activity-info">
+                <p>{item.description}</p>
+                {item.laptop?.name && <h4>{item.laptop.name}</h4>}
+              </div>
 
-<div className="activity">
-
-<div className="activity-header">
-
-<h2>Aktivitas Terbaru</h2>
-
-</div>
-
-{
-
-activities.map((item,index)=>(
-
-<div
-className="activity-item"
-key={index}
->
-
-<div className={`activity-icon ${item.color}`}>
-
-{item.icon}
-
-</div>
-
-<div className="activity-info">
-
-<p>{item.title}</p>
-
-<h4>{item.name}</h4>
-
-</div>
-
-<span>{item.time}</span>
-
-</div>
-
-))
-
-}
-
-</div>
-
-)
-
+              <span>{dayjs(item.created_at).fromNow()}</span>
+            </div>
+          );
+        })
+      )}
+    </div>
+  );
 }
 
 export default Activity;
