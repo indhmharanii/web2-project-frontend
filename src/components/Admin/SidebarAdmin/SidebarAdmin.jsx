@@ -9,6 +9,7 @@ import {
   FaUsers,
   FaUserShield,
   FaSignOutAlt,
+  FaVoteYea,
 } from "react-icons/fa";
 
 function SidebarAdmin() {
@@ -31,6 +32,7 @@ function SidebarAdmin() {
       {/* Menu */}
       <nav className="admin-sidebar-menu">
 
+        {/* Dashboard */}
         <NavLink
           to="/admin"
           end
@@ -44,6 +46,7 @@ function SidebarAdmin() {
           <span>Dashboard</span>
         </NavLink>
 
+        {/* Kelola Laptop */}
         <NavLink
           to="/admin/laptop"
           className={({ isActive }) =>
@@ -56,6 +59,20 @@ function SidebarAdmin() {
           <span>Kelola Laptop</span>
         </NavLink>
 
+        {/* Kelola Voting */}
+        <NavLink
+          to="/admin/voting"
+          className={({ isActive }) =>
+            isActive
+              ? "admin-sidebar-link admin-sidebar-link-active"
+              : "admin-sidebar-link"
+          }
+        >
+          <FaVoteYea />
+          <span>Kelola Voting</span>
+        </NavLink>
+
+        {/* Kelola Rekomendasi */}
         <NavLink
           to="/admin/recommendation"
           className={({ isActive }) =>
@@ -68,6 +85,7 @@ function SidebarAdmin() {
           <span>Kelola Rekomendasi</span>
         </NavLink>
 
+        {/* Kelola User */}
         <NavLink
           to="/admin/user"
           className={({ isActive }) =>
@@ -80,6 +98,7 @@ function SidebarAdmin() {
           <span>Kelola User</span>
         </NavLink>
 
+        {/* Profil Admin */}
         <NavLink
           to="/admin/profile"
           className={({ isActive }) =>

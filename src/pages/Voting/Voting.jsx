@@ -1,17 +1,21 @@
 import "./Voting.css";
 
 import DashboardLayout from "../../layouts/DashboardLayout";
-
 import VotingCard from "../../components/VotingCard/VotingCard";
+
+import { useNavigate } from "react-router-dom";
 
 import {
     FaVoteYea,
     FaSearch,
     FaClock,
     FaCheckCircle,
+    FaPlus,
 } from "react-icons/fa";
 
 function Voting() {
+
+    const navigate = useNavigate();
 
     return (
 
@@ -72,29 +76,48 @@ function Voting() {
 
                 </div>
 
-                {/* ================= FILTER ================= */}
+                {/* ================= TOOLBAR ================= */}
 
-                <div className="status-filter">
+                <div className="voting-toolbar">
 
-                    <button className="active">
+                    {/* FILTER */}
 
-                        Semua
+                    <div className="status-filter">
 
-                    </button>
+                        <button className="active">
 
-                    <button>
+                            Semua
 
-                        <FaClock />
+                        </button>
 
-                        Pending
+                        <button>
 
-                    </button>
+                            <FaClock />
 
-                    <button>
+                            Pending
 
-                        <FaCheckCircle />
+                        </button>
 
-                        Approve
+                        <button>
+
+                            <FaCheckCircle />
+
+                            Approve
+
+                        </button>
+
+                    </div>
+
+                    {/* AJUKAN VOTE */}
+
+                    <button
+                        className="add-vote-btn"
+                        onClick={() => navigate("/laptop")}
+                    >
+
+                        <FaPlus />
+
+                        Ajukan Vote
 
                     </button>
 
