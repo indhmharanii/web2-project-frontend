@@ -1,0 +1,623 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.voting-detail-page{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:
+    radial-gradient(circle at top,#15233f 0%,#0B0F1A 45%,#080A12 100%);
+
+}
+
+/* ==========================================
+   BREADCRUMB
+========================================== */
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+}
+
+.breadcrumb span{
+
+    color:#3B82F6;
+
+}
+
+/* ==========================================
+   HERO CARD
+========================================== */
+
+.voting-detail-card{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:35px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.voting-detail-left{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.voting-image-wrapper{
+
+    width:100%;
+
+    background:#0F172A;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.voting-image-wrapper img{
+
+    width:100%;
+
+    max-width:300px;
+
+    object-fit:contain;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.voting-detail-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.voting-badge{
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.15);
+
+    color:#60A5FA;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.voting-detail-right h1{
+
+    color:#FFFFFF;
+
+    font-size:38px;
+
+    margin-bottom:18px;
+
+}
+
+.voting-detail-right h2{
+
+    color:#3B82F6;
+
+    font-size:34px;
+
+    margin-top:20px;
+
+}
+
+/* ==========================================
+   RATING
+========================================== */
+
+.voting-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.voting-rating svg{
+
+    color:#FACC15;
+
+}
+
+.voting-rating span{
+
+    margin-left:10px;
+
+    color:#CBD5E1;
+
+    font-weight:600;
+
+}
+
+.price-divider{
+
+    height:1px;
+
+    background:rgba(255,255,255,.06);
+
+    margin:22px 0;
+
+}
+
+/* ==========================================
+   MINI CARD
+========================================== */
+
+.voting-info-box{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+.voting-mini-card{
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+
+}
+
+.voting-mini-card svg{
+
+    font-size:24px;
+
+    color:#3B82F6;
+
+}
+
+.voting-mini-card small{
+
+    display:block;
+
+    color:#94A3B8;
+
+    margin-bottom:5px;
+
+}
+
+.voting-mini-card h4{
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================
+   STATUS CARD
+========================================== */
+
+.voting-status-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#14532D,#166534);
+
+    margin-bottom:35px;
+
+}
+
+.status-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.status-icon svg{
+
+    color:#FFFFFF;
+
+    font-size:34px;
+
+}
+
+.status-content h2{
+
+    color:#FFFFFF;
+
+    font-size:26px;
+
+    margin-bottom:10px;
+
+}
+
+.status-content p{
+
+    color:#DCFCE7;
+
+    line-height:1.7;
+
+}
+/* ==========================================
+   SECTION
+========================================== */
+
+.voting-section{
+
+    margin-bottom:35px;
+
+}
+
+.voting-section h3{
+
+    color:#FFFFFF;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   SPECIFICATION
+========================================== */
+
+.voting-spec-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.voting-spec-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+.voting-spec-card:hover{
+
+    border-color:#2563EB;
+
+    transform:translateY(-3px);
+
+}
+
+.voting-spec-card small{
+
+    display:block;
+
+    color:#94A3B8;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+}
+
+.voting-spec-card h4{
+
+    color:#FFFFFF;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.voting-description-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:24px;
+
+}
+
+.voting-description-card p{
+
+    color:#CBD5E1;
+
+    line-height:1.9;
+
+    font-size:15px;
+
+    text-align:justify;
+
+}
+
+/* ==========================================
+   HISTORY
+========================================== */
+
+.voting-history-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:26px;
+
+}
+
+.history-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.history-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.history-item span{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+}
+
+.history-item strong{
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+}
+
+.approve-text{
+
+    color:#22C55E !important;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.voting-action{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:40px;
+
+}
+
+.back-voting-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    height:56px;
+
+    padding:0 26px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.back-voting-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.30);
+
+}
+
+.back-voting-btn svg{
+
+    transition:.3s;
+
+}
+
+.back-voting-btn:hover svg{
+
+    transform:translateX(-4px);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .voting-detail-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .voting-info-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .voting-spec-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .voting-detail-page{
+
+        padding:24px;
+
+    }
+
+    .voting-detail-right h1{
+
+        font-size:30px;
+
+    }
+
+    .voting-detail-right h2{
+
+        font-size:28px;
+
+    }
+
+    .status-content h2{
+
+        font-size:22px;
+
+    }
+
+    .history-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+    .back-voting-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

@@ -18,7 +18,7 @@ function QuickAction() {
   icon: <FaVoteYea />,
   title: "Vote Laptop",
   desc: "Dukung laptop favoritmu",
-  path: "/laptop", 
+  path: "/Vote", 
 },
 
     {

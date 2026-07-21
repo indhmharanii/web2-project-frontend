@@ -11,8 +11,9 @@ import TierList from "./pages/TierList/TierList";
 import Favorite from "./pages/Favorite/Favorite"; 
 import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile/EditProfile";
-import Vote from "./pages/Vote/Vote";
+import Vote from "./pages/Voting/Voting";
 import Compare from "./pages/Compare/Compare";
+import VotingDetail from "./pages/VotingDetail/VotingDetail";
 // ================= ADMIN =================
 import DashboardAdmin from "./pages/Admin/Dashboard/DashboardAdmin";
 import ManageLaptop from "./pages/Admin/Laptop/ManageLaptop";
@@ -34,13 +35,14 @@ function App() {
       <Route path="/tierlist" element={<TierList />} />
       <Route path="/profile"element={<Profile />}/>
       <Route path="/edit-profile"element={<EditProfile />}/>
-      <Route path="/vote/:id"element={<Vote />}/>
+      <Route path="/vote"element={<Vote/>}/>
       <Route path="/compare" element={<Compare />} />
       <Route path="/admin" element={<DashboardAdmin />} />
       <Route path="/admin/laptop" element={<ManageLaptop />} />
       <Route path="/admin/recommendation" element={<ManageRecommendation />} />
       <Route path="/admin/user" element={<ManageUser />} />
       <Route path="/admin/profile" element={<AdminProfile />} />
+      <Route path="/voting/:id" element={<VotingDetail />} />
     </Routes>
   );
 }
