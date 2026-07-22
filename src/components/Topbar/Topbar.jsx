@@ -19,21 +19,6 @@ function Topbar() {
 
     <header className="topbar">
 
-      {showSearch && (
-
-        <div className="topbar-search">
-
-          <FaSearch />
-
-          <input
-            type="text"
-            placeholder="Cari laptop, brand, atau kategori..."
-          />
-
-        </div>
-
-      )}
-
       <div
         className={`topbar-right ${
           !showSearch ? "full-width" : ""
