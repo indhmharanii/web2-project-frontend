@@ -39,10 +39,14 @@ function Login() {
       ] = `Bearer ${token}`;
 
       // ==========================
-      // LOGIN BERHASIL
+      // LOGIN BERHASIL — redirect sesuai role
       // ==========================
 
-      navigate("/dashboard");
+      if (user.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
 
     } catch (err) {
 

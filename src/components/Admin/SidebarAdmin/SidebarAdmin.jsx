@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import {
   FaHome,
+  FaLayerGroup,
   FaLaptop,
   FaClipboardList,
   FaUsers,
@@ -15,21 +16,11 @@ import {
 function SidebarAdmin() {
   return (
     <aside className="admin-sidebar-container">
-
-      {/* Logo */}
       <div className="admin-sidebar-logo">
-
-        <h2 className="admin-sidebar-title">
-          TIERRA
-        </h2>
-
-        <span className="admin-sidebar-subtitle">
-          ADMIN PANEL
-        </span>
-
+        <h2 className="admin-sidebar-title">TIERRA</h2>
+        <span className="admin-sidebar-subtitle">ADMIN PANEL</span>
       </div>
 
-      {/* Menu */}
       <nav className="admin-sidebar-menu">
 
         {/* Dashboard */}
@@ -37,9 +28,7 @@ function SidebarAdmin() {
           to="/admin"
           end
           className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
           }
         >
           <FaHome />
@@ -48,11 +37,19 @@ function SidebarAdmin() {
 
         {/* Kelola Laptop */}
         <NavLink
+          to="/admin/tierlist"
+          className={({ isActive }) =>
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
+          }
+        >
+          <FaLayerGroup />
+          <span>Kelola Tier List</span>
+        </NavLink>
+
+        <NavLink
           to="/admin/laptop"
           className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
           }
         >
           <FaLaptop />
@@ -63,9 +60,7 @@ function SidebarAdmin() {
         <NavLink
           to="/admin/voting"
           className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
           }
         >
           <FaVoteYea />
@@ -76,9 +71,7 @@ function SidebarAdmin() {
         <NavLink
           to="/admin/user"
           className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
           }
         >
           <FaUsers />
@@ -89,30 +82,20 @@ function SidebarAdmin() {
         <NavLink
           to="/admin/profile"
           className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
+            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
           }
         >
           <FaUserShield />
           <span>Profil Admin</span>
         </NavLink>
-
       </nav>
 
-      {/* Footer */}
       <div className="admin-sidebar-footer">
-
         <button className="admin-sidebar-logout">
-
           <FaSignOutAlt />
-
           <span>Logout</span>
-
         </button>
-
       </div>
-
     </aside>
   );
 }
