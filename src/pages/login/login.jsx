@@ -174,24 +174,6 @@ function Login() {
 
             </div>
 
-            <div className="remember">
-
-              <label>
-
-                <input type="checkbox" />
-
-                Ingat Saya
-
-              </label>
-
-              <a href="#">
-
-                Lupa Kata Sandi?
-
-              </a>
-
-            </div>
-
             <button
               type="submit"
               disabled={loading}
@@ -200,25 +182,6 @@ function Login() {
               {loading
                 ? "Memproses..."
                 : "Masuk"}
-
-            </button>
-
-            <div className="or">
-
-              <span>
-
-                atau lanjutkan dengan
-
-              </span>
-
-            </div>
-
-            <button
-              type="button"
-              className="google"
-            >
-
-              Lanjutkan dengan Google
 
             </button>
 
