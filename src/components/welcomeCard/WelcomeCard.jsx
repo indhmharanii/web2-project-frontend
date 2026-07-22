@@ -20,9 +20,12 @@ function WelcomeCard() {
           suaramu dan bantu pengguna lain menemukan laptop terbaik.
         </p>
 
-        <button className="welcome-btn" onClick={() => navigate("/tier-list")}>
-          Lihat Tier List
-        </button>
+        <button
+  className="welcome-btn"
+  onClick={() => navigate("/tierlist")}
+>
+  Lihat Tier List
+</button>
       </div>
 
       <div className="welcome-right">

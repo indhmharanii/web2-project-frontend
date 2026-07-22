@@ -30,9 +30,9 @@ function QuickAction() {
 
     {
       icon: <FaLaptop />,
-      title: "Tambah Rekomendasi",
-      desc: "Ajukan laptop baru",
-      path: "/recommendation",
+      title: "Bandingkan Laptop",
+      desc: "Bandingkan spesifikasi laptop",
+      path: "/compare",
     },
 
     {

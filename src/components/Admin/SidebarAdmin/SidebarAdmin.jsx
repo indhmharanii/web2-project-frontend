@@ -72,19 +72,6 @@ function SidebarAdmin() {
           <span>Kelola Voting</span>
         </NavLink>
 
-        {/* Kelola Rekomendasi */}
-        <NavLink
-          to="/admin/recommendation"
-          className={({ isActive }) =>
-            isActive
-              ? "admin-sidebar-link admin-sidebar-link-active"
-              : "admin-sidebar-link"
-          }
-        >
-          <FaClipboardList />
-          <span>Kelola Rekomendasi</span>
-        </NavLink>
-
         {/* Kelola User */}
         <NavLink
           to="/admin/user"

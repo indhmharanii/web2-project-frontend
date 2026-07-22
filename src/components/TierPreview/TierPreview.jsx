@@ -20,6 +20,7 @@ function TierPreview() {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/api/laptops/tier-overview`
         );
+
         setTierData(response.data);
       } catch (err) {
         console.error("Gagal memuat ringkasan tier:", err);
@@ -32,51 +33,97 @@ function TierPreview() {
   }, []);
 
   return (
-    <section className="tier-preview">
-      <div className="tier-header">
-        <h2>
-          Peringkat Tier
-          <span> (Berdasarkan Total Vote Pengguna)</span>
-        </h2>
+    <section className="home-tier-preview">
+
+      <div className="home-tier-header">
+
+        <h2>Peringkat Tier</h2>
+
+        <p>Berdasarkan Total Vote Pengguna</p>
+
       </div>
 
-      <div className="tier-grid">
+      <div className="home-tier-grid">
+
         {Object.entries(tierMeta).map(([key, meta]) => {
+
           const laptops = tierData[key] || [];
 
           return (
-            <div className={`tier-card ${meta.color}`} key={key}>
-              <div className="tier-title">{meta.title}</div>
+
+            <div
+              key={key}
+              className={`home-tier-card ${meta.color}`}
+            >
+
+              <div className="home-tier-title">
+
+                {meta.title}
+
+              </div>
 
               {loading ? (
-                <div className="tier-empty">
+
+                <div className="home-tier-empty">
+
                   <p>Memuat...</p>
+
                 </div>
+
               ) : laptops.length === 0 ? (
-                <div className="tier-empty">
+
+                <div className="home-tier-empty">
+
                   <FaBoxOpen />
+
                   <h4>Belum ada laptop</h4>
+
                   <p>
-                    Laptop pada tier ini akan muncul setelah pengguna
-                    memberikan vote.
+                    Laptop pada tier ini akan muncul
+                    setelah pengguna memberikan vote.
                   </p>
+
                 </div>
+
               ) : (
-                <ul className="tier-laptop-list">
+
+                <ul className="home-tier-list">
+
                   {laptops.map((laptop) => (
-                    <li key={laptop.id}>
-                      <span className="tier-laptop-name">{laptop.name}</span>
-                      <span className="tier-laptop-vote">
-                        {laptop.vote_count} vote
+
+                    <li
+                      key={laptop.id}
+                      className="home-tier-item"
+                    >
+
+                      <span className="home-tier-name">
+
+                        {laptop.name}
+
                       </span>
+
+                      <span className="home-tier-vote">
+
+                        {laptop.vote_count} Vote
+
+                      </span>
+
                     </li>
+
                   ))}
+
                 </ul>
+
               )}
+
             </div>
+
           );
+
         })}
+
       </div>
+
     </section>
   );
 }
