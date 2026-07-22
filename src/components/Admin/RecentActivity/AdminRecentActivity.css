@@ -8,6 +8,12 @@
 
     padding:24px;
 
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
 .admin-activity-header{
@@ -26,7 +32,9 @@
 
     color:white;
 
-    font-size:26px;
+    font-size:30px;
+
+    font-weight:700;
 
 }
 
@@ -42,13 +50,19 @@
 
     font-weight:600;
 
+    font-size:15px;
+
 }
 
 .admin-activity-list{
 
+    flex:1;
+
     display:flex;
 
     flex-direction:column;
+
+    justify-content:space-between;
 
 }
 
@@ -58,11 +72,11 @@
 
     grid-template-columns:55px 1fr auto;
 
-    gap:16px;
+    gap:18px;
 
     align-items:center;
 
-    padding:18px 0;
+    padding:20px 0;
 
     border-bottom:1px solid rgba(255,255,255,.05);
 
@@ -76,9 +90,9 @@
 
 .admin-activity-icon{
 
-    width:46px;
+    width:50px;
 
-    height:46px;
+    height:50px;
 
     border-radius:50%;
 
@@ -89,6 +103,8 @@
     align-items:center;
 
     color:white;
+
+    font-size:18px;
 
 }
 
@@ -120,9 +136,11 @@
 
     color:white;
 
-    font-size:16px;
+    font-size:17px;
 
-    margin-bottom:5px;
+    font-weight:600;
+
+    margin-bottom:6px;
 
 }
 
@@ -139,14 +157,5 @@
     color:#94A3B8;
 
     font-size:13px;
-
-}
-.admin-activity-container{
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
 
 }

@@ -82,7 +82,7 @@ function Login() {
 
         <button
           className="back-home"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
         >
 
           <FaArrowLeft />

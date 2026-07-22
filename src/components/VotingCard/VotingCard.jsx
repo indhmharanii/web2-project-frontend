@@ -3,126 +3,136 @@ import "./VotingCard.css";
 import { useNavigate } from "react-router-dom";
 
 import {
-    FaLaptop,
-    FaUser,
-    FaClock,
-    FaCheckCircle,
-    FaArrowRight,
+  FaLaptop,
+  FaUser,
+  FaClock,
+  FaCheckCircle,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const votingData = [
-    {
-        id:1,
-        laptop:"ASUS TUF Gaming A15",
-        user:"Rani",
-        status:"Pending",
-        date:"18 Juli 2026",
-    },
-    {
-        id:2,
-        laptop:"Lenovo LOQ 15",
-        user:"Rani",
-        status:"Approve",
-        date:"17 Juli 2026",
-    },
-    {
-        id:3,
-        laptop:"Acer Nitro V15",
-        user:"Rani",
-        status:"Pending",
-        date:"16 Juli 2026",
-    },
-    {
-        id:4,
-        laptop:"ASUS Vivobook 14",
-        user:"Rani",
-        status:"Approve",
-        date:"15 Juli 2026",
-    },
+  {
+    id: 1,
+    laptop: "ASUS TUF Gaming A15",
+    user: "Rani",
+    status: "Pending",
+    date: "18 Juli 2026",
+  },
+  {
+    id: 2,
+    laptop: "Lenovo LOQ 15",
+    user: "Rani",
+    status: "Approve",
+    date: "17 Juli 2026",
+  },
+  {
+    id: 3,
+    laptop: "Acer Nitro V15",
+    user: "Rani",
+    status: "Pending",
+    date: "16 Juli 2026",
+  },
+  {
+    id: 4,
+    laptop: "ASUS Vivobook 14",
+    user: "Rani",
+    status: "Approve",
+    date: "15 Juli 2026",
+  },
 ];
 
 function VotingCard() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  return (
+    <>
+      {votingData.map((item) => (
+        <div
+          className="voting-card"
+          key={item.id}
+        >
+          {/* ================= HEADER ================= */}
 
-    return (
+          <div className="voting-card-header">
 
-        <>
+            <div className="voting-icon">
 
-            {votingData.map((item) => (
+              <FaLaptop />
 
-                <div
-                    className="voting-card"
-                    key={item.id}
-                >
+            </div>
 
-                    <div className="voting-card-top">
+            <div className="voting-title">
 
-                        <div className="voting-icon">
+              <h3>{item.laptop}</h3>
 
-                            <FaLaptop />
+              <p>
 
-                        </div>
+                <FaUser />
 
-                        <div>
+                <span>{item.user}</span>
 
-                            <h3>{item.laptop}</h3>
+              </p>
 
-                            <p>
+            </div>
 
-                                <FaUser />
+          </div>
 
-                                {item.user}
+          {/* ================= BODY ================= */}
 
-                            </p>
+          <div className="voting-card-body">
 
-                        </div>
+            <div className="voting-status">
 
-                    </div>
+              <span
+                className={
+                  item.status === "Approve"
+                    ? "approve"
+                    : "pending"
+                }
+              >
 
-                    <div className="voting-info">
+                {item.status === "Approve" ? (
+                  <FaCheckCircle />
+                ) : (
+                  <FaClock />
+                )}
 
-                        <span
-                            className={
-                                item.status === "Approve"
-                                    ? "approve"
-                                    : "pending"
-                            }
-                        >
+                {item.status}
 
-                            {
-                                item.status === "Approve"
-                                    ? <FaCheckCircle />
-                                    : <FaClock />
-                            }
+              </span>
 
-                            {item.status}
+            </div>
 
-                        </span>
+            <div className="voting-date">
 
-                        <small>{item.date}</small>
+              <small>
 
-                    </div>
+                Diajukan pada
 
-                    <button
-                        type="button"
-                        onClick={() => navigate(`/voting/${item.id}`)}
-                    >
+                <strong>{item.date}</strong>
 
-                        Lihat Detail
+              </small>
 
-                        <FaArrowRight />
+            </div>
 
-                    </button>
+          </div>
 
-                </div>
+          {/* ================= FOOTER ================= */}
 
-            ))}
+          <button
+            className="detail-btn"
+            type="button"
+            onClick={() => navigate(`/voting/${item.id}`)}
+          >
+            <span>Lihat Detail</span>
 
-        </>
+            <FaArrowRight />
+          </button>
 
-    );
-
+        </div>
+      ))}
+    </>
+  );
 }
 
 export default VotingCard;

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import { FaUserCircle } from "react-icons/fa";
-import profile from "../../assets/images/profile.jpeg";
+import profile from "../../assets/images/profile.jpg";
 
 import {
   FaUser,

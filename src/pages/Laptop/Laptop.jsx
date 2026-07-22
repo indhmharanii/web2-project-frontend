@@ -232,36 +232,47 @@ function Laptop() {
           </div>
         )}
 
-        <div className="stats-grid">
-          <div className="stats-card">
-            <FaLaptop />
-            <div>
-              <h2>{stats ? stats.total_laptops : "..."}</h2>
-              <p>Total Laptop</p>
-            </div>
-          </div>
-          <div className="stats-card">
-            <FaStar />
-            <div>
-              <h2>{stats ? stats.average_rating : "..."}</h2>
-              <p>Rating</p>
-            </div>
-          </div>
-          <div className="stats-card">
-            <FaUsers />
-            <div>
-              <h2>{stats ? stats.total_votes : "..."}</h2>
-              <p>Total Vote</p>
-            </div>
-          </div>
-          <div className="stats-card">
-            <FaFire />
-            <div>
-              <h2>S Tier</h2>
-              <p>Tier Tertinggi</p>
-            </div>
-          </div>
-        </div>
+        {/* ================= STATS ================= */}
+
+<div className="laptop-stats-grid">
+
+  <div className="laptop-stats-card">
+    <FaLaptop />
+
+    <div className="laptop-stats-content">
+      <h2>{stats ? stats.total_laptops : "..."}</h2>
+      <p>Total Laptop</p>
+    </div>
+  </div>
+
+  <div className="laptop-stats-card">
+    <FaStar />
+
+    <div className="laptop-stats-content">
+      <h2>{stats ? stats.average_rating : "..."}</h2>
+      <p>Rating</p>
+    </div>
+  </div>
+
+  <div className="laptop-stats-card">
+    <FaUsers />
+
+    <div className="laptop-stats-content">
+      <h2>{stats ? stats.total_votes : "..."}</h2>
+      <p>Total Vote</p>
+    </div>
+  </div>
+
+  <div className="laptop-stats-card">
+    <FaFire />
+
+    <div className="laptop-stats-content">
+      <h2>S Tier</h2>
+      <p>Tier Tertinggi</p>
+    </div>
+  </div>
+
+</div>
 
         {searchType === "name" && (
           <div className="section-header">

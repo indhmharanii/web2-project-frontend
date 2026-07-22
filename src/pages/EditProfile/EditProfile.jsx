@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DashboardLayout from "../../layouts/DashboardLayout";
-import profile from "../../assets/images/profile.jpeg";
+import profile from "../../assets/images/profile.jpg";
 
 import {
   FaUserEdit,

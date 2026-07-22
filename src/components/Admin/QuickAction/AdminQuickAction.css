@@ -36,9 +36,13 @@
 
     gap:16px;
 
+    flex:1;
+
 }
 
 .admin-quick-item{
+
+    width:100%;
 
     height:62px;
 
@@ -56,7 +60,7 @@
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:all .3s ease;
 
     color:white;
 
@@ -72,17 +76,35 @@
 
 }
 
+.admin-quick-item div span{
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
 .admin-quick-item svg{
 
     font-size:18px;
+
+    transition:.3s;
 
 }
 
 .admin-quick-item:hover{
 
+    transform:translateX(6px);
+
+}
+
+.admin-quick-item:hover svg:last-child{
+
     transform:translateX(5px);
 
 }
+
+/* ================= BLUE ================= */
 
 .admin-quick-item.blue{
 
@@ -92,6 +114,16 @@
 
 }
 
+.admin-quick-item.blue:hover{
+
+    background:rgba(37,99,235,.12);
+
+    box-shadow:0 12px 24px rgba(37,99,235,.20);
+
+}
+
+/* ================= PURPLE ================= */
+
 .admin-quick-item.purple{
 
     border:1px solid #7C3AED;
@@ -99,6 +131,16 @@
     color:#A78BFA;
 
 }
+
+.admin-quick-item.purple:hover{
+
+    background:rgba(124,58,237,.12);
+
+    box-shadow:0 12px 24px rgba(124,58,237,.20);
+
+}
+
+/* ================= ORANGE ================= */
 
 .admin-quick-item.orange{
 
@@ -108,10 +150,60 @@
 
 }
 
+.admin-quick-item.orange:hover{
+
+    background:rgba(245,158,11,.12);
+
+    box-shadow:0 12px 24px rgba(245,158,11,.20);
+
+}
+
+/* ================= GREEN ================= */
+
 .admin-quick-item.green{
 
     border:1px solid #22C55E;
 
     color:#4ADE80;
+
+}
+
+.admin-quick-item.green:hover{
+
+    background:rgba(34,197,94,.12);
+
+    box-shadow:0 12px 24px rgba(34,197,94,.20);
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .admin-quick-container{
+
+        padding:20px;
+
+    }
+
+    .admin-quick-title{
+
+        font-size:22px;
+
+    }
+
+    .admin-quick-item{
+
+        height:58px;
+
+        padding:0 18px;
+
+    }
+
+    .admin-quick-item div span{
+
+        font-size:14px;
+
+    }
 
 }

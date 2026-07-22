@@ -1,4 +1,5 @@
 import "./AdminQuickAction.css";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaPlus,
@@ -6,9 +7,12 @@ import {
   FaClipboardList,
   FaUsers,
   FaChevronRight,
+   FaLayerGroup,
 } from "react-icons/fa";
 
 function AdminQuickAction() {
+  const navigate = useNavigate();
+
   return (
     <div className="admin-quick-container">
 
@@ -18,60 +22,56 @@ function AdminQuickAction() {
 
       <div className="admin-quick-list">
 
-        <button className="admin-quick-item blue">
-
+        {/* Tambah Laptop */}
+        <button
+          className="admin-quick-item blue"
+          onClick={() => navigate("/admin/laptop")}
+        >
           <div>
-
             <FaPlus />
-
             <span>Tambah Laptop</span>
-
           </div>
 
           <FaChevronRight />
-
         </button>
 
-        <button className="admin-quick-item purple">
-
+        {/* Kelola Laptop */}
+        <button
+          className="admin-quick-item purple"
+          onClick={() => navigate("/admin/laptop")}
+        >
           <div>
-
             <FaLaptop />
-
             <span>Kelola Laptop</span>
-
           </div>
 
           <FaChevronRight />
-
         </button>
 
-        <button className="admin-quick-item orange">
-
+        {/* Kelola tierlist */}
+        <button
+          className="admin-quick-item orange"
+          onClick={() => navigate("/admin/tierlist")}
+        >
           <div>
-
-            <FaClipboardList />
-
-            <span>Kelola Rekomendasi</span>
-
+            < FaLayerGroup />
+            <span>Kelola Tier List</span>
           </div>
 
           <FaChevronRight />
-
         </button>
 
-        <button className="admin-quick-item green">
-
+        {/* Kelola User */}
+        <button
+          className="admin-quick-item green"
+          onClick={() => navigate("/admin/user")}
+        >
           <div>
-
             <FaUsers />
-
             <span>Kelola User</span>
-
           </div>
 
           <FaChevronRight />
-
         </button>
 
       </div>

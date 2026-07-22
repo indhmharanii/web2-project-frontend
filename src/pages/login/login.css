@@ -304,11 +304,11 @@ color:#bfbfbf;
 }
 .back-home{
 
-    position:absolute;
+    position:fixed;
 
-    top:0px;
+    top:24px;
 
-    left:0px;
+    left:24px;
 
     display:flex;
 
@@ -316,7 +316,9 @@ color:#bfbfbf;
 
     gap:10px;
 
-    background:transparent;
+    background:rgba(17,17,17,.85);
+
+    backdrop-filter:blur(10px);
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -334,7 +336,7 @@ color:#bfbfbf;
 
     transition:.3s;
 
-    z-index:10;
+    z-index:999;
 
 }
 
