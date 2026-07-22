@@ -1,0 +1,93 @@
+.manage-tierlist-container {
+  padding: 10px;
+}
+
+.manage-tierlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.manage-tierlist-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.manage-tierlist-subtitle {
+  color: #9CA3AF;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.manage-tierlist-add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563EB;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tierlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.tierlist-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.tierlist-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tierlist-card-header h3 {
+  color: #fff;
+  font-size: 18px;
+}
+
+.tierlist-delete-btn {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+}
+
+.tierlist-card-range {
+  color: #3B82F6;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.tierlist-card-count {
+  color: #9CA3AF;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.tierlist-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: #1F2937;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
