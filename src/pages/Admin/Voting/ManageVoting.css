@@ -1,18 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
     font-family:"Poppins",sans-serif;
-
 }
 
-.voting-page{
+/* ================= PAGE ================= */
+
+.manage-voting-page{
 
     min-height:100vh;
 
@@ -20,10 +17,9 @@
 
     background:
     radial-gradient(circle at top,#15233f 0%,#0B0F1A 45%,#080A12 100%);
-
 }
 
-/* ================= Breadcrumb ================= */
+/* ================= BREADCRUMB ================= */
 
 .breadcrumb{
 
@@ -33,9 +29,11 @@
 
     gap:10px;
 
+    margin-bottom:28px;
+
     color:#94A3B8;
 
-    margin-bottom:28px;
+    font-size:15px;
 
 }
 
@@ -45,13 +43,13 @@
 
 }
 
-/* ================= Header ================= */
+/* ================= HEADER ================= */
 
 .page-header{
 
-    border-bottom:1px solid rgba(255,255,255,.05);
-
     padding-bottom:20px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
 
     margin-bottom:35px;
 
@@ -87,13 +85,17 @@
 
     font-size:34px;
 
+    box-shadow:0 20px 45px rgba(37,99,235,.28);
+
 }
 
 .title-wrapper h1{
 
     color:white;
 
-    font-size:48px;
+    font-size:46px;
+
+    margin-bottom:6px;
 
 }
 
@@ -101,11 +103,9 @@
 
     color:#94A3B8;
 
-    margin-top:6px;
-
 }
 
-/* ================= Search ================= */
+/* ================= SEARCH ================= */
 
 .voting-search{
 
@@ -125,7 +125,7 @@
 
     border-radius:16px;
 
-    margin-bottom:24px;
+    margin-bottom:28px;
 
 }
 
@@ -139,11 +139,11 @@
 
     flex:1;
 
+    background:transparent;
+
     border:none;
 
     outline:none;
-
-    background:transparent;
 
     color:white;
 
@@ -151,7 +151,7 @@
 
 }
 
-/* ================= Filter ================= */
+/* ================= FILTER ================= */
 
 .status-filter{
 
@@ -159,7 +159,7 @@
 
     gap:14px;
 
-    margin-bottom:32px;
+    margin-bottom:30px;
 
 }
 
@@ -205,78 +205,68 @@
 
 }
 
-/* ================= Grid ================= */
+/* ================= STATS ================= */
 
-.voting-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-
-    gap:26px;
-
-}
-/* ================= Hover Card ================= */
-
-.voting-grid{
+.stats-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
-    gap:26px;
+    gap:20px;
 
-    align-items:start;
-
-}
-/* ================= TOOLBAR ================= */
-
-.voting-toolbar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
+    margin-bottom:35px;
 
 }
 
-.add-vote-btn{
+.stats-card{
 
-    display:flex;
+    background:#111827;
 
-    align-items:center;
+    border:1px solid rgba(255,255,255,.05);
 
-    gap:10px;
+    border-radius:18px;
 
-    height:48px;
+    padding:26px;
 
-    padding:0 24px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:linear-gradient(135deg,#2563EB,#4F46E5);
-
-    color:white;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    cursor:pointer;
+    text-align:center;
 
     transition:.3s;
 
 }
 
-.add-vote-btn:hover{
+.stats-card:hover{
 
-    transform:translateY(-2px);
+    transform:translateY(-4px);
 
-    box-shadow:0 15px 30px rgba(37,99,235,.30);
+    border-color:#2563EB;
+
+}
+
+.stats-card h2{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.stats-card p{
+
+    color:#94A3B8;
+
+}
+
+/* ================= GRID ================= */
+
+.voting-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+    gap:26px;
 
 }

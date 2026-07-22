@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+.vote-page{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:
+    radial-gradient(circle at top,#15233f 0%,#0B0F1A 45%,#080A12 100%);
+}
+
+/* ================= Breadcrumb ================= */
+
+.vote-breadcrumb{
+
+    display:flex;
+
+    gap:10px;
+
+    color:#94A3B8;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+}
+
+.vote-breadcrumb span:last-child{
+
+    color:#3B82F6;
+}
+
+/* ================= Header ================= */
+
+.vote-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding-bottom:24px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    margin-bottom:35px;
+}
+
+.vote-header-icon{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:#fff;
+
+    font-size:34px;
+
+    box-shadow:0 20px 45px rgba(37,99,235,.28);
+}
+
+.vote-header h1{
+
+    color:white;
+
+    font-size:46px;
+
+    margin-bottom:6px;
+}
+
+.vote-header p{
+
+    color:#94A3B8;
+}
+
+/* ================= HERO ================= */
+
+.vote-hero{
+
+    display:grid;
+
+    grid-template-columns:330px 1fr;
+
+    gap:35px;
+
+    background:#111827;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    margin-bottom:35px;
+}
+
+.vote-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.vote-image img{
+
+    width:100%;
+
+    max-width:280px;
+
+    object-fit:contain;
+}
+
+.vote-category{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.15);
+
+    color:#60A5FA;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+}
+
+.vote-info h2{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+}
+
+.vote-info h3{
+
+    color:#60A5FA;
+
+    font-size:30px;
+
+    margin-top:20px;
+}
+
+.vote-rating{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#FACC15;
+
+    font-size:18px;
+}
+
+.vote-rating span{
+
+    color:white;
+
+    margin-left:10px;
+
+    font-weight:600;
+}
+
+.vote-mini-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:30px;
+}
+
+.vote-mini-card{
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+
+    background:#0F172A;
+
+    padding:18px;
+
+    border-radius:16px;
+}
+
+.vote-mini-card svg{
+
+    color:#3B82F6;
+
+    font-size:24px;
+}
+
+.vote-mini-card small{
+
+    color:#94A3B8;
+}
+
+.vote-mini-card h4{
+
+    color:white;
+
+    margin-top:5px;
+}
+/* ================= FORM ================= */
+
+.vote-form{
+
+    background:#111827;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.vote-form h2{
+
+    color:white;
+
+    margin-bottom:8px;
+}
+
+.vote-form-subtitle{
+
+    color:#94A3B8;
+
+    margin-bottom:30px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:24px;
+}
+
+.form-group label{
+
+    color:white;
+
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    color:white;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#2563EB;
+}
+
+.form-group textarea{
+
+    resize:none;
+}
+/* ================= Preview ================= */
+
+.tier-preview{
+
+    background:#0F172A;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    margin-bottom:30px;
+}
+
+.tier-preview h3{
+
+    color:white;
+
+    margin-bottom:20px;
+}
+
+.tier-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+.tier-box small{
+
+    color:#94A3B8;
+}
+
+.tier-box h4{
+
+    color:#3B82F6;
+
+    font-size:24px;
+
+    margin-top:6px;
+}
+
+.tier-box span{
+
+    color:white;
+
+    font-size:34px;
+}
+
+/* ================= Rating ================= */
+
+.rating-select{
+
+    display:flex;
+
+    gap:10px;
+
+    font-size:28px;
+
+    color:#FACC15;
+}
+
+/* ================= Information ================= */
+
+.vote-info-card{
+
+    background:rgba(37,99,235,.12);
+
+    border-left:5px solid #2563EB;
+
+    padding:20px;
+
+    border-radius:14px;
+
+    margin-bottom:25px;
+}
+
+.vote-info-card h4{
+
+    color:white;
+
+    margin-bottom:10px;
+}
+
+.vote-info-card p{
+
+    color:#CBD5E1;
+
+    line-height:1.7;
+}
+
+/* ================= Checkbox ================= */
+
+.vote-check{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:flex-start;
+
+    color:#CBD5E1;
+
+    margin-bottom:30px;
+}
+
+.vote-check input{
+
+    margin-top:5px;
+}
+
+/* ================= Submit ================= */
+
+.submit-vote-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit-vote-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.35);
+}
+/* ================= SUMMARY ================= */
+
+.vote-summary{
+
+    margin-bottom:30px;
+
+}
+
+.vote-summary h3{
+
+    color:white;
+
+    margin-bottom:18px;
+
+}
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.summary-card{
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:16px;
+
+    padding:18px;
+
+}
+
+.summary-card small{
+
+    color:#94A3B8;
+
+}
+
+.summary-card h4{
+
+    color:white;
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}

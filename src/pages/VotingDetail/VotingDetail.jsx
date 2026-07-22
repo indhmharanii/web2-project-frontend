@@ -433,7 +433,7 @@ function VotingDetail() {
 
                     <button
                         className="back-voting-btn"
-                        onClick={() => navigate("/voting")}
+                        onClick={() => navigate("/vote")}
                     >
 
                         <FaArrowLeft />

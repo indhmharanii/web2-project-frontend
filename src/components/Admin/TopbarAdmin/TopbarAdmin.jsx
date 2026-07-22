@@ -22,18 +22,6 @@ function TopbarAdmin() {
       {/* RIGHT */}
       <div className="admin-topbar-right-section">
 
-        <div className="admin-topbar-search-box">
-
-          <FaSearch className="admin-topbar-search-icon" />
-
-          <input
-            className="admin-topbar-search-input"
-            type="text"
-            placeholder="Cari..."
-          />
-
-        </div>
-
         <div className="admin-topbar-user">
 
           <div className="admin-topbar-user-avatar">

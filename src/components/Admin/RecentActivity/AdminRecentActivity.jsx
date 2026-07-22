@@ -46,8 +46,6 @@ function AdminRecentActivity() {
 
         <h3>Aktivitas Terbaru</h3>
 
-        <button>Lihat Semua</button>
-
       </div>
 
       <div className="admin-activity-list">

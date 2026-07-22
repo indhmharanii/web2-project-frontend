@@ -16,6 +16,7 @@ import Compare from "./pages/Compare/Compare";
 import VotingDetail from "./pages/VotingDetail/VotingDetail";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
+import VoteForm from "./pages/VoteForm/VoteForm";
 // ================= ADMIN =================
 import DashboardAdmin from "./pages/Admin/Dashboard/DashboardAdmin";
 import ManageLaptop from "./pages/Admin/Laptop/ManageLaptop";
@@ -24,6 +25,8 @@ import ManageUser from "./pages/Admin/User/ManageUser";
 import AdminProfile from "./pages/Admin/Profile/AdminProfile";
 import ManageTierList from "./pages/Admin/TierList/ManageTierList";
 import TierListDetailAdmin from "./pages/Admin/TierList/TierListDetailAdmin";
+import ManageVoting from "./pages/Admin/Voting/ManageVoting";
+import AdminVotingDetail from "./pages/Admin/Voting/VotingDetail/AdminVotingDetail";
 
 function App() {
   return (
@@ -100,6 +103,15 @@ function App() {
     </ProtectedRoute>
   }
 />
+      <Route path="/admin" element={<DashboardAdmin />} />
+      <Route path="/admin/laptop" element={<ManageLaptop />} />
+      <Route path="/admin/recommendation" element={<ManageRecommendation />} />
+      <Route path="/admin/user" element={<ManageUser />} />
+      <Route path="/admin/profile" element={<AdminProfile />} />
+      <Route path="/admin/voting"element={<ManageVoting />}/>
+      <Route path="/admin/voting/:id"element={<AdminVotingDetail />}/>
+      <Route path="/voting/:id" element={<VotingDetail />} />
+      <Route path="/vote/:id"element={<VoteForm />}/>
     </Routes>
   );
 }
