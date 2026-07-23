@@ -1,4 +1,6 @@
 import "./LaptopCard.css";
+import { useState } from "react";
+import axios from "axios";
 
 import {
   FaStar,
@@ -11,13 +13,18 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function LaptopCard({
   laptop,
   compact = false,
   isFavorite = false,
+  onFavoriteChange,
 }) {
 
   const navigate = useNavigate();
+  const [favorited, setFavorited] = useState(isFavorite);
+  const [loadingFav, setLoadingFav] = useState(false);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat("id-ID", {
@@ -25,6 +32,31 @@ function LaptopCard({
       currency: "IDR",
       maximumFractionDigits: 0,
     }).format(price);
+  };
+
+  const handleToggleFavorite = async (e) => {
+    e.stopPropagation();
+
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Kamu harus login untuk menambahkan favorit.");
+      return;
+    }
+
+    setLoadingFav(true);
+    try {
+      const res = await axios.post(
+        `${API_URL}/api/laptops/${laptop.id}/favorite`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setFavorited(res.data.favorited);
+      onFavoriteChange?.(laptop.id, res.data.favorited);
+    } catch (err) {
+      console.error("Gagal mengubah status favorit:", err);
+    } finally {
+      setLoadingFav(false);
+    }
   };
 
   return (
@@ -42,16 +74,20 @@ function LaptopCard({
       {/* Favorite */}
 
       <button
-  className={`favorite-btn ${
-    isFavorite ? "active" : ""
-  }`}
->
-  <FaHeart />
-</button>
+        className={`favorite-btn ${favorited ? "active" : ""}`}
+        onClick={handleToggleFavorite}
+        disabled={loadingFav}
+      >
+        <FaHeart />
+      </button>
 
       {/* Image */}
 
-      <div className="image-area">
+      <div
+        className="image-area"
+        onClick={() => navigate(`/laptop/${laptop.id}`)}
+        style={{ cursor: "pointer" }}
+      >
 
         <img
           src={laptop.image}

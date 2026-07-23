@@ -1,137 +1,80 @@
 import "./VotingCard.css";
-
 import { useNavigate } from "react-router-dom";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/id";
 
 import {
   FaLaptop,
   FaUser,
   FaClock,
   FaCheckCircle,
+  FaTimesCircle,
+  FaVoteYea,
   FaArrowRight,
 } from "react-icons/fa";
 
-const votingData = [
-  {
-    id: 1,
-    laptop: "ASUS TUF Gaming A15",
-    user: "Rani",
-    status: "Pending",
-    date: "18 Juli 2026",
-  },
-  {
-    id: 2,
-    laptop: "Lenovo LOQ 15",
-    user: "Rani",
-    status: "Approve",
-    date: "17 Juli 2026",
-  },
-  {
-    id: 3,
-    laptop: "Acer Nitro V15",
-    user: "Rani",
-    status: "Pending",
-    date: "16 Juli 2026",
-  },
-  {
-    id: 4,
-    laptop: "ASUS Vivobook 14",
-    user: "Rani",
-    status: "Approve",
-    date: "15 Juli 2026",
-  },
-];
+dayjs.extend(relativeTime);
+dayjs.locale("id");
 
-function VotingCard() {
+const statusMeta = {
+  pending_review: { label: "Menunggu Admin", icon: <FaClock />, className: "pending" },
+  voting: { label: "Sedang Voting", icon: <FaVoteYea />, className: "voting" },
+  approved: { label: "Disetujui", icon: <FaCheckCircle />, className: "approve" },
+  rejected: { label: "Ditolak", icon: <FaTimesCircle />, className: "rejected" },
+};
+
+function VotingCard({ submission }) {
   const navigate = useNavigate();
+  const meta = statusMeta[submission.status] || statusMeta.pending_review;
 
   return (
-    <>
-      {votingData.map((item) => (
-        <div
-          className="voting-card"
-          key={item.id}
-        >
-          {/* ================= HEADER ================= */}
-
-          <div className="voting-card-header">
-
-            <div className="voting-icon">
-
-              <FaLaptop />
-
-            </div>
-
-            <div className="voting-title">
-
-              <h3>{item.laptop}</h3>
-
-              <p>
-
-                <FaUser />
-
-                <span>{item.user}</span>
-
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* ================= BODY ================= */}
-
-          <div className="voting-card-body">
-
-            <div className="voting-status">
-
-              <span
-                className={
-                  item.status === "Approve"
-                    ? "approve"
-                    : "pending"
-                }
-              >
-
-                {item.status === "Approve" ? (
-                  <FaCheckCircle />
-                ) : (
-                  <FaClock />
-                )}
-
-                {item.status}
-
-              </span>
-
-            </div>
-
-            <div className="voting-date">
-
-              <small>
-
-                Diajukan pada
-
-                <strong>{item.date}</strong>
-
-              </small>
-
-            </div>
-
-          </div>
-
-          {/* ================= FOOTER ================= */}
-
-          <button
-            className="detail-btn"
-            type="button"
-            onClick={() => navigate(`/voting/${item.id}`)}
-          >
-            <span>Lihat Detail</span>
-
-            <FaArrowRight />
-          </button>
-
+    <div className="voting-card">
+      <div className="voting-card-header">
+        <div className="voting-icon">
+          <FaLaptop />
         </div>
-      ))}
-    </>
+
+        <div className="voting-title">
+          <h3>{submission.name}</h3>
+          <p>
+            <FaUser />
+            <span>{submission.user?.name || "Pengguna"}</span>
+          </p>
+        </div>
+      </div>
+
+      <div className="voting-card-body">
+        <div className="voting-status">
+          <span className={meta.className}>
+            {meta.icon}
+            {meta.label}
+          </span>
+        </div>
+
+        {submission.status === "voting" && (
+          <div className="voting-count">
+            <small>{submission.upvotes ?? 0} Setuju · {submission.downvotes ?? 0} Tidak Setuju</small>
+          </div>
+        )}
+
+        <div className="voting-date">
+          <small>
+            Diajukan pada
+            <strong> {dayjs(submission.created_at).format("D MMMM YYYY")}</strong>
+          </small>
+        </div>
+      </div>
+
+      <button
+        className="detail-btn"
+        type="button"
+        onClick={() => navigate(`/voting/${submission.id}`)}
+      >
+        <span>Lihat Detail</span>
+        <FaArrowRight />
+      </button>
+    </div>
   );
 }
 

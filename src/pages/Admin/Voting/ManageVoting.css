@@ -7,6 +7,42 @@
     font-family:"Poppins",sans-serif;
 }
 
+.manage-voting-container { padding: 10px; }
+.manage-voting-title { color: #fff; font-size: 26px; font-weight: 700; }
+.manage-voting-subtitle { color: #9CA3AF; margin-bottom: 24px; }
+
+.voting-review-list { display: flex; flex-direction: column; gap: 16px; }
+
+.voting-review-card {
+  background: #111827; border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; padding: 20px;
+}
+
+.voting-review-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.voting-review-header h3 { color: #fff; font-size: 16px; }
+.vr-meta { color: #9CA3AF; font-size: 12px; margin-top: 4px; }
+.vr-pending-icon { color: #F59E0B; font-size: 20px; }
+
+.vr-reason { color: #D1D5DB; font-size: 14px; margin: 14px 0; line-height: 1.6; }
+
+.vr-actions { display: flex; gap: 12px; align-items: flex-end; }
+
+.vr-days-input { display: flex; flex-direction: column; gap: 4px; }
+.vr-days-input label { color: #9CA3AF; font-size: 11px; }
+.vr-days-input input {
+  width: 80px; padding: 8px; border-radius: 8px;
+  background: #1F2937; border: 1px solid rgba(255,255,255,.1); color: #fff;
+}
+
+.vr-approve-btn, .vr-reject-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 16px; border-radius: 8px; border: none;
+  font-weight: 600; cursor: pointer; font-size: 13px;
+}
+
+.vr-approve-btn { background: #10B981; color: #fff; }
+.vr-reject-btn { background: #3F1616; color: #f87171; border: 1px solid #f87171; }
+
 /* ================= PAGE ================= */
 
 .manage-voting-page{
