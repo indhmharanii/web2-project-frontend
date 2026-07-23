@@ -58,11 +58,11 @@ function SidebarAdmin() {
 
         {/* Kelola Voting */}
         <NavLink
-          to="/admin/voting"
+         to="/admin/voting"
           className={({ isActive }) =>
-            isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
-          }
-        >
+           isActive ? "admin-sidebar-link admin-sidebar-link-active" : "admin-sidebar-link"
+        }
+      >
           <FaVoteYea />
           <span>Kelola Voting</span>
         </NavLink>

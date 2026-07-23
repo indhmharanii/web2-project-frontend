@@ -25,6 +25,8 @@
     position:relative;
 
 }
+.voting-status .voting { color: #3B82F6; }
+.voting-status .rejected { color: #f87171; }
 
 .voting-card:hover{
 

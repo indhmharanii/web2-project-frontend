@@ -39,7 +39,7 @@ function TierPreview() {
 
         <h2>Peringkat Tier</h2>
 
-        <p>Berdasarkan Total Vote Pengguna</p>
+        <p>Berdasarkan Total Rating Pengguna</p>
 
       </div>
 
@@ -80,7 +80,7 @@ function TierPreview() {
 
                   <p>
                     Laptop pada tier ini akan muncul
-                    setelah pengguna memberikan vote.
+                    setelah pengguna memberikan rating.
                   </p>
 
                 </div>
@@ -104,7 +104,7 @@ function TierPreview() {
 
                       <span className="home-tier-vote">
 
-                        {laptop.vote_count} Vote
+                        ⭐ {laptop.average_rating}
 
                       </span>
 

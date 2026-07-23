@@ -152,7 +152,11 @@ function Review({ laptopId }) {
             return (
               <div key={item.id} className="review-item">
                 <div className="review-item-header">
+                  {item.user?.avatar_url ? (
+                  <img src={item.user.avatar_url} alt={item.user.name} className="review-avatar-img" />
+                  ) : (
                   <FaUserCircle className="review-avatar" />
+                  )}
                   <div>
                     <h4>
                       {item.user?.name || "Pengguna"}

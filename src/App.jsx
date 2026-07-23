@@ -103,12 +103,19 @@ function App() {
     </ProtectedRoute>
   }
 />
+<Route
+  path="/admin/voting"
+  element={
+    <ProtectedRoute allowedRole="admin">
+      <ManageVoting />
+    </ProtectedRoute>
+  }
+/>
       <Route path="/admin" element={<DashboardAdmin />} />
       <Route path="/admin/laptop" element={<ManageLaptop />} />
       <Route path="/admin/recommendation" element={<ManageRecommendation />} />
       <Route path="/admin/user" element={<ManageUser />} />
       <Route path="/admin/profile" element={<AdminProfile />} />
-      <Route path="/admin/voting"element={<ManageVoting />}/>
       <Route path="/admin/voting/:id"element={<AdminVotingDetail />}/>
       <Route path="/voting/:id" element={<VotingDetail />} />
       <Route path="/vote/:id"element={<VoteForm />}/>
