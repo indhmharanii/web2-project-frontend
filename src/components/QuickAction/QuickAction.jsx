@@ -15,23 +15,30 @@ function QuickAction() {
 
   const actions = [
     {
-  icon: <FaVoteYea />,
-  title: "Vote Laptop",
-  desc: "Dukung laptop favoritmu",
-  path: "/Vote", 
-},
+      icon: <FaVoteYea />,
+      title: "Vote Laptop",
+      desc: "Berikan usulan perubahan tier laptop",
+      path: "/vote",
+    },
 
     {
       icon: <FaListOl />,
       title: "Lihat Tier List",
-      desc: "Lihat ranking terbaru",
-      path: "/TierList",
+      desc: "Lihat peringkat laptop terbaru",
+      path: "/tierlist",
+    },
+
+    {
+      icon: <FaLaptop />,
+      title: "Jelajahi Laptop",
+      desc: "Temukan laptop sesuai kebutuhanmu",
+      path: "/laptop",
     },
 
     {
       icon: <FaHeart />,
       title: "Favorit",
-      desc: "Laptop favoritmu",
+      desc: "Lihat daftar laptop favoritmu",
       path: "/favorite",
     },
   ];
@@ -50,17 +57,12 @@ function QuickAction() {
         >
 
           <div className="quick-icon">
-
             {item.icon}
-
           </div>
 
           <div>
-
             <h4>{item.title}</h4>
-
             <p>{item.desc}</p>
-
           </div>
 
         </div>

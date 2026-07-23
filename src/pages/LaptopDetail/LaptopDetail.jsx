@@ -15,7 +15,6 @@ import {
   FaWeightHanging,
   FaHeart,
   FaThumbsUp,
-  FaBalanceScale,
   FaFire,
   FaMedal,
   FaUsers,
@@ -255,6 +254,18 @@ function LaptopDetail() {
         </div>
 
         <Review laptopId={laptop.id} />
+
+        <div className="action-buttons">
+
+        <button
+          className="vote-btn full-width"
+          onClick={() => navigate(`/vote/${laptop.id}`)}
+        >
+          <FaThumbsUp />
+          Vote Laptop
+        </button>
+
+      </div>
       </div>
     </DashboardLayout>
   );
