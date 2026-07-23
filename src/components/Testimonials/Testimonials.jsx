@@ -1,4 +1,5 @@
 import "./Testimonials.css";
+import { useNavigate } from "react-router-dom";
 import { FaStar, FaUserCircle } from "react-icons/fa";
 
 const reviews = [
@@ -26,37 +27,22 @@ const reviews = [
 ];
 
 function Testimonials() {
+  const navigate = useNavigate();
+
   return (
     <section className="testimonial-section" id="review">
-
       <div className="testimonial-header">
-
         <h2>Ulasan Pengguna</h2>
-
-        <button className="testimonial-button">
-          Lihat Semua →
-        </button>
-
       </div>
 
       <div className="testimonial-container">
-
         {reviews.map((item, index) => (
-
-          <div
-            className="testimonial-item"
-            key={index}
-          >
-
+          <div className="testimonial-item" key={index}>
             <FaUserCircle className="testimonial-user-icon" />
 
-            <h4 className="testimonial-name">
-              {item.name}
-            </h4>
+            <h4 className="testimonial-name">{item.name}</h4>
 
-            <span className="testimonial-role">
-              {item.role}
-            </span>
+            <span className="testimonial-role">{item.role}</span>
 
             <div className="testimonial-rating">
               {[...Array(item.rating)].map((_, i) => (
@@ -64,16 +50,10 @@ function Testimonials() {
               ))}
             </div>
 
-            <p className="testimonial-text">
-              {item.text}
-            </p>
-
+            <p className="testimonial-text">{item.text}</p>
           </div>
-
         ))}
-
       </div>
-
     </section>
   );
 }

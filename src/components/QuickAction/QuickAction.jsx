@@ -29,13 +29,6 @@ function QuickAction() {
     },
 
     {
-      icon: <FaLaptop />,
-      title: "Bandingkan Laptop",
-      desc: "Bandingkan spesifikasi laptop",
-      path: "/compare",
-    },
-
-    {
       icon: <FaHeart />,
       title: "Favorit",
       desc: "Laptop favoritmu",

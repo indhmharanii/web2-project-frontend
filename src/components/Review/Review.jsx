@@ -182,17 +182,6 @@ function Review({ laptopId }) {
                 {isMine && (
                   <div style={{ display: "flex", gap: "10px", marginTop: "8px" }}>
                     <button
-                      onClick={() => {
-                        setContent(item.content);
-                        setRating(item.rating || 0);
-                        setEditingId(item.id);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                      style={{ background: "transparent", border: "none", color: "#3B82F6", fontSize: "12px", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}
-                    >
-                      <FaEdit /> Edit
-                    </button>
-                    <button
                       onClick={handleDelete}
                       style={{ background: "transparent", border: "none", color: "#f87171", fontSize: "12px", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}
                     >

@@ -255,18 +255,6 @@ function LaptopDetail() {
         </div>
 
         <Review laptopId={laptop.id} />
-
-        <div className="action-buttons">
-          <button className="compare-btn" onClick={() => navigate("/compare")}>
-            <FaBalanceScale />
-            Bandingkan
-          </button>
-
-          <button className="vote-btn" onClick={() => navigate(`/vote/${laptop.id}`)}>
-            <FaThumbsUp />
-            Vote Laptop
-          </button>
-        </div>
       </div>
     </DashboardLayout>
   );
