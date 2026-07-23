@@ -1,5 +1,6 @@
 import "./ManageUser.css";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 
 import AdminLayout from "../../../components/Admin/Layout/AdminLayout";
 import SidebarAdmin from "../../../components/Admin/SidebarAdmin/SidebarAdmin";
@@ -10,68 +11,63 @@ import UserTable from "../../../components/Admin/UserTable/UserTable";
 import PaginationAdmin from "../../../components/Admin/PaginationAdmin/PaginationAdmin";
 import UserEditModal from "../../../components/Admin/UserEditModal/UserEditModal";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ManageUser() {
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
 
-    const [openModal, setOpenModal] = useState(false);
+  const fetchUsers = useCallback(async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await axios.get(`${API_URL}/api/admin/users`, {
+        params: { search: search || undefined },
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUsers(res.data);
+    } catch (err) {
+      console.error("Gagal memuat data user:", err);
+    }
+  }, [search]);
 
-    return (
+  useEffect(() => {
+    const timeout = setTimeout(fetchUsers, 400);
+    return () => clearTimeout(timeout);
+  }, [fetchUsers]);
 
-        <AdminLayout
-            sidebar={<SidebarAdmin />}
-            topbar={<TopbarAdmin />}
-        >
+  return (
+    <AdminLayout sidebar={<SidebarAdmin />} topbar={<TopbarAdmin />}>
+      <div className="manage-user-container">
+        <div className="manage-user-header">
+          <div>
+            <h1 className="manage-user-title">Kelola User</h1>
+            <p className="manage-user-subtitle">Kelola seluruh data pengguna aplikasi TIERRA.</p>
+          </div>
+        </div>
 
-            <div className="manage-user-container">
+        <SearchUser value={search} onChange={setSearch} />
 
-                {/* HEADER */}
+        <UserTable
+          users={users}
+          onEdit={(user) => {
+            setSelectedUser(user);
+            setOpenModal(true);
+          }}
+        />
 
-                <div className="manage-user-header">
+        <PaginationAdmin />
 
-                    <div>
-
-                        <h1 className="manage-user-title">
-
-                            Kelola User
-
-                        </h1>
-
-                        <p className="manage-user-subtitle">
-
-                            Kelola seluruh data pengguna aplikasi TIERRA.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                {/* SEARCH */}
-
-                <SearchUser />
-
-                {/* TABLE */}
-
-                <UserTable
-                    onEdit={() => setOpenModal(true)}
-                />
-
-                {/* PAGINATION */}
-
-                <PaginationAdmin />
-
-                {/* MODAL EDIT USER */}
-
-                <UserEditModal
-                    open={openModal}
-                    onClose={() => setOpenModal(false)}
-                />
-
-            </div>
-
-        </AdminLayout>
-
-    );
-
+        <UserEditModal
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          user={selectedUser}
+          onSuccess={fetchUsers}
+        />
+      </div>
+    </AdminLayout>
+  );
 }
 
 export default ManageUser;

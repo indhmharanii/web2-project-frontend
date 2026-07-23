@@ -1,6 +1,6 @@
 import "./SidebarAdmin.css";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import {
   FaHome,
@@ -14,6 +14,14 @@ import {
 } from "react-icons/fa";
 
 function SidebarAdmin() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+
   return (
     <aside className="admin-sidebar-container">
       <div className="admin-sidebar-logo">
@@ -91,7 +99,7 @@ function SidebarAdmin() {
       </nav>
 
       <div className="admin-sidebar-footer">
-        <button className="admin-sidebar-logout">
+        <button className="admin-sidebar-logout" onClick={handleLogout}>
           <FaSignOutAlt />
           <span>Logout</span>
         </button>

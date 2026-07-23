@@ -124,11 +124,7 @@ function LaptopCard({
 
           <span>{laptop.rating}</span>
 
-          <small>
 
-            ({laptop.votes} Vote)
-
-          </small>
 
         </div>
 
