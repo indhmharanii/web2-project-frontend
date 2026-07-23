@@ -2,7 +2,7 @@ import "./Features.css";
 
 import {
   FaVoteYea,
-  FaBalanceScale,
+  FaLaptop,
   FaTrophy,
 } from "react-icons/fa";
 
@@ -34,16 +34,15 @@ function Features() {
 
         <div className="feature-card">
 
-          <FaBalanceScale className="feature-icon"/>
+        <FaLaptop className="feature-icon"/>
 
-          <h3>Bandingkan Laptop</h3>
+        <h3>Jelajahi Laptop</h3>
 
-          <p>
-            Bandingkan spesifikasi, harga, dan performa beberapa laptop sebelum
-            menentukan pilihan.
-          </p>
+        <p>
+          Temukan berbagai pilihan laptop lengkap dengan spesifikasi, harga, dan informasi yang membantu sebelum menentukan pilihan.
+        </p>
 
-        </div>
+      </div>
 
         <div className="feature-card">
 
